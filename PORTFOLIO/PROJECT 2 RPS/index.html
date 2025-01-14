@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK PAPER SCISSORS</title>
+    <link rel="stylesheet" href="GAME.css">
+</head>
+
+<body>
+    <head>
+        <h1>ROCK PAPER SCISSOR GAME</h1>
+        <marquee direction="right">
+            <p>CHOOSE ANY ONE</p>
+        </marquee>
+    </head>
+    <main>
+        <div id="imgs">
+            <div class="choice" onclick="click_choice(0)">
+                <img src="GAME-MATERIAL/PAPER.png" alt="Error">
+            </div>
+            <div class="choice" onclick="click_choice(1)">
+                <img src="GAME-MATERIAL/ROCK.png" alt="Error">
+            </div>
+            <div class="choice" onclick="click_choice(2)">
+                <img src="GAME-MATERIAL/SCISSOR.png" alt="Error">
+            </div>
+        </div>
+        <div id="score_title">
+            <div>
+                <p>USER-SCORE</p>
+                <div id="user_score">0</div>
+            </div>
+            <div id="vl"></div>
+            <div>
+                <p>COMP-USER</p>
+                <div id="comp_score">0</div>
+            </div>
+        </div>
+    </main>
+    <section>
+        <p id="msg">WHO WILL WIN ?</p>
+    </section>
+    <footer>
+        <div id="foot">
+            <button onclick="reset()">RESET</button>
+            <button onclick="final()">FINAL</button>
+            <button onclick="mode()">THEME</button>
+        </div>
+    </footer>
+</body>
+
+<script src="GAME.js"></script>
+
+</html>

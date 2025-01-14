@@ -1,0 +1,127 @@
+h1 {
+    width: 100%;
+    /* height: 40px; */
+    color: aliceblue;
+    background-color: #170281;
+    text-align: center;
+    font-size: 2vmax;
+    margin: 0;
+    /* padding-top: 5px; */
+}
+
+.dark {
+    background-color: #000;
+    color: white;
+    border: 2px solid white;
+}
+
+marquee {
+    /* width: auto;
+    height: 30px; */
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 2px aqua;
+    box-shadow: 10px 10px 10px red;
+    animation-name: marquee;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes marquee {
+    0% {
+        box-shadow: 10px 10px 10px red;
+    }
+
+    25% {
+        box-shadow: 10px 10px 10px blue;
+    }
+
+    50% {
+        box-shadow: 10px 10px 10px green;
+    }
+
+    75% {
+        box-shadow: 10px 10px 10px yellow;
+    }
+
+    100% {
+        box-shadow: 10px 10px 10px pink;
+    }
+}
+
+#imgs {
+    width: 100%;
+    /* height: 130px; */
+    /* margin-top: 30px; */
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    width: 100%;
+    height: 20vh;
+    cursor: pointer;
+}
+
+img:hover {
+    width: 100%;
+    height: 19vh;
+    border-radius: 50%;
+    /* border-style: dashed; */
+}
+
+#score_title {
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 25%;
+    text-align: center;
+    color: #684cf8;
+    border: 2px solid black;
+    font-size: 2vmax;
+    font-weight: 900;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#vl {
+    border-right: 2px solid black;
+}
+
+#foot {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#msg {
+    width: auto;
+    height: 7vh;
+    color: aliceblue;
+    background-color: #170281;
+    font-size: 2vmax;
+    padding-top: 5px;
+    text-align: center;
+    font-weight: 900;
+    font-style: italic;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+button {
+    /* width: 10vw; */
+    height: 8vh;
+    font-weight: 900;
+    margin-top: 2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    background-color: gray;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #684cf8;
+}

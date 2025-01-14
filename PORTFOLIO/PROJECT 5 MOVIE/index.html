@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="JS_FORM.css">
+    <title>CONFIRM PASSWORD</title>
+</head>
+
+<body id="main">
+    <form id="form" method="post" onsubmit="return submiting()">
+        <p>FILL FORM TO OPEN MOVIE APP</p>
+        <label for="name" class="text">ENTER USERNAME *</label>
+        <input type="text" placeholder="Enter Username" name="name" class="box" required>
+        <br>
+        <label for="pass" class="text">ENTER PASSWORD *</label>
+        <input type="password" name="pass" placeholder="e.g=@H21" class="box" required>
+        <br>
+        <label for="pass" class="text">RETYPE PASSWORD *</label>
+        <input type="password" name="pass" placeholder="e.g=@H21" class="box" onkeyup="verify()" required>
+        <br>
+        <h1 id="h1">ERROR SHOWN HERE !</h1>
+        <br>
+        <br>
+        <button type="button" onclick="visible(this)"
+            style=" width: 33vmax; height: 3.5vmax; color:white; font-size: 1vmax; font-weight: 900; background-color: seagreen;">VISIBILITY</button>
+        <input type="submit" value="SUBMIT" id="submit">
+        <br>
+        <br>
+        <marquee direction="left">PLEASE , SIGN UP FOR MORE EXICTING OFFERS .</marquee>
+        <marquee direction="right">AVAIABLE SOON NEW OFFERS</marquee>
+    </form>
+</body>
+<script>
+    var pass1 = document.getElementsByClassName("box")[1];
+    var pass2 = document.getElementsByClassName("box")[2];
+    var flag = 1;
+    function verify() {
+        if (pass1.value.length > 0 && pass2.value.length > 0) {
+            if (pass1.value != pass2.value) {
+                document.getElementById("h1").innerHTML = "PASSWORD DOESN'T MATCH";
+                flag = 0;
+            }
+            else {
+                document.getElementById("h1").innerHTML = "";
+                flag = 1;
+            }
+        }
+        else {
+            document.getElementById("h1").innerHTML = "PLEASE CONFIRM PASSWORD";
+            flag = 0;
+        }
+    }
+    function submiting() {
+        if (flag == 1) {
+            window.open("MOVIE.html");
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    var pass3 = document.getElementsByClassName('box')[1];
+    var pass4 = document.getElementsByClassName('box')[2];
+    function visible(elem) {
+        var type1 = pass3.getAttribute('type');
+        var type2 = pass4.getAttribute('type');
+        if (type1 === 'password' && type2 === 'password') {
+            pass3.setAttribute('type', 'text');
+            pass4.setAttribute('type', 'text');
+            elem.innerText = "HIDE PASSWORD";
+        }
+        else {
+            pass3.setAttribute('type', 'password');
+            pass4.setAttribute('type', 'password');
+            elem.innerText = "SHOW PASSWORD";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOADER</title>
+</head>
+<style>
+    /* #loader {
+        width: 396px;
+        height: 396px;
+        border: 1px solid #010101;
+        background: transparent;
+        text-align: center;
+        margin: auto;
+        border-radius: 50%;
+        box-shadow: 15px 15px 100px red;
+        animation-name: loader;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes loader {
+        0% {
+            box-shadow: 15px 15px 100px red;
+            transform: rotate(0deg);
+        }
+
+        25% {
+            box-shadow: 15px 15px 100px orangered;
+            transform: rotate(90deg);
+        }
+
+        50% {
+            box-shadow: 15px 15px 100px yellow;
+            transform: rotate(180deg);
+        }
+
+        75% {
+            box-shadow: 15px 15px 100px rgb(102, 154, 24);
+            transform: rotate(270deg);
+        }
+
+        100% {
+            box-shadow: 15px 15px 100px green;
+            transform: rotate(360deg);
+        }
+    } */
+
+
+    p {
+        font-size: 30px;
+        font-style: italic;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+        animation-name: para;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes para {
+        0% {
+            box-shadow: 15px 15px 100px red;
+            transform: scale(0);
+        }
+
+        25% {
+            box-shadow: 15px 15px 100px orangered;
+            transform: scale(1);
+        }
+
+        50% {
+            box-shadow: 15px 15px 100px yellow;
+            transform: scale(0);
+        }
+
+        75% {
+            box-shadow: 15px 15px 100px rgb(102, 154, 24);
+            transform: scale(1);
+        }
+
+        100% {
+            box-shadow: 15px 15px 100px green;
+            transform: scale(0);
+        }
+    }
+
+    #four {
+        width: 200px;
+        height: 200px;
+        margin: auto;
+        margin-top: 5%;
+        background: transparent;
+        font-weight: 900;
+        border: 1px solid rgba(0, 0, 0, 0.568);
+        border-radius: 50%;
+        font-weight: 900;
+        border-radius: 50%;
+        animation-name: four;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+    }
+
+    @keyframes four {
+        0% {
+            box-shadow: 5px 5px 20px rgb(0, 132, 255);
+            transform: rotate(0deg);
+        }
+
+        25% {
+            box-shadow: 5px 5px 20px rgb(0, 255, 0);
+            transform: rotate(90deg);
+        }
+
+        50% {
+            box-shadow: 5px 5px 20px rgb(255, 238, 0);
+            transform: rotate(180deg);
+        }
+
+        75% {
+            box-shadow: 5px 5px 20px rgb(255, 0, 55);
+            transform: rotate(240deg);
+        }
+
+        100% {
+            box-shadow: 5px 5px 20px rgb(255, 0, 183);
+            transform: rotate(360deg);
+        }
+
+    }
+</style>
+
+<body>
+    <!-- <div id="loader">
+    </div> -->
+    <div id="four">
+    </div>
+    <p>IT TAKES FEW SECONDS , PLEASE WAIT...</p>
+</body>
+<script>
+    setTimeout(
+        function ops() {
+            window.open("AMAZON-CLONE.html");
+            window.close();
+        }, 8000
+    );
+</script>
+
+</html>

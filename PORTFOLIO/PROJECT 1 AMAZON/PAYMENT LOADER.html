@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAYMENT LOADER</title>
+</head>
+<style>
+    /* #three_1 {
+        width: 200px;
+        height: 50px;
+        margin: auto;
+        margin-top: 150px;
+        border: 15px solid rgb(221, 221, 221);
+        position: relative;
+        border-top-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+
+    #three_2 {
+        width: 200px;
+        height: 50px;
+        background-color: transparent;
+        font-weight: 900;
+        position: absolute;
+        animation-name: three_2;
+        animation-duration: 5s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-play-state: running;
+    }
+
+    @keyframes three_2 {
+        0% {
+            width: 0%;
+            background-color: red;
+        }
+
+        10% {
+            width: 10%;
+            background-color: red;
+        }
+
+        25% {
+            width: 25%;
+            background-color: red;
+        }
+
+        50% {
+            width: 50%;
+            background-color: yellow;
+        }
+
+        75% {
+            width: 75%;
+            background-color: greenyellow;
+        }
+
+        100% {
+            width: 100%;
+            background-color: green;
+        }
+    } */
+
+    p,
+    h1 {
+        /* text-align: center; */
+        font-size: 30px;
+        font-style: italic;
+        font-family: cursive;
+        /* margin-top: 160px; */
+    }
+
+    #option {
+        text-align: center;
+    }
+
+    a {
+        /* text-align: center; */
+        font-size: 30px;
+        font-style: italic;
+        font-family: cursive;
+        /* margin-top: 160px; */
+        animation-name: para;
+        animation-duration: 6s;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes para {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        90% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+    #img{
+        visibility: hidden;
+    }
+</style>
+
+<body>
+    <!-- <div id="three_1">
+        <div id="three_2"></div>
+    </div> -->
+    <div id="option">
+        <img src="AMAZON-MATERIAL/7efs.gif" width="500px" height="200px" id="img">
+        <p id="p">PAYMENT FEW SECONDS LATER</p>
+        <a href="AMAZON-MATERIAL/Invoice.pdf" style="text-align: center;" download="">DOWNLOAD RECEIPT</a>
+        <br>
+        <br>
+        <a href="AMAZON-MATERIAL/Invoice.pdf" style="text-align: center;">PRINT RECEIPT</a>
+        <h1 id="h1"></h1>
+    </div>
+</body>
+<script>
+    // document.getElementById("p").innerHTML = ""
+    setTimeout(
+        function ops() {
+            document.getElementById("p").innerHTML = "PAYMENT SUCCESSFUL"
+            document.getElementById("h1").innerHTML = "VISIT AGAIN FOR BETTER EXPERIENCE"
+        }, 5000);
+        let val=document.getElementById("img");
+        setTimeout(() => {
+            val.style.visibility="visible";
+        }, 4000);
+</script>
+
+</html>

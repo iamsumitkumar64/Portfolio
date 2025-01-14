@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUY MEN'S CLOTHES</title>
+    <link rel="stylesheet" href="/WEB DEV/PROJECT 1 AMAZON/AMAZON-CLONE.css">
+    <link rel="shortcut icon" href="/WEB DEV/PROJECT 1 AMAZON/AMAZON-MATERIAL/america logo.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header id="head">
+        <!-- ROW-1 -->
+        <div class="row1">
+            <!-- AMAZON-LOGO -->
+            <div>
+                <div class="logo">
+                    <img src="/WEB DEV/PROJECT 1 AMAZON/AMAZON-MATERIAL/amazon_logo.png" width="130px" height="70px" alt="">
+                </div>
+            </div>
+            <!-- LOCATION-ICON -->
+            <div class="deliver">
+                <p class="first">Deliver To/-</p>
+                <div class="loc">
+                    <img src="/WEB DEV/PROJECT 1 AMAZON/AMAZON-MATERIAL/location-dot-solid.svg" alt="Location Is Missing" width="30px"
+                        height="36px">
+                    <p class="second">INDIA</p>
+                </div>
+            </div>
+            <!-- SEARCH-BOX -->
+            <div class="search">
+                <select name="ALL" id="option" class="search-option">
+                    <option>ALL</option>
+                    <option value="FASHION">FASHION</option>
+                    <option value="GROCERY">GROCERY</option>
+                    <option value="ELECTRONICS">ELECTRONICS</option>
+                    <option value="HOUSEHOLD">HOUSEHOLD</option>
+                    <option value="PROPERTY DEALS">PROPERTY DEALS</option>
+                </select>
+                <input type="search" name="search" id="gap" placeholder="Enter Any Product" class="search-gap">
+                <input type="image" class="search-icon" src="/WEB DEV/PROJECT 1 AMAZON/AMAZON-MATERIAL/search.svg" width="80px" height="10px">
+            </div>
+            <!-- LANGUAGE -->
+            <div class="lang">
+                <select name="LANG" id="LANG" class="opt">
+                    <option value="ENG">ENG</option>
+                    <option value="HIN">HIN</option>
+                    <option value="TURK">TURK</option>
+                    <option value="GERM">GERM</option>
+                    <option value="PORTE">PORTE</option>
+                </select>
+            </div>
+            <!-- ACCOUNT -->
+            <div class="acc">
+                <p class="acc-first">Hello , Sign In/-</p>
+                <select name="Account" id="acc" class="acc-second" value="ACCOUNT AND LIST">
+                    <option value="GOOGLE">GOOGLE</option>
+                    <option value="MICROSOFT">MICROSOF</option>
+                    <option value="FACEBOOK">FACEBOO</option>
+                </select>
+            </div>
+            <!-- RETRURN AND ORDER  -->
+            <div class="r-a-o">
+                <p class="return-first">RETURN</p>
+                <p class="order-second"> ♪ ORDER</p>
+            </div>
+            <!-- CART -->
+            <div class="cart">
+                <div class="cart-icon">
+                    <img src="/WEB DEV/PROJECT 1 AMAZON/AMAZON-MATERIAL/cart-shopping-solid.svg" width="40px" height="20px" alt="">
+                </div>
+                <p class="cart-text">CART</p>
+            </div>
+        </div>
+    </header>
+    <!-- MAIN -->
+    <main>
+        <!-- ROW-2 -->
+        <div class="row2" style="padding-bottom: 5px;">
+            <div class="row2-text1">
+                <img src="/WEB DEV/PROJECT 1 AMAZON/AMAZON-MATERIAL/bars-solid.svg" style="padding-bottom: -5px;" alt="" width="30px"
+                    height="30px">
+                <div class="row2-home">Home</div>
+            </div>
+            <div class="row2-text">Today's Deal</div>
+            <div class="row2-text">Customer Service</div>
+            <div class="row2-text">Registry</div>
+            <div class="row2-text">Gift Cards</div>
+            <div class="row2-text">Sell</div>
+        </div>
+        <br>
+        <!-- ROW-3 -->
+        <div>
+            <h1 id="comp-head">SUITE'S FOR PROFESSIONAL</h1>
+            <div class="compare">
+                <div>
+                    <div class="comp1"><img src="/WEB DEV/PROJECT 1 AMAZON/AMAZON-MATERIAL/MEN 1.jpeg" alt="IMAGE IS MISSING" width="200px"
+                            height="250px" style="margin-left: 150px;"></div>
+                    <input type="button" value="TUXEDO IMPERIUM EDITION 2.0" class="button" style="margin-left: 100px;">
+                    <div class="compare">
+                        <div>
+                            <div><input type="number" name="ADD TO CART" class="cart_option"></div>
+                            <button onclick="cart_limit1()" class="button_option">ADD TO CART</button>
+                        </div>
+                        <div><input type="button" value="BUY PRODUCT" class="buy_option" onclick="buy_1()"></div>
+                    </div>
+                </div>
+                <div class="vl"></div>
+                <div>
+                    <div class="comp2"><img src="/WEB DEV/PROJECT 1 AMAZON/AMAZON-MATERIAL/MEN 2.jpeg" alt="IMAGE IS MISSING" width="200px"
+                            height="250px" style="margin-left: 150px;"></div>
+                    <input type="button" value="TUXEDO 1232" class="button" style="margin-left: 100px;">
+                    <div class="compare">
+                        <div>
+                            <div><input type="number" name="ADD TO CART" class="cart_option"></div>
+                            <button onclick="cart_limit2()" class="button_option">ADD TO CART</button>
+                        </div>
+                        <div><input type="button" value="BUY PRODUCT" class="buy_option" onclick="buy_2()"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ROW-4 -->
+        <div>
+            <h1 id="comp-head">SPECIFICATION</h1>
+            <div class="compare">
+                <div class="comp3">
+                    <h1 class="data">FEATURE</h1>
+                    <ul>
+                        <li>LEATHER STRIPS WITH HIGH POLISHED SURFACE</li>
+                        <li>7% LEATHER</li>
+                        <li>HALF SLEEVES</li>
+                        <li>BOLD</li>
+                        <li>LIGHT-BODIED</li>
+                        <li>CEREMONIES , PARTY & MUCH MORE</li>
+                        <li>WELL-BALANCED</li>
+                    </ul>
+                </div>
+                <div class="vl" style="height: 200px;"></div>
+                <div class="comp3">
+                    <h1 class="data">FEATURE</h1>
+                    <ul>
+                        <li>DESIGNED WITH HIGH EDGELESS DUTY</li>
+                        <li>8% LEATHER</li>
+                        <li>FULL SLEEVES</li>
+                        <li>REFRESHING</li>
+                        <li>FULL-BODIED</li>
+                        <li>MEETING , WORK & MUCH MORE</li>
+                        <li>BEST BALANCED</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- ROW-5 -->
+        <div>
+            <h1 id="comp-head">PRICES</h1>
+            <div class="compare">
+                <div class="comp3">
+                    <h1 class="data">DEALERS</h1>
+                    <ul>
+                        <li>
+                            <h1 class="data" style="font-size: 15px; color: blue;">SANYAM AHUJA (&#8377 1200)</h1>
+                            <ol>
+                                <li>
+                                    <a href="https://www.winebaba.in/product-page/haywards-5000-gold-strong-beer"
+                                        target="_blank">https://www.winebaba.in/product-page/haywards-5000-gold-strong-beer</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h1 class="data" style="font-size: 15px; color: blue;">ROHIT SINGHLA(&#8377 1740)</h1>
+                            <ol>
+                                <li>
+                                    <a href="https://www.winebaba.in/product-page/haywards-5000-gold-strong-beer"
+                                        target="_blank">https://www.winebaba.in/product-page/haywards-5000-gold-strong-beer</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h1 class="data" style="font-size: 15px; color: blue;">AMAN RAI(&#8377 1220)</h1>
+                            <ol>
+                                <li>
+                                    <a href="https://www.winebaba.in/product-page/haywards-5000-gold-strong-beer"
+                                        target="_blank">https://www.winebaba.in/product-page/haywards-5000-gold-strong-beer</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h1 class="data" style="font-size: 15px; color: blue;">SUMIT PATHAK(&#8377 1343)</h1>
+                            <ol>
+                                <li>
+                                    <a href="https://www.winebaba.in/product-page/haywards-5000-gold-strong-beer"
+                                        target="_blank">https://www.winebaba.in/product-page/haywards-5000-gold-strong-beer</a>
+                                </li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+                <div class="vl" style="height: 300px;"></div>
+                <div class="comp3">
+                    <h1 class="data">DEALERS</h1>
+                    <ul>
+                        <li>
+                            <h1 class="data" style="font-size: 15px; color: blue;">SANYAM AHUJA (&#8377 1244)</h1>
+                            <ol>
+                                <li>
+                                    <a href="https://www.spencers.in/kingfisher-strong-premium-beer-650-ml-1193108.html"
+                                        target="_blank">https://www.spencers.in/kingfisher-strong-premium-beer-650-ml-1193108.html</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h1 class="data" style="font-size: 15px; color: blue;">ROHIT SINGHLA(&#8377 1324)</h1>
+                            <ol>
+                                <li>
+                                    <a href="https://www.spencers.in/kingfisher-strong-premium-beer-650-ml-1193108.html"
+                                        target="_blank">https://www.spencers.in/kingfisher-strong-premium-beer-650-ml-1193108.html</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h1 class="data" style="font-size: 15px; color: blue;">AMAN RAI(&#8377 2000)</h1>
+                            <ol>
+                                <li>
+                                    <a href="https://www.spencers.in/kingfisher-strong-premium-beer-650-ml-1193108.html"
+                                        target="_blank">https://www.spencers.in/kingfisher-strong-premium-beer-650-ml-1193108.html</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h1 class="data" style="font-size: 15px; color: blue;">SUMIT PATHAK(&#8377 1740)</h1>
+                            <ol>
+                                <li>
+                                    <a href="https://www.spencers.in/kingfisher-strong-premium-beer-650-ml-1193108.html"
+                                        target="_blank">https://www.spencers.in/kingfisher-strong-premium-beer-650-ml-1193108.html</a>
+                                </li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <!-- ROW-6 -->
+            <div class="row-6">
+                <a href="#head" target="_parent">BACK TO TOP</a>
+            </div>
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <!-- ROW-7 -->
+        <div class="row-7">
+            <div class="text1">
+                <p>GET TO KNOW US</p>
+                <a href="/WEB DEV/E-COMMERCE.html" target="_parent">Carrers</a>
+                <a href="/WEB DEV/E-COMMERCE.html" target="_parent">Blog</a>
+                <a href="/WEB DEV/E-COMMERCE.html" target="_parent">About Amazon</a>
+                <a href="/WEB DEV/E-COMMERCE.html" target="_parent">Investor Relation</a>
+            </div>
+            <div class="text2">
+                <p>MAKE MONEY WITH US</p>
+                <a href="/WEB DEV/ANIMATION.html" target="_parent">Sell Produts on Amazon</a>
+                <a href="/WEB DEV/ANIMATION.html" target="_parent">Sell on Amazon Business</a>
+                <a href="/WEB DEV/ANIMATION.html" target="_parent">Sell Apps on Amazon</a>
+                <a href="/WEB DEV/ANIMATION.html" target="_parent">Became an Affiliate</a>
+                <a href="/WEB DEV/ANIMATION.html" target="_parent">Advertise your Products</a>
+                <a href="/WEB DEV/ANIMATION.html" target="_parent">Self-Publish with us</a>
+                <a href="/WEB DEV/ANIMATION.html" target="_parent">Host on Amazon Web</a>
+            </div>
+            <div class="text3">
+                <p>ACCOUNT AND ORDER</p>
+                <a href="/WEB DEV/BORDER-MARGIN-PADDING.html" target="_parent">Your Accounts</a>
+                <a href="/WEB DEV/BORDER-MARGIN-PADDING.html" target="_parent">Your Orders</a>
+                <a href="/WEB DEV/BORDER-MARGIN-PADDING.html" target="_parent">Amazon Buisness Cards</a>
+                <a href="/WEB DEV/BORDER-MARGIN-PADDING.html" target="_parent">Bonus Points</a>
+            </div>
+            <div class="text4">
+                <p>Lets Us Help You</p>
+                <a href="/WEB DEV/FLEX-BOX.html" target="_parent">Covid 19</a>
+                <a href="/WEB DEV/FLEX-BOX.html" target="_parent">ShippinG Rates And Policies</a>
+                <a href="/WEB DEV/FLEX-BOX.html" target="_parent">Relod Your Blance</a>
+                <a href="/WEB DEV/FLEX-BOX.html" target="_parent">Amazon Assitant</a>
+                <a href="/WEB DEV/FLEX-BOX.html" target="_parent">Help</a>
+            </div>
+        </div>
+        <!-- ROW-8 -->
+        <div class="row-8">
+            <img src="/WEB DEV/PROJECT 1 AMAZON/AMAZON-MATERIAL/amazon_logo.png" alt="" width="80px" height="50px">
+            <div>
+                <select name="Lang2" value="Lang2">
+                    <option value="ENGLISH">ENGLISH</option>
+                    <option value="HINDI">HINDI</option>
+                    <option value="BRITISH">BRITISH</option>
+                </select>
+                <select name="money" value="money">
+                    <option value="DOLLOR">DOLLOR</option>
+                    <option value="RUPEES">RUPEES</option>
+                    <option value="DINAR">DINAR</option>
+                </select>
+            </div>
+        </div>
+        <!-- ROW-9 -->
+        <div class="row-9">
+            <div class="one">
+                <a href="/WEB DEV/DISPLAY-RESIZE-TEXTINDENT.html" target="_parent">Conditions of Use</a>&emsp;
+                <a href="/WEB DEV/DISPLAY-RESIZE-TEXTINDENT.html" target="_parent">Privacy Notes</a>&emsp;
+                <a href="/WEB DEV/DISPLAY-RESIZE-TEXTINDENT.html" target="_parent">Your Ads Privacy Choices</a>&emsp;
+            </div>
+            <div class="two">
+                © 1996-2024, Amazon.com, Inc. or its affiliates
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    function cart_limit1() {
+        if (document.getElementsByClassName("cart_option")[0].value > 0) {
+            alert(document.getElementsByClassName("cart_option")[0].value + " TUXEDO IMPERIUM DITION 2.0 CARTED IN YOUR ACCOUNT");
+        }
+    }
+    function buy_1() {
+        if (document.getElementsByClassName("cart_option")[0].value > 0) {
+            confirm(document.getElementsByClassName("cart_option")[0].value + " CONFIRM TO BUY TUXEDO IMPERIUM DITION 2.0 ");
+        }
+        setTimeout(function buy() {
+            window.open("PAYMENT LOADER.html");
+        }, 2000);
+    }
+    function cart_limit2() {
+        if (document.getElementsByClassName("cart_option")[1].value > 0) {
+            alert(document.getElementsByClassName("cart_option")[1].value + " TUXEDO 1232 CARTED IN YOUR ACCOUNT");
+        }
+    }
+    function buy_2() {
+        if (document.getElementsByClassName("cart_option")[1].value > 0) {
+            confirm(document.getElementsByClassName("cart_option")[1].value + " CONFIRM TO BUY TUXEDO 1232 ");
+        }
+        setTimeout(function buy() {
+            window.open("PAYMENT LOADER.html");
+        }, 2000);
+    }
+</script>
+
+</html>
