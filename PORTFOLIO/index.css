@@ -137,9 +137,10 @@ main>#home>div {
     /* background-color: rgb(1, 255, 149); */
     width: 50vmin;
     height: 50vmin;
-    background-image: url(PORTO\ CONTENT/code-bg.jpg);
+    background-image: url(https://i.gifer.com/TXOP.gif);
+    /* background-image: url(PORTO\ CONTENT/code-bg.jpg); */
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     transition: 1s;
     /* border-bottom-left-radius: 60%;
     border-top-right-radius: 60%; */
