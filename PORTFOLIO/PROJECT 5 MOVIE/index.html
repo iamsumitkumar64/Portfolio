@@ -4,79 +4,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="JS_FORM.css">
-    <title>CONFIRM PASSWORD</title>
+    <title>Confirm Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            background-color: #00264e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #form {
+            background: rgb(212, 212, 212);
+            padding: 5%;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 40vmax;
+        }
+
+        .text {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        #h1 {
+            color: red;
+            font-size: 0.9em;
+            height: 20px;
+            /* Fixed height for consistent spacing */
+        }
+
+        button,
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        input::placeholder {
+            color: rgb(160, 96, 0);
+            font-weight: 900;
+        }
+
+        button {
+            background-color: seagreen;
+            color: white;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: white;
+            color: seagreen;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        input[type="submit"]:hover {
+            color: #007BFF;
+            background-color: white;
+        }
+
+        marquee {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
 </head>
 
 <body id="main">
     <form id="form" method="post" onsubmit="return submiting()">
-        <p>FILL FORM TO OPEN MOVIE APP</p>
-        <label for="name" class="text">ENTER USERNAME *</label>
+        <h2>Fill Form to Open Movie App</h2>
+        <label for="name" class="text">Enter Username *</label>
         <input type="text" placeholder="Enter Username" name="name" class="box" required>
-        <br>
-        <label for="pass" class="text">ENTER PASSWORD *</label>
+
+        <label for="pass" class="text">Enter Password *</label>
         <input type="password" name="pass" placeholder="e.g=@H21" class="box" required>
-        <br>
-        <label for="pass" class="text">RETYPE PASSWORD *</label>
+
+        <label for="pass" class="text">Retype Password *</label>
         <input type="password" name="pass" placeholder="e.g=@H21" class="box" onkeyup="verify()" required>
-        <br>
-        <h1 id="h1">ERROR SHOWN HERE !</h1>
-        <br>
-        <br>
-        <button type="button" onclick="visible(this)"
-            style=" width: 33vmax; height: 3.5vmax; color:white; font-size: 1vmax; font-weight: 900; background-color: seagreen;">VISIBILITY</button>
-        <input type="submit" value="SUBMIT" id="submit">
-        <br>
-        <br>
-        <marquee direction="left">PLEASE , SIGN UP FOR MORE EXICTING OFFERS .</marquee>
-        <marquee direction="right">AVAIABLE SOON NEW OFFERS</marquee>
+
+        <h1 id="h1">Error shown here!</h1>
+
+        <button type="button" onclick="visible(this)">Show Password</button>
+        <input type="submit" value="Submit" id="submit">
+
+        <marquee direction="left">Please, sign up for more exciting offers.</marquee>
+        <marquee direction="right">Available soon: new offers!</marquee>
     </form>
-</body>
-<script>
-    var pass1 = document.getElementsByClassName("box")[1];
-    var pass2 = document.getElementsByClassName("box")[2];
-    var flag = 1;
-    function verify() {
-        if (pass1.value.length > 0 && pass2.value.length > 0) {
-            if (pass1.value != pass2.value) {
-                document.getElementById("h1").innerHTML = "PASSWORD DOESN'T MATCH";
+
+    <script>
+        var pass1 = document.getElementsByClassName("box")[1];
+        var pass2 = document.getElementsByClassName("box")[2];
+        var flag = 1;
+
+        function verify() {
+            if (pass1.value.length > 0 && pass2.value.length > 0) {
+                if (pass1.value != pass2.value) {
+                    document.getElementById("h1").innerHTML = "PASSWORD DOESN'T MATCH";
+                    flag = 0;
+                } else {
+                    document.getElementById("h1").innerHTML = "";
+                    flag = 1;
+                }
+            } else {
+                document.getElementById("h1").innerHTML = "PLEASE CONFIRM PASSWORD";
                 flag = 0;
             }
-            else {
-                document.getElementById("h1").innerHTML = "";
-                flag = 1;
+        }
+
+        function submiting() {
+            if (flag == 1) {
+                window.open("MOVIE.html");
+                return true;
+            } else {
+                return false;
             }
         }
-        else {
-            document.getElementById("h1").innerHTML = "PLEASE CONFIRM PASSWORD";
-            flag = 0;
+
+        var pass3 = document.getElementsByClassName('box')[1];
+        var pass4 = document.getElementsByClassName('box')[2];
+
+        function visible(elem) {
+            var type1 = pass3.getAttribute('type');
+            var type2 = pass4.getAttribute('type');
+            if (type1 === 'password' && type2 === 'password') {
+                pass3.setAttribute('type', 'text');
+                pass4.setAttribute('type', 'text');
+                elem.innerText = "Hide Password";
+            } else {
+                pass3.setAttribute('type', 'password');
+                pass4.setAttribute('type', 'password');
+                elem.innerText = "Show Password";
+            }
         }
-    }
-    function submiting() {
-        if (flag == 1) {
-            window.open("MOVIE.html");
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    var pass3 = document.getElementsByClassName('box')[1];
-    var pass4 = document.getElementsByClassName('box')[2];
-    function visible(elem) {
-        var type1 = pass3.getAttribute('type');
-        var type2 = pass4.getAttribute('type');
-        if (type1 === 'password' && type2 === 'password') {
-            pass3.setAttribute('type', 'text');
-            pass4.setAttribute('type', 'text');
-            elem.innerText = "HIDE PASSWORD";
-        }
-        else {
-            pass3.setAttribute('type', 'password');
-            pass4.setAttribute('type', 'password');
-            elem.innerText = "SHOW PASSWORD";
-        }
-    }
-</script>
+    </script>
+</body>
 
 </html>
