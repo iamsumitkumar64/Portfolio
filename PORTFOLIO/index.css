@@ -155,12 +155,12 @@ main>#home>div:hover {
 }
 
 main>#home>article>button {
-    color: black;
-    background-color: aliceblue;
+    color: white;
+    background-color: royalblue;
     margin-top: 10px;
     transition: 1s;
-    border-top-right-radius: 25%;
-    border-bottom-left-radius: 25%;
+    /* border-top-right-radius: 25%;
+    border-bottom-left-radius: 25%; */
     font-size: 4vmin;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -264,15 +264,15 @@ main>#about>#about-btn-cont>div>img:hover {
 }
 
 main>#about>#about-btn>button {
-    color: black;
+    color: white;
     /* display: flex; */
     /* flex-direction: column; */
-    background-color: white;
+    background-color: royalblue;
     margin-top: 10px;
     transition: 1s;
     /* border-radius: 10%; */
-    border-top-right-radius: 20%;
-    border-bottom-left-radius: 20%;
+    /* border-top-right-radius: 20%;
+    border-bottom-left-radius: 20%; */
     font-size: 4vmin;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -547,8 +547,8 @@ main>#contact>#contact-cont>#contact-cont-in>div>textarea:focus {
 }
 
 main>#contact>#contact-cont>#contact-cont-in>div>button {
-    color: black;
-    background-color: aliceblue;
+    color: white;
+    background-color: royalblue;
     margin-top: 7px;
     /* border-radius: 10%; */
     transition: 1s;
