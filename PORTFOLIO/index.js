@@ -1,22 +1,51 @@
-// document.addEventListener('keydown', function (e) {
-//     if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-//         e.preventDefault();
-//     }
-// });
-// document.addEventListener('contextmenu', function(e) {
-//     e.preventDefault();
-// });
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+    }
+});
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+let modeimg = document.querySelectorAll('.mode-img');
 let mode = document.getElementById("mode");
 let body = document.body;
 mode.addEventListener("click", () => {
     if (mode.src.endsWith("light.png")) {
         mode.src = "PORTO CONTENT/night.png";
-        body.setAttribute("style", "color:black; background-color:rgb(129, 129, 129);");
-        document.querySelectorAll("a").setAttribute("style", "color:black;");
+        mode.setAttribute("style", "filter:invert(100%) brightness(0);");
+        body.setAttribute("style", "color:black; background-color:rgb(236, 236, 236);");
+        document.getElementsByTagName('header')[0].setAttribute("style", "color:black; background-color:rgb(236, 236, 236);");
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.setAttribute("style", "color:black;");
+            link.addEventListener("mouseenter", () => {
+                link.setAttribute("style", "color:red;");
+            })
+            link.addEventListener("mouseleave", () => {
+                link.setAttribute("style", "color:black;");
+            })
+        });
+        modeimg.forEach(img => {
+            img.setAttribute("style", "filter:invert(100%) brightness(0);");
+        });
     } else {
         mode.src = "PORTO CONTENT/light.png";
+        mode.setAttribute("style", "filter:invert(100%);");
         body.setAttribute("style", "color:white;background-color: rgb(1, 0, 26);");
-        document.querySelectorAll("a").setAttribute("style", "color:white;");
+        document.getElementsByTagName('header')[0].setAttribute("style", "color:white;background-color: rgb(1, 0, 26);");
+        const links = document.querySelectorAll('a');
+        links.forEach(link => {
+            link.setAttribute("style", "color:white;");
+            link.addEventListener("mouseenter", () => {
+                link.setAttribute("style", "color:yellow;");
+            })
+            link.addEventListener("mouseleave", () => {
+                link.setAttribute("style", "color:white;");
+            })
+        });
+        modeimg.forEach(img => {
+            img.setAttribute("style", "filter:invert(100%);");
+        });
     }
 });
 let about_btn = document.getElementsByClassName("about-btns");
@@ -67,10 +96,10 @@ function SendMail() {
 }
 
 document.getElementById("resume").addEventListener("click", () => {
-    const pdfUrl = 'PORTO CONTENT/My Resume.pdf'; 
+    const pdfUrl = 'PORTO CONTENT/My Resume.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
-    link.download = 'Sumit Resume.pdf'; 
+    link.download = 'Sumit Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

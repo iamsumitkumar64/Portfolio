@@ -18,13 +18,15 @@ body {
 }
 
 header {
-    /* box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.5); */
+    background-color: rgb(1, 0, 26);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     box-shadow: 4px 4px 4px rgb(160, 255, 131);
 }
 
 header>img {
-    width: 20vmin;
-    border-radius: 100%;
+    width: 15vmin;
 }
 
 header,
@@ -59,7 +61,7 @@ header>div>nav>a {
 }
 
 header>div>nav>a:hover {
-    color: rgb(0, 217, 255);
+    color: yellow;
 }
 
 header>div>img {
@@ -116,12 +118,13 @@ main>#home {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-family: "Macondo", serif;
 }
 
 main>#home>article>p {
     font-size: 5vmin;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: "Macondo", serif; */
 }
 
 main>#home>article>h1 {
@@ -129,8 +132,6 @@ main>#home>article>h1 {
     font-size: 8vmin;
     font-weight: bolder;
     text-shadow: 3px 3px 3px #ababab;
-    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 main>#home>div {
@@ -140,7 +141,7 @@ main>#home>div {
     background-image: url(https://i.gifer.com/TXOP.gif);
     /* background-image: url(PORTO\ CONTENT/code-bg.jpg); */
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     transition: 1s;
     /* border-bottom-left-radius: 60%;
     border-top-right-radius: 60%; */
@@ -167,7 +168,6 @@ main>#home>article>button {
 }
 
 main>#home>article>button:hover {
-    color: white;
     background-color: red;
 }
 
@@ -204,7 +204,6 @@ main>#about>p {
 main>#about>p>span {
     font-size: 5vmin;
     font-weight: bold;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     /* text-shadow: 2px 2px 2px #ababab; */
 }
 
@@ -279,18 +278,17 @@ main>#about>#about-btn>button {
 }
 
 main>#about>#about-btn>button:hover {
-    color: white;
     background-color: red;
 }
 
 main>#about>#about-btn-cont>#about-btn-cont-p {
+    font-family: "Macondo", serif;
     width: 70%;
 }
 
 main>#about>#about-btn-cont>#about-btn-cont-p>ul>li {
     font-size: 5vmin;
     font-weight: 500;
-    font-family: "Macondo", serif;
     flex-wrap: wrap;
 }
 
@@ -417,7 +415,9 @@ main>#skill>#skill-cont>div {
 }
 
 main>#skill>#skill-cont>div>p {
-    color: rgb(251, 255, 0);
+    font-size: 2vmax;
+    color: rgb(217, 255, 0);
+    background-color: #646464;
     font-weight: bold;
 }
 
@@ -466,7 +466,7 @@ main>#contact>#contact-cont>#contact-cont-img {
     width: 50vmin;
     height: 50vmin;
     position: relative;
-    background-color: rgb(197, 197, 197);
+    background-color: rgb(16, 0, 59);
     transition: 1s;
     border-radius: 100%;
 }
@@ -510,7 +510,6 @@ main>#contact>#contact-cont>#contact-cont-in>div {
 }
 
 main>#contact>#contact-cont>#contact-cont-in>div>label {
-    /* color: red; */
     color: white;
     font-size: 3.5vmin;
     font-weight: bold;
@@ -524,12 +523,12 @@ main>#contact>#contact-cont>#contact-cont-in>div>label {
 
 main>#contact>#contact-cont>#contact-cont-in>div>input,
 main>#contact>#contact-cont>#contact-cont-in>div>textarea {
+    color: white;
     padding: 1.3vmin;
     font-weight: 700;
     background-color: transparent;
-    color: white;
     outline: none;
-    background-color: rgb(87, 87, 87);
+    background-color: rgb(70, 70, 70);
 }
 
 main>#contact>#contact-cont>#contact-cont-in>div>input:focus+label,
@@ -558,7 +557,6 @@ main>#contact>#contact-cont>#contact-cont-in>div>button {
 }
 
 main>#contact>#contact-cont>#contact-cont-in>div>button:hover {
-    color: white;
     background-color: red;
 }
 
@@ -566,8 +564,6 @@ footer>p {
     text-align: center;
     font-size: 2vmin;
     font-weight: bolder;
-    text-shadow: 3px 3px 3px black;
-    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
