@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOP-WATCH</title>
+    <style>
+        body {
+            background-color: #2e3a47;
+            font-family: Arial, sans-serif;
+        }
+
+        #whole {
+            width: 90%;
+            height: auto;
+            margin: auto;
+            background-color: #a1a1a1;
+            border-radius: 1.5vmax;
+            box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        #main {
+            width: 90%;
+            /* min-height: 40vh; */
+            border: 0.2em solid #4a5d73;
+            margin: auto;
+            border-radius: 1vmax;
+            margin-bottom: 4%;
+            margin-top: 2vmax;
+        }
+
+        #buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 10px 10px;
+        }
+
+        #whole>h1 {
+            font-size: 7vmin;
+        }
+
+        h1 {
+            color: rgb(255, 253, 253);
+            text-align: center;
+            font-style: italic;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 5vmin;
+        }
+
+        .box {
+            width: 12vmax;
+            min-height: 6vmax;
+            font-weight: 900;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 1vmax;
+            transition: all ease .8s;
+            font-size: 2vmax;
+        }
+
+        .box:hover {
+            color: black;
+            background-color: white;
+            width: 13vmax;
+        }
+
+        #lap {
+            max-height: 32vh;
+            display: flex;
+            justify-content: left;
+            flex-wrap: wrap;
+            text-indent: 5vmax;
+            overflow: auto;
+            scrollbar-width: none;
+        }
+
+        #text1 {
+            font-size: 3em;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="whole">
+        <h1>Stop-Watch</h1>
+        <div id="buttons">
+            <button onclick="start()" class="box">START</button>
+            <button onclick="stop()" class="box">STOP</button>
+            <button onclick="reset()" class="box">RESET</button>
+            <button onclick="lap()" class="box">LAP</button>
+        </div>
+        <div id="main">
+            <h1 id="text1">Timer Starts here !</h1>
+        </div>
+        <h2 id="lap"></h2>
+    </div>
+</body>
+<script>
+    let obj, flag = 1, i = 0, para, div;
+    var h = "0" + 0, m = "0" + 0, s = "0" + 0;
+
+    function start() {
+        if (flag == 1) {
+            obj = setInterval(() => {
+                document.getElementById('text1').innerText = h + ":" + m + ":" + s;
+                s++;
+                s = s < 10 ? "0" + s : s;
+                if (s > 60) {
+                    m++;
+                    s = 0;
+                    m = m < 10 ? "0" + m : m;
+                }
+                if (m > 60) {
+                    h++;
+                    m = 0;
+                    h = h < 10 ? "0" + h : h;
+                }
+            }, 750);
+            flag = 0;
+        }
+        else {
+            window.alert("Already Working");
+        }
+    }
+    function lap() {
+        div = document.createElement("div");
+        para = document.createElement("p");
+        para.innerText = h + ":" + m + ":" + s;
+        document.getElementById("lap").appendChild(div);
+        div.appendChild(para);
+    }
+
+    function reset() {
+        h = 0 + "0";
+        m = 0 + "0";
+        s = 0 + "0";
+        document.getElementById('text1').innerText = "Timer Starts here !";
+        clearInterval(obj);
+        flag = 1;
+        document.getElementById("lap").innerText = "";
+    }
+
+    function stop() {
+        clearInterval(obj);
+        flag = 1;
+    }
+</script>
+
+</html>

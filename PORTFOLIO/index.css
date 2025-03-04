@@ -17,6 +17,10 @@ body {
     color: white;
 }
 
+#mode {
+    cursor: grab;
+}
+
 header {
     background-color: rgb(1, 0, 26);
     position: sticky;
@@ -164,6 +168,7 @@ main>#home>article>button {
     border-bottom-left-radius: 25%; */
     font-size: 4vmin;
     font-weight: bold;
+    cursor: grab;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -274,6 +279,7 @@ main>#about>#about-btn>button {
     border-bottom-left-radius: 20%; */
     font-size: 4vmin;
     font-weight: bold;
+    cursor: grab;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -325,28 +331,29 @@ main>#project>#project-cont {
 }
 
 main>#project>#project-cont>div {
-    width: 60vmin;
+    width: 65vmin;
     height: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: .8vmin solid red;
+    /* border: .6vmin solid red; */
+    box-shadow: 0px 0px 5vmin rgb(63, 63, 63);
     border-radius: 10%;
+    transition: all 1.4s ease-out;
+}
+
+main>#project>#project-cont>div:hover {
+    box-shadow: 0px 0px 5vmin rgb(39, 1, 255);
+    transform: scale(1.1);
 }
 
 main>#project>#project-cont>div>img {
-    width: 100%;
+    width: 90%;
     height: auto;
     margin: auto;
     max-width: 100%;
     border-radius: 10%;
     aspect-ratio: 1/.8;
-    transition: all 2s ease-out;
-}
-
-main>#project>#project-cont>div>img:hover {
-    transform: scale(.8) translate(10%) rotate(10deg);
-    opacity: 0.6;
 }
 
 main>#project>#project-cont>div>div {
@@ -552,6 +559,7 @@ main>#contact>#contact-cont>#contact-cont-in>div>button {
     /* border-radius: 10%; */
     transition: 1s;
     font-size: 4vmin;
+    cursor: grab;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
