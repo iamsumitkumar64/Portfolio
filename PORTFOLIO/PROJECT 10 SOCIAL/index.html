@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            scrollbar-width: none;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        body>div {
+            width: 80vw;
+            margin: auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2vmax;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            border: 1px solid #ccc;
+            padding: 1vmax;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 20%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 1vmax;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .result div {
+            width: 90%;
+            background-color: #9c6767;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        a {
+            width: 100%;
+            height: fit-content;
+            color: white;
+            text-decoration: none;
+            margin-top: 10px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        img {
+            width: 50%;
+            height: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Social Media Video Downloader</h1>
+        <input type="text" id="videoUrl" placeholder="Enter YouTube video URL" />
+        <input type="text" id="platform" placeholder="Enter Social Media" />
+        <button onclick="run()">Download Video</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        async function run() {
+            const videoUrl = document.getElementById('videoUrl').value;
+            let platform = document.getElementById('platform').value;
+            platform = platform.toLowerCase();
+            const url = `https://social-media-video-downloader.p.rapidapi.com/smvd/get/${platform}?url=${videoUrl}`;
+
+            const options = {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': '9509987347msh5920d332a81283ep115dd0jsn70b716b8b1fa',
+                    'x-rapidapi-host': 'social-media-video-downloader.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+                console.log(result);
+                document.getElementById('result').innerHTML = ''; // Clear previous results
+
+                result.links.forEach(elem => {
+                    const div = document.createElement('div');
+
+                    const a = document.createElement('a');
+                    a.href = elem.link;
+                    a.textContent = elem.title || elem.link;
+                    a.target = '_blank';
+
+                    const img = document.createElement('img');
+                    img.src = result.picture;
+                    img.alt = elem.title || 'Video Thumbnail';
+
+                    div.appendChild(img);
+                    div.appendChild(a);
+                    document.getElementById('result').appendChild(div);
+                });
+            } catch (error) {
+                console.error(error);
+                document.getElementById('result').innerText = 'Error fetching data.';
+            }
+        }
+    </script>
+</body>
+
+</html>
