@@ -13,6 +13,7 @@
             margin: 0;
             padding: 0;
             scrollbar-width: none;
+            font-size: 1vmax;
         }
 
         h1 {
@@ -44,7 +45,7 @@
         }
 
         button {
-            width: 20%;
+            width: fit-content;
             background-color: #27ae60;
             color: white;
             border: none;
@@ -52,6 +53,10 @@
             padding: 1vmax;
             border-radius: 4px;
             transition: background-color 0.3s;
+        }
+
+        ::placeholder {
+            color: white;
         }
 
         button:hover {
