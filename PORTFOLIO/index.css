@@ -343,7 +343,7 @@ main>#project>#project-cont>div {
 }
 
 main>#project>#project-cont>div:hover {
-    box-shadow: 0px 0px 5vmin rgb(39, 1, 255);
+    box-shadow: 0px 0px 5vmin rgb(1, 238, 255);
     transform: scale(1.1);
 }
 

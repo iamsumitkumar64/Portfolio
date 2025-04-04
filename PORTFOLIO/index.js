@@ -25,6 +25,7 @@ mode.addEventListener("click", () => {
                 link.setAttribute("style", "color:black;");
             })
         });
+        document.getElementById('head-img').setAttribute("style", "filter:invert(100%) brightness(0);");
         modeimg.forEach(img => {
             img.setAttribute("style", "filter:invert(100%) brightness(0);");
         });
@@ -43,6 +44,7 @@ mode.addEventListener("click", () => {
                 link.setAttribute("style", "color:white;");
             })
         });
+        document.getElementById('head-img').setAttribute("style", "filter:invert(100%);");
         modeimg.forEach(img => {
             img.setAttribute("style", "filter:invert(100%);");
         });
@@ -81,6 +83,7 @@ window.addEventListener("scroll", () => {
         console.error("No elements found with the class name 'about-btns'.");
     }
 });
+
 function SendMail() {
     var params = {
         from_name: document.getElementsByClassName("form")[0].value,
@@ -99,7 +102,7 @@ document.getElementById("resume").addEventListener("click", () => {
     const pdfUrl = 'PORTO CONTENT/My Resume.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
-    link.download = 'Sumit Resume.pdf';
+    link.download = 'Sumit Kumar Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
