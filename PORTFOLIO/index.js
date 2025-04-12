@@ -11,7 +11,7 @@ let mode = document.getElementById("mode");
 let body = document.body;
 mode.addEventListener("click", () => {
     if (mode.src.endsWith("light.png")) {
-        mode.src = "PORTO CONTENT/night.png"; 
+        mode.src = "PORTO CONTENT/night.png";
         mode.setAttribute("style", "filter:invert(100%) brightness(0);");
         body.setAttribute("style", "color:black; background-color:rgb(236, 236, 236);");
         document.getElementsByTagName('header')[0].setAttribute("style", "color:black; background-color:rgb(236, 236, 236);");
@@ -103,7 +103,5 @@ document.getElementById("resume").addEventListener("click", () => {
     const link = document.createElement('a');
     link.href = pdfUrl;
     link.download = 'Sumit Kumar Resume.pdf';
-    document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
 });
