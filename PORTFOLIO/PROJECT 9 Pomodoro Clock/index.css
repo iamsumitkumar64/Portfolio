@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1.8vmax;
+    font-weight: 900;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+
+body {
+    /* background-color: #f4f4f4;
+    color: #328d72; */
+    color: white;
+    background-color: rgb(0, 0, 0); 
+}
+
+header {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+main {
+    width: 70%;
+    height: auto;
+    display: grid;
+    place-self: center;
+    flex-direction: column;
+    border-radius: 5vmax;
+    padding: 1vmax;
+    box-shadow: 0px 0px 10px rgb(0, 255, 170);
+}
+
+main #main_head {
+    display: grid;
+    place-self: center;
+}
+
+main #main_head label {
+    font-size: 4vmax;
+    color: #56aaff;
+    border-radius: 1vmax;
+    border-width: 1px;
+}
+
+main>p {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+main section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30vmin;
+    padding: 2vmax;
+    border: 3px solid #bdc3c7;
+    border-radius: 1vmax;
+}
+
+main section>div {
+    width: 100%;
+    display: grid;
+    place-self: center;
+}
+
+main section p {
+    text-align: center;
+}
+
+main section>div>div {
+    display: grid;
+    gap: 1vmax;
+}
+
+main section>div>div>p {
+    text-align: center;
+}
+
+main #btns {
+    display: grid;
+    place-self: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1vmax;
+}
+
+button {
+    color: white;
+    background-color: #007bff;
+    padding: 0.4em;
+    border: none;
+    border-radius: 1vmax;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #034c99;
+    transform: translateY(-5px);
+}
+
+button:active {
+    color: rgb(0, 60, 255);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    background-color: #2c3e50;
+}
+
+footer p {
+    color: white;
+}
+
+@media (max-width:1000px) {
+    * {
+        font-size: 3vmax;
+    }
+
+    body {
+        width: 100vw;
+        height: 70vh;
+        display: grid;
+    }
+
+    main {
+        width: 85%;
+        height: 100%;
+    }
+
+    main #main_head label {
+        font-size: 6vmax;
+    }
+}
