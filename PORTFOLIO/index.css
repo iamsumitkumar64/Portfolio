@@ -1879,20 +1879,38 @@ footer p {
         font-size: 1.25rem;
     }
     
-    .hero-code-window {
-        display: none; /* hide on mobile to prevent overflow */
-    }
-    
-    .hero-metric-badge {
-        right: -10px;
-        bottom: 20px;
-        padding: 0.35rem 0.75rem;
+    .hero-visual {
+        flex-direction: column;
+        min-height: auto;
+        padding-top: 1.5rem;
+        gap: 1.5rem;
     }
     
     .hero-img-container {
-        width: 220px;
-        height: 275px;
+        width: 200px;
+        height: 250px;
         border-radius: 16px;
+        transform: none !important;
+    }
+    
+    .hero-code-window {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: 260px;
+        margin: -25px auto 0 auto;
+        z-index: 6;
+        transform: rotate(-1deg);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-metric-badge {
+        position: absolute;
+        right: 15px;
+        top: 0px;
+        bottom: auto;
+        padding: 0.35rem 0.75rem;
+        z-index: 7;
     }
     
     .nav-links {
