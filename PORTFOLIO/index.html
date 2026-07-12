@@ -102,7 +102,7 @@
                         <span id="element"></span>
                     </div>
                     <p class="hero-desc">
-                        Designing scalable backend systems and distributed architectures utilizing Event-Driven Microservices, Domain-Driven Design (DDD), CQRS, and Event Sourcing, while integrating Stripe Connected Account/Paymongo payment flows and exploring agentic AI/ML structures.
+                        Designing scalable backend systems and distributed architectures utilizing Event-Driven Microservices, Domain-Driven Design (DDD), CQRS, Event Sourcing, and Resilient Architecture, while integrating Stripe Connected Account/Paymongo payment flows and exploring agentic AI/ML structures.
                     </p>
                     <div class="hero-ctas">
                         <a href="#contact-section" class="btn btn-primary">Get In Touch</a>
@@ -169,7 +169,7 @@
                         <div class="about-bio">
                             <h3>Core Background & Expertise</h3>
                             <p>Hello! My name is <strong>Sumit Kumar (Birwal)</strong>. I design resilient, decoupled, and distributed software systems. My engineering focus lies at the intersection of robust backend patterns and secure web integrations.</p>
-                            <p>I specialize in backend architecture utilizing <strong>Domain-Driven Design (DDD)</strong>, <strong>CQRS</strong>, <strong>Event Sourcing</strong>, and <strong>Event-Driven Architectures (EDA)</strong>. I focus on transaction integrity using patterns like the <strong>Inbox-Outbox Pattern</strong> with <strong>RabbitMQ</strong> to guarantee reliable event delivery. On the integration layer, I design payment architectures including <strong>Stripe Connected Account architectures</strong> and local gateways like <strong>Paymongo Philippines</strong>.</p>
+                            <p>I specialize in backend architecture utilizing <strong>Domain-Driven Design (DDD)</strong>, <strong>CQRS</strong>, <strong>Event Sourcing</strong>, <strong>Event-Driven Architectures (EDA)</strong>, and <strong>Resilient Architecture</strong>. I focus on transaction integrity and fault tolerance using patterns like the <strong>Inbox-Outbox Pattern</strong> with <strong>RabbitMQ</strong> to guarantee reliable event delivery. On the integration layer, I design payment architectures including <strong>Stripe Connected Account architectures</strong> and local gateways like <strong>Paymongo Philippines</strong>.</p>
                             <p>I am continuously improving my system design thinking, writing cleaner architectures, and exploring AI/ML agentic systems to solve real-world problems.</p>
                         </div>
                         
@@ -179,7 +179,7 @@
                                 <div class="stat-icon">🔧</div>
                                 <div class="stat-text">
                                     <h4>Backend Architecture</h4>
-                                    <p>DDD, CQRS, Event Sourcing, Microservices</p>
+                                    <p>DDD, CQRS, Event Sourcing, Resilient Systems</p>
                                 </div>
                             </div>
                             <div class="stat-card">
@@ -255,6 +255,7 @@
                                 <span class="tech-badge">CQRS</span>
                                 <span class="tech-badge">Event Sourcing</span>
                                 <span class="tech-badge">Inbox-Outbox</span>
+                                <span class="tech-badge">Resilient Architecture</span>
                             </div>
                             <ul class="exp-list">
                                 <li>Engineered highly scalable backend services using <strong>NestJS, Next.js, React, and TypeScript</strong>.</li>
@@ -385,6 +386,22 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Item 5 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <span class="timeline-date">Phase 5: Resilient Architecture</span>
+                            <h3>Fault-Tolerant & High-Availability Systems</h3>
+                            <p>Designing fault-tolerant, self-healing distributed backends. Implementing resiliency patterns such as Retries with Exponential Backoff, Dead Letter Queues (DLQ) for message failure isolation, Circuit Breakers, Rate Limiting, Idempotent consumers, and Outbox orchestration to ensure bulletproof message delivery and zero data loss.</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">Resilience</span>
+                                <span class="timeline-tag">Circuit Breakers</span>
+                                <span class="timeline-tag">DLQ Routing</span>
+                                <span class="timeline-tag">Idempotency</span>
+                                <span class="timeline-tag">Self-Healing</span>
+                                <span class="timeline-tag">Fault Tolerance</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -407,8 +424,10 @@
                             <p>A transactionally secure microservices messaging system implementing the Inbox-Outbox pattern using NestJS, PostgreSQL, and RabbitMQ to guarantee at-least-once message delivery.</p>
                             <div class="project-tags">
                                 <span class="project-tag">NestJS</span>
+                                <span class="project-tag">TypeORM</span>
                                 <span class="project-tag">RabbitMQ</span>
                                 <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">Docker</span>
                                 <span class="project-tag">Microservices</span>
                             </div>
                             <div class="project-links">
@@ -429,8 +448,10 @@
                             <p>An event-sourced backend proof-of-concept built with NestJS. Stores chronological, immutable system state transitions, supporting event replays, audits, and CQRS handlers.</p>
                             <div class="project-tags">
                                 <span class="project-tag">NestJS</span>
-                                <span class="project-tag">Event Sourcing</span>
+                                <span class="project-tag">TypeORM</span>
+                                <span class="project-tag">PostgreSQL</span>
                                 <span class="project-tag">CQRS</span>
+                                <span class="project-tag">Event Sourcing</span>
                                 <span class="project-tag">TypeScript</span>
                             </div>
                             <div class="project-links">
@@ -493,11 +514,13 @@
                             <h3>LinkedIn Clone</h3>
                             <p>A full-featured LinkedIn clone platform designed to explore scalable backend messaging, post feeds, user network relations, dynamic updates, and connection search graphs.</p>
                             <div class="project-tags">
-                                <span class="project-tag">Nest.js</span>
+                                <span class="project-tag">NestJS</span>
                                 <span class="project-tag">Next.js</span>
                                 <span class="project-tag">TypeScript</span>
+                                <span class="project-tag">PostgreSQL</span>
                                 <span class="project-tag">TypeORM</span>
                                 <span class="project-tag">WebSockets</span>
+                                <span class="project-tag">Firebase Auth</span>
                                 <span class="project-tag">Docker</span>
                             </div>
                             <div class="project-links">
@@ -518,8 +541,11 @@
                             <p>A comprehensive architectural migration POC detailing the separation of tightly coupled monolithic subdomains into Dockerized event-driven microservices.</p>
                             <div class="project-tags">
                                 <span class="project-tag">NestJS</span>
+                                <span class="project-tag">Next.js</span>
+                                <span class="project-tag">RabbitMQ</span>
+                                <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">Outbox Pattern</span>
                                 <span class="project-tag">Docker</span>
-                                <span class="project-tag">Microservices</span>
                                 <span class="project-tag">System Design</span>
                             </div>
                             <div class="project-links">
@@ -537,12 +563,14 @@
                         </div>
                         <div class="project-content">
                             <h3>LangChain AI Agent POC</h3>
-                            <p>An intelligent agentic POC exploring AI frontiers using LangChain libraries, LLM function calling, memory layers, and custom tool binding architectures.</p>
+                            <p>An intelligent agentic POC exploring AI agent workflows using LangGraph and LangChain JS/TS, leveraging Google Gemini LLM API, memory layers, and custom tool binding architectures.</p>
                             <div class="project-tags">
                                 <span class="project-tag">LangChain</span>
-                                <span class="project-tag">Python</span>
+                                <span class="project-tag">LangGraph</span>
+                                <span class="project-tag">Gemini API</span>
+                                <span class="project-tag">TypeScript</span>
+                                <span class="project-tag">Node.js</span>
                                 <span class="project-tag">AI/ML</span>
-                                <span class="project-tag">LLM Orchestration</span>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/iamsumitkumar64/langchan-poc" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
@@ -561,8 +589,10 @@
                             <h3>RabbitMQ Exchanges POC</h3>
                             <p>A message routing architecture implementing Direct, Topic, and Fanout exchanges in RabbitMQ for asynchronous multi-service event orchestration.</p>
                             <div class="project-tags">
-                                <span class="project-tag">RabbitMQ</span>
                                 <span class="project-tag">NestJS</span>
+                                <span class="project-tag">RabbitMQ</span>
+                                <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">Docker</span>
                                 <span class="project-tag">Microservices</span>
                                 <span class="project-tag">Event-Driven</span>
                             </div>
@@ -581,12 +611,15 @@
                         </div>
                         <div class="project-content">
                             <h3>AI Problem Analyzer</h3>
-                            <p>An intelligent engineering assistant leveraging LLM APIs to ingest system bug reports and synthesize detailed architectural design reviews and debugging paths.</p>
+                            <p>An intelligent engineering assistant using React, Express.js, and Google Gemini API to analyze system bug reports, utilizing Redis and BullMQ for task queues, and MongoDB for state tracking.</p>
                             <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">LLM APIs</span>
-                                <span class="project-tag">AI/ML</span>
-                                <span class="project-tag">System Design</span>
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">Express.js</span>
+                                <span class="project-tag">Gemini API</span>
+                                <span class="project-tag">BullMQ</span>
+                                <span class="project-tag">Redis</span>
+                                <span class="project-tag">MongoDB</span>
+                                <span class="project-tag">TailwindCSS</span>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/iamsumitkumar64/AI-Problem-Analyzer" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
@@ -603,12 +636,16 @@
                         </div>
                         <div class="project-content">
                             <h3>AI Resume Customizer</h3>
-                            <p>A responsive application using prompt engineering to dynamically parse candidate profiles and customize CV blocks to match targeted corporate job specifications.</p>
+                            <p>A full-stack application using React/Vite, Express.js, and Gemini API to dynamically parse candidate profiles. Features voice input with Deepgram API, audio processing with FFmpeg, and queuing via BullMQ/Redis.</p>
                             <div class="project-tags">
-                                <span class="project-tag">Next.js</span>
                                 <span class="project-tag">React</span>
-                                <span class="project-tag">OpenAI API</span>
-                                <span class="project-tag">Node.js</span>
+                                <span class="project-tag">Express.js</span>
+                                <span class="project-tag">Gemini API</span>
+                                <span class="project-tag">Deepgram API</span>
+                                <span class="project-tag">MongoDB</span>
+                                <span class="project-tag">BullMQ</span>
+                                <span class="project-tag">FFmpeg</span>
+                                <span class="project-tag">Zustand</span>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/iamsumitkumar64/AI-Resume-Builder" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
@@ -645,9 +682,13 @@
                                 <span class="arch-badge-dot"></span>
                                 Event-Driven Architecture (EDA)
                             </div>
-                            <div class="arch-badge">
+                             <div class="arch-badge">
                                 <span class="arch-badge-dot"></span>
                                 Event Sourcing
+                            </div>
+                            <div class="arch-badge">
+                                <span class="arch-badge-dot"></span>
+                                Resilient Architecture
                             </div>
                             <div class="arch-badge">
                                 <span class="arch-badge-dot"></span>
@@ -1101,7 +1142,7 @@
             const typed = new Typed('#element', {
                 strings: [
                     'Full Stack Developer',
-                    'Backend Architect',
+                    'Resilient Backend Architect',
                     'Aspiring AI/ML Engineer',
                     'Problem Solver'
                 ],
