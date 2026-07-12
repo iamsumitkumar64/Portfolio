@@ -1694,6 +1694,7 @@ header.scrolled .nav-container {
     color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition);
+    margin: 0;
 }
 
 .contact-item-details a:hover {
