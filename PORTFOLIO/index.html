@@ -939,15 +939,74 @@
             </div>
         </section>
 
+        <!-- Hobbies & Interests Section -->
+        <section id="hobbies-section" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Hobbies & Interests</h2>
+                    <p>What I enjoy doing when I am not coding or building distributed systems.</p>
+                </div>
+                <div class="hobbies-grid">
+                    <div class="hobby-card">
+                        <div class="hobby-icon-wrapper">
+                            <!-- Cooking SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hobby-svg"><path d="M6 12h12M4 12V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6M3 12h18a1 1 0 0 1 1 1v2a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4v-2a1 1 0 0 1 1-1zM12 2v2M8 2v2M16 2v2"/></svg>
+                        </div>
+                        <h3>Cooking</h3>
+                        <p>Experimenting and preparing unique, creative dishes in the kitchen.</p>
+                    </div>
+                    
+                    <div class="hobby-card">
+                        <div class="hobby-icon-wrapper">
+                            <!-- Watching Movies SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hobby-svg"><path d="M2 10V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5M2 10h20M2 10v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-9M7 3l4 7M13 3l4 7"/></svg>
+                        </div>
+                        <h3>Watching Movies</h3>
+                        <p>Enjoying mind-bending sci-fi, cinema classics, and insightful documentaries.</p>
+                    </div>
+                    
+                    <div class="hobby-card">
+                        <div class="hobby-icon-wrapper">
+                            <!-- Playing Badminton SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hobby-svg"><path d="M12 2a4 4 0 0 0-4 4v4c0 3 2.5 6 4 10 1.5-4 4-7 4-10V6a4 4 0 0 0-4-4zm-4 4h8M8 8h8M12 2v18M12 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+                        </div>
+                        <h3>Badminton</h3>
+                        <p>Engaging in energetic, fast-paced matches on the court.</p>
+                    </div>
+                    
+                    <div class="hobby-card">
+                        <div class="hobby-icon-wrapper">
+                            <!-- Gaming SVG -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hobby-svg"><rect width="20" height="12" x="2" y="6" rx="3"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
+                        </div>
+                        <h3>Gaming</h3>
+                        <p>Casual relaxation and competitive match-ups with friends.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Quotes Section -->
         <section class="quotes-section">
-            <div class="container quote-slider">
-                <div class="quote-card">
-                    <div class="quote-icon">“</div>
-                    <blockquote id="quote-text" class="quote-text">
-                        You have the right to perform your actions, but not to claim the results.
-                    </blockquote>
-                    <cite id="quote-author" class="quote-author">– Bhagavad Gita 2.47</cite>
+            <div class="container quote-slider-container">
+                <div class="quote-slider">
+                    <button id="prev-quote-btn" class="quote-control-btn prev" aria-label="Previous Quote">
+                        <span>&larr;</span>
+                    </button>
+                    
+                    <div class="quote-card">
+                        <div class="quote-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h3c0 4-2 6-4 6m11 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h3c0 4-2 6-4 6"/></svg>
+                        </div>
+                        <blockquote id="quote-text" class="quote-text">
+                            You have the right to perform your actions, but not to claim the results.
+                        </blockquote>
+                        <cite id="quote-author" class="quote-author">– Bhagavad Gita 2.47</cite>
+                    </div>
+                    
+                    <button id="next-quote-btn" class="quote-control-btn next" aria-label="Next Quote">
+                        <span>&rarr;</span>
+                    </button>
                 </div>
             </div>
         </section>

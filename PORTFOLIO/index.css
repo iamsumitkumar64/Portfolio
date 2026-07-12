@@ -1506,24 +1506,39 @@ header.scrolled .nav-container {
     padding: 5rem 0;
 }
 
-.quote-slider {
-    max-width: 800px;
+.quote-slider-container {
+    max-width: 850px;
     margin: 0 auto;
-    text-align: center;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.quote-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 }
 
 .quote-card {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .quote-icon {
-    font-size: 3rem;
-    color: var(--accent-glow);
-    line-height: 1;
+    color: var(--accent-color);
     margin-bottom: 1.5rem;
-    font-family: var(--font-heading);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-icon svg {
+    stroke: var(--accent-color);
+    filter: drop-shadow(0 0 5px var(--accent-glow));
 }
 
 .quote-text {
@@ -1538,9 +1553,69 @@ header.scrolled .nav-container {
 .quote-author {
     font-family: var(--font-heading);
     font-weight: 700;
-    color: var(--accent-secondary);
+    color: var(--accent-color);
     font-size: 1.1rem;
     transition: opacity 0.5s ease;
+}
+
+.quote-control-btn {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.quote-control-btn:hover {
+    border-color: var(--accent-color);
+    background-color: var(--bg-secondary);
+    color: var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.quote-control-btn span {
+    font-size: 1.25rem;
+    line-height: 1;
+    display: inline-block;
+    transition: var(--transition);
+}
+
+.quote-control-btn.prev:hover span {
+    transform: translateX(-2px);
+}
+
+.quote-control-btn.next:hover span {
+    transform: translateX(2px);
+}
+
+@media (max-width: 768px) {
+    .quote-slider {
+        position: relative;
+        padding-bottom: 3.5rem;
+    }
+    
+    .quote-control-btn {
+        position: absolute;
+        bottom: 0;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .quote-control-btn.prev {
+        left: calc(50% - 45px);
+    }
+    
+    .quote-control-btn.next {
+        right: calc(50% - 45px);
+    }
 }
 
 /* Contact Section */
@@ -2050,5 +2125,92 @@ footer p {
 
     .achievement-details p {
         font-size: 0.82rem;
+    }
+}
+
+/* Hobbies & Interests Section styling */
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.hobby-card {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hobby-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--accent-glow);
+}
+
+.hobby-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.hobby-card:hover .hobby-icon-wrapper {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.hobby-card:hover .hobby-icon-wrapper .hobby-svg {
+    stroke: white;
+}
+
+.hobby-svg {
+    stroke: var(--accent-color);
+    transition: var(--transition);
+}
+
+.hobby-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.hobby-card p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+    .hobbies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .hobby-card {
+        padding: 1.25rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hobbies-grid {
+        grid-template-columns: 1fr;
     }
 }

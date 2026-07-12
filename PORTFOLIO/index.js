@@ -363,37 +363,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Quotes rotation
+// Quotes rotation & controls
 const quotes = [
     {
         text: "You have the right to perform your actions, but not to claim the results.",
-        author: "– Bhagavad Gita 2.47"
+        author: "— Bhagavad Gita 2.47"
     },
     {
         text: "An equation means nothing to me unless it expresses a thought of God.",
-        author: "– Srinivasa Ramanujan"
+        author: "— Srinivasa Ramanujan"
+    },
+    {
+        text: "A person should never do that to others which he does not like to be done to him.",
+        author: "— Bhishma, Mahabharata"
     }
 ];
 
 let currentQuoteIndex = 0;
 const quoteTextEl = document.getElementById('quote-text');
 const quoteAuthorEl = document.getElementById('quote-author');
+const prevQuoteBtn = document.getElementById('prev-quote-btn');
+const nextQuoteBtn = document.getElementById('next-quote-btn');
+let quoteInterval;
 
 if (quoteTextEl && quoteAuthorEl) {
-    setInterval(() => {
-        currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-        
-        // Fade out
+    function displayQuote(index) {
         quoteTextEl.style.opacity = '0';
         quoteAuthorEl.style.opacity = '0';
         
         setTimeout(() => {
-            quoteTextEl.innerText = quotes[currentQuoteIndex].text;
-            quoteAuthorEl.innerText = quotes[currentQuoteIndex].author;
+            quoteTextEl.innerText = quotes[index].text;
+            quoteAuthorEl.innerText = quotes[index].author;
             
-            // Fade in
             quoteTextEl.style.opacity = '1';
             quoteAuthorEl.style.opacity = '1';
-        }, 500);
-    }, 6000);
+        }, 300);
+    }
+    
+    function startQuoteRotation() {
+        if (quoteInterval) clearInterval(quoteInterval);
+        quoteInterval = setInterval(() => {
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            displayQuote(currentQuoteIndex);
+        }, 8000);
+    }
+    
+    if (prevQuoteBtn) {
+        prevQuoteBtn.addEventListener('click', () => {
+            currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
+            displayQuote(currentQuoteIndex);
+            startQuoteRotation();
+        });
+    }
+    
+    if (nextQuoteBtn) {
+        nextQuoteBtn.addEventListener('click', () => {
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+            displayQuote(currentQuoteIndex);
+            startQuoteRotation();
+        });
+    }
+    
+    startQuoteRotation();
 }
