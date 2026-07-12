@@ -904,6 +904,11 @@ header.scrolled .nav-container {
     object-fit: contain;
     margin-bottom: 0.75rem;
     transition: var(--transition);
+    filter: brightness(0) invert(1);
+}
+
+.light-theme .skill-card img {
+    filter: brightness(0.1);
 }
 
 .skill-card:hover img {
