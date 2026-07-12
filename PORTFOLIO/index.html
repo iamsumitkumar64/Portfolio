@@ -216,19 +216,31 @@
                     <h2>Professional Experience</h2>
                     <p>My corporate journey, software engineering roles, and technical project execution.</p>
                 </div>
-                <div class="experience-container">
-                    <!-- Item 1: Zenmonk -->
-                    <div class="experience-item">
-                        <div class="experience-node"></div>
-                        <div class="experience-card">
-                            <div class="exp-header">
-                                <div>
-                                    <h4>Full Stack Developer</h4>
-                                    <span class="exp-company">Zenmonk Software & Services</span>
-                                </div>
-                                <div style="text-align: right;">
-                                    <span class="exp-date">Feb 2026 - Current</span>
-                                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; font-family: var(--font-mono);">NestJS & System Architectures</div>
+                
+                <div class="experience-tabs-layout">
+                    <!-- Tabs Buttons -->
+                    <div class="experience-tabs-buttons" role="tablist" aria-label="Experience Tabs">
+                        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-zenmonk" id="tab-zenmonk">
+                            Zenmonk
+                        </button>
+                        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-techbuilder" id="tab-techbuilder">
+                            Techbuilder
+                        </button>
+                        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-codequotient" id="tab-codequotient">
+                            CodeQuotient
+                        </button>
+                        <div class="tabs-indicator"></div>
+                    </div>
+                    
+                    <!-- Tabs Panels -->
+                    <div class="experience-tabs-content">
+                        <!-- Panel 1: Zenmonk -->
+                        <div class="tab-panel active" id="panel-zenmonk" role="tabpanel" aria-labelledby="tab-zenmonk">
+                            <div class="exp-panel-header">
+                                <h3>Full Stack Developer <span class="exp-company-link">@ Zenmonk Software & Services</span></h3>
+                                <div class="exp-panel-meta">
+                                    <span class="exp-panel-date">Feb 2026 - Current</span>
+                                    <span class="exp-panel-type">NestJS & System Architectures</span>
                                 </div>
                             </div>
                             <div class="exp-tech-badges">
@@ -252,20 +264,14 @@
                                 <li>Worked closely with senior architects in Agile environments, driving code reviews, testing routes in <strong>Postman</strong>, and merging branch components.</li>
                             </ul>
                         </div>
-                    </div>
-
-                    <!-- Item 2: Techbuilder -->
-                    <div class="experience-item">
-                        <div class="experience-node"></div>
-                        <div class="experience-card">
-                            <div class="exp-header">
-                                <div>
-                                    <h4>Node.js Developer</h4>
-                                    <span class="exp-company">Techbuilder</span>
-                                </div>
-                                <div style="text-align: right;">
-                                    <span class="exp-date">Nov 2025 - Feb 2026</span>
-                                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; font-family: var(--font-mono);">Node.js & Payment Systems</div>
+                        
+                        <!-- Panel 2: Techbuilder -->
+                        <div class="tab-panel" id="panel-techbuilder" role="tabpanel" aria-labelledby="tab-techbuilder">
+                            <div class="exp-panel-header">
+                                <h3>Node.js Developer <span class="exp-company-link">@ Techbuilder</span></h3>
+                                <div class="exp-panel-meta">
+                                    <span class="exp-panel-date">Nov 2025 - Feb 2026</span>
+                                    <span class="exp-panel-type">Node.js & Payment Systems</span>
                                 </div>
                             </div>
                             <div class="exp-tech-badges">
@@ -283,20 +289,14 @@
                                 <li>Standardized integration testing profiles, verifying payload schemas and validating routes in <strong>Postman</strong>.</li>
                             </ul>
                         </div>
-                    </div>
-
-                    <!-- Item 3: CodeQuotient -->
-                    <div class="experience-item">
-                        <div class="experience-node"></div>
-                        <div class="experience-card">
-                            <div class="exp-header">
-                                <div>
-                                    <h4>MERN Stack Intern</h4>
-                                    <span class="exp-company">CodeQuotient</span>
-                                </div>
-                                <div style="text-align: right;">
-                                    <span class="exp-date">Feb 2025 - Nov 2025</span>
-                                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; font-family: var(--font-mono);">MERN Stack & Algorithms</div>
+                        
+                        <!-- Panel 3: CodeQuotient -->
+                        <div class="tab-panel" id="panel-codequotient" role="tabpanel" aria-labelledby="tab-codequotient">
+                            <div class="exp-panel-header">
+                                <h3>Software Developer Intern <span class="exp-company-link">@ CodeQuotient</span></h3>
+                                <div class="exp-panel-meta">
+                                    <span class="exp-panel-date">Feb 2025 - Nov 2025</span>
+                                    <span class="exp-panel-type">MERN Stack & Algorithms</span>
                                 </div>
                             </div>
                             <div class="exp-tech-badges">

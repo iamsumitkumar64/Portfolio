@@ -841,177 +841,196 @@ header.scrolled .nav-container {
     }
 }
 
-.experience-container {
+/* Upgraded Tabbed Experience Section Styling */
+.experience-tabs-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+    min-height: 380px;
+}
+
+.experience-tabs-buttons {
+    display: flex;
+    flex-direction: column;
     position: relative;
-    max-width: 850px;
-    margin: 2rem auto 0;
-    padding-left: 2.5rem;
+    border-left: 2px solid var(--border-color);
 }
 
-.experience-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 14px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--accent-color) 0%, var(--accent-secondary) 70%, transparent 100%);
-    border-radius: 1px;
-}
-
-.experience-item {
-    position: relative;
-    margin-bottom: 2rem;
-}
-
-.experience-item:last-child {
-    margin-bottom: 0;
-}
-
-.experience-node {
-    position: absolute;
-    left: -38px;
-    top: 8px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--bg-primary);
-    border: 2px solid var(--accent-color);
-    box-shadow: 0 0 8px var(--accent-glow);
-    z-index: 2;
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
     transition: var(--transition);
+    border-radius: 0 8px 8px 0;
 }
 
-.experience-item:hover .experience-node,
-.experience-item.glowing .experience-node {
-    background: var(--accent-color);
-    box-shadow: 0 0 12px var(--accent-color);
-    transform: scale(1.15);
+.tab-btn:hover {
+    color: var(--accent-color);
+    background-color: var(--bg-tertiary);
 }
 
-.experience-card {
+.tab-btn.active {
+    color: var(--accent-color);
     background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    padding: 1.25rem 1.5rem;
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
-    transition: var(--transition);
 }
 
-.experience-card:hover,
-.experience-item.glowing .experience-card {
-    border-color: var(--accent-color);
-    box-shadow: 0 10px 25px var(--accent-glow);
+/* Sliding tab indicator */
+.tabs-indicator {
+    position: absolute;
+    left: -2px;
+    top: 0;
+    width: 2px;
+    height: 48px; /* equals the vertical height of a button */
+    background-color: var(--accent-color);
+    box-shadow: 0 0 8px var(--accent-color);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.experience-card:hover {
-    transform: translateX(6px);
+.experience-tabs-content {
+    position: relative;
 }
 
-.exp-header {
+.tab-panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+.tab-panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.exp-panel-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.exp-company-link {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.exp-panel-meta {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
 }
 
-.exp-header h4 {
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    font-weight: 800;
-    letter-spacing: -0.2px;
-}
-
-.exp-company {
-    color: var(--accent-secondary);
-    font-family: var(--font-mono);
-    font-weight: 700;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 0.1rem;
-    display: inline-block;
-}
-
-.exp-date {
+.exp-panel-date {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    background-color: var(--bg-tertiary);
-    color: var(--text-secondary);
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.exp-panel-type {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
 }
 
 .exp-tech-badges {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
-    margin: 0.75rem 0 1rem 0;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .tech-badge {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
     background-color: var(--bg-tertiary);
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
-    padding: 0.15rem 0.5rem;
+    padding: 0.25rem 0.65rem;
     border-radius: 4px;
-    font-weight: 500;
+    font-size: 0.7rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
     transition: var(--transition);
 }
 
-.experience-card:hover .tech-badge {
-    border-color: rgba(99, 102, 241, 0.25);
-    color: var(--text-primary);
+.tech-badge:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background-color: var(--bg-secondary);
 }
 
 .exp-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .exp-list li {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
     position: relative;
-    padding-left: 1.25rem;
-    line-height: 1.45;
+    padding-left: 1.5rem;
+    margin-bottom: 0.85rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
 }
 
 .exp-list li::before {
-    content: '';
+    content: '➔';
     position: absolute;
     left: 0;
-    top: 7px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: var(--accent-secondary);
+    top: 2px;
+    color: var(--accent-color);
+    font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {
-    .experience-container {
-        padding-left: 2rem;
+    .experience-tabs-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        min-height: auto;
     }
-    .experience-container::before {
-        left: 10px;
+    
+    .experience-tabs-buttons {
+        flex-direction: row;
+        border-left: none;
+        border-bottom: 2px solid var(--border-color);
+        overflow-x: auto;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
     }
-    .experience-node {
-        left: -33px;
-        width: 16px;
-        height: 16px;
-        top: 8px;
+    
+    .experience-tabs-buttons::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
     }
-    .experience-card {
-        padding: 1.5rem;
+    
+    .tab-btn {
+        padding: 0.75rem 1rem;
+        text-align: center;
+        border-radius: 4px 4px 0 0;
+        flex-shrink: 0;
     }
-    .experience-card:hover {
-        transform: translateY(-5px);
+    
+    .tabs-indicator {
+        left: 0;
+        top: auto;
+        bottom: -2px;
+        width: 100px; /* Will be set dynamically via JS */
+        height: 2px;
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 }
 
