@@ -217,30 +217,18 @@
                     <p>My corporate journey, software engineering roles, and technical project execution.</p>
                 </div>
                 
-                <div class="experience-tabs-layout">
-                    <!-- Tabs Buttons -->
-                    <div class="experience-tabs-buttons" role="tablist" aria-label="Experience Tabs">
-                        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-zenmonk" id="tab-zenmonk">
-                            Zenmonk
-                        </button>
-                        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-techbuilder" id="tab-techbuilder">
-                            Techbuilder
-                        </button>
-                        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-codequotient" id="tab-codequotient">
-                            CodeQuotient
-                        </button>
-                        <div class="tabs-indicator"></div>
-                    </div>
-                    
-                    <!-- Tabs Panels -->
-                    <div class="experience-tabs-content">
-                        <!-- Panel 1: Zenmonk -->
-                        <div class="tab-panel active" id="panel-zenmonk" role="tabpanel" aria-labelledby="tab-zenmonk">
-                            <div class="exp-panel-header">
-                                <h3>Full Stack Developer <span class="exp-company-link">@ Zenmonk Software & Services</span></h3>
-                                <div class="exp-panel-meta">
-                                    <span class="exp-panel-date">Feb 2026 - Current</span>
-                                    <span class="exp-panel-type">NestJS & System Architectures</span>
+                <div class="experience-timeline">
+                    <!-- Item 1: Zenmonk -->
+                    <div class="experience-item">
+                        <div class="experience-dot"></div>
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div class="exp-title-company">
+                                    <h3>Full Stack Developer <span>@ Zenmonk Software & Services</span></h3>
+                                    <span class="exp-type-text">NestJS & System Architectures</span>
+                                </div>
+                                <div class="exp-meta-info">
+                                    <div class="exp-date-pill">Feb 2026 - Current</div>
                                 </div>
                             </div>
                             <div class="exp-tech-badges">
@@ -265,14 +253,19 @@
                                 <li>Worked closely with senior architects in Agile environments, driving code reviews, testing routes in <strong>Postman</strong>, and merging branch components.</li>
                             </ul>
                         </div>
-                        
-                        <!-- Panel 2: Techbuilder -->
-                        <div class="tab-panel" id="panel-techbuilder" role="tabpanel" aria-labelledby="tab-techbuilder">
-                            <div class="exp-panel-header">
-                                <h3>Node.js Developer <span class="exp-company-link">@ Techbuilder</span></h3>
-                                <div class="exp-panel-meta">
-                                    <span class="exp-panel-date">Nov 2025 - Feb 2026</span>
-                                    <span class="exp-panel-type">Node.js & Payment Systems</span>
+                    </div>
+                    
+                    <!-- Item 2: Techbuilder -->
+                    <div class="experience-item">
+                        <div class="experience-dot"></div>
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div class="exp-title-company">
+                                    <h3>Node.js Developer <span>@ Techbuilder</span></h3>
+                                    <span class="exp-type-text">Node.js & Payment Systems</span>
+                                </div>
+                                <div class="exp-meta-info">
+                                    <div class="exp-date-pill">Nov 2025 - Feb 2026</div>
                                 </div>
                             </div>
                             <div class="exp-tech-badges">
@@ -290,14 +283,19 @@
                                 <li>Standardized integration testing profiles, verifying payload schemas and validating routes in <strong>Postman</strong>.</li>
                             </ul>
                         </div>
-                        
-                        <!-- Panel 3: CodeQuotient -->
-                        <div class="tab-panel" id="panel-codequotient" role="tabpanel" aria-labelledby="tab-codequotient">
-                            <div class="exp-panel-header">
-                                <h3>Software Developer Intern <span class="exp-company-link">@ CodeQuotient</span></h3>
-                                <div class="exp-panel-meta">
-                                    <span class="exp-panel-date">Feb 2025 - Nov 2025</span>
-                                    <span class="exp-panel-type">MERN Stack & Algorithms</span>
+                    </div>
+                    
+                    <!-- Item 3: CodeQuotient -->
+                    <div class="experience-item">
+                        <div class="experience-dot"></div>
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div class="exp-title-company">
+                                    <h3>Software Developer Intern <span>@ CodeQuotient</span></h3>
+                                    <span class="exp-type-text">MERN Stack & Algorithms</span>
+                                </div>
+                                <div class="exp-meta-info">
+                                    <div class="exp-date-pill">Feb 2025 - Nov 2025</div>
                                 </div>
                             </div>
                             <div class="exp-tech-badges">
@@ -322,84 +320,60 @@
             </div>
         </section>
 
-        <!-- Architectural Journey (Timeline) -->
-        <section id="journey-section">
+        <!-- Architecture Learning Journey Section -->
+        <section id="journey" class="journey-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>Architectural Journey</h2>
-                    <p>My evolution from building traditional monolithic CRUD applications to designing complex, decoupled, and distributed systems.</p>
+                <!-- Header -->
+                <div class="journey-header">
+                    <h2>Architecture Learning Journey</h2>
+                    <p class="journey-quote">"Good Architecture Comes From Solving Real Problems."</p>
+                    <div class="glow-separator"></div>
                 </div>
-                <div class="timeline">
-                    <!-- Item 1 -->
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <span class="timeline-date">Phase 1: Monolithic Foundation</span>
-                            <h3>MERN Monoliths (MVC)</h3>
-                            <p>Began building standard web apps using the MERN stack with monolithic MVC architecture. While great for learning, I quickly faced bottlenecks like tight code coupling, coordination conflicts, and difficult scaling as codebases grew.</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag">React</span>
-                                <span class="timeline-tag">Express</span>
-                                <span class="timeline-tag">Node.js</span>
-                                <span class="timeline-tag">MongoDB</span>
-                            </div>
+                
+                <!-- Timeline Wrapper -->
+                <div class="journey-timeline">
+                    <!-- Step 01: Monolithic Beginnings -->
+                    <div class="timeline-step">
+                        <div class="step-marker">01</div>
+                        <div class="step-content">
+                            <h3>Monolithic Beginnings</h3>
+                            <p>Started with traditional monolithic MERN stack projects using MVC structure. Faced tightly-coupled codebases, scaling bottlenecks, and coordinate conflicts.</p>
                         </div>
                     </div>
-                    <!-- Item 2 -->
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <span class="timeline-date">Phase 2: Modular Decoupling</span>
-                            <h3>Service Isolation & Separation</h3>
-                            <p>Shifted focus towards domain modularity. Began splitting routers, controllers, and database access logic into distinct, isolated layers, reducing dependency conflicts and improving codebase maintainability.</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag">Clean Code</span>
-                                <span class="timeline-tag">Modular Design</span>
-                                <span class="timeline-tag">Separation of Concerns</span>
-                            </div>
+                    
+                    <!-- Step 02: Modular Monolith Shift -->
+                    <div class="timeline-step">
+                        <div class="step-marker">02</div>
+                        <div class="step-content">
+                            <h3>Modular Monolith Shift</h3>
+                            <p>Gradually transitioned to modular architectures and domain isolation. Separated routers, controllers, and services to increase testability and manage features independently.</p>
                         </div>
                     </div>
-                    <!-- Item 3 -->
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <span class="timeline-date">Phase 3: Scaling Out</span>
-                            <h3>Microservices Architecture</h3>
+                    
+                    <!-- Step 03: Scaling Out (Microservices) -->
+                    <div class="timeline-step">
+                        <div class="step-marker">03</div>
+                        <div class="step-content">
+                            <h3>Scaling Out (Microservices)</h3>
                             <p>Adopted Microservices architecture to isolate services, enable independent scaling, and isolate failure domains. Utilized RESTful communication and orchestrated containers with Docker.</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag">Microservices</span>
-                                <span class="timeline-tag">Docker</span>
-                                <span class="timeline-tag">NestJS</span>
-                                <span class="timeline-tag">Node.js</span>
-                            </div>
                         </div>
                     </div>
-                    <!-- Item 4 -->
-                    <div class="timeline-item right">
-                        <div class="timeline-content">
-                            <span class="timeline-date">Phase 4: Advanced Paradigms</span>
-                            <h3>DDD, CQRS & Event-Driven Systems</h3>
-                            <p>Deep-diving into robust architectural paradigms: Domain-Driven Design (DDD) to map complex business boundaries, CQRS to segregate command and query workloads, Event-Driven Architecture (EDA) via RabbitMQ, and the Inbox-Outbox pattern for resilient message delivery.</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag">DDD</span>
-                                <span class="timeline-tag">CQRS</span>
-                                <span class="timeline-tag">RabbitMQ</span>
-                                <span class="timeline-tag">Event Sourcing</span>
-                                <span class="timeline-tag">Inbox-Outbox</span>
-                            </div>
+
+                    <!-- Step 04: Advanced Paradigms (Events) -->
+                    <div class="timeline-step">
+                        <div class="step-marker">04</div>
+                        <div class="step-content">
+                            <h3>Advanced Paradigms & Messaging</h3>
+                            <p>Deep-dived into robust messaging patterns: Domain-Driven Design (DDD), CQRS, Event-Driven Architecture, RabbitMQ exchanges (Direct/Topic/Fanout), and the Inbox-Outbox pattern for guaranteed delivery.</p>
                         </div>
                     </div>
-                    <!-- Item 5 -->
-                    <div class="timeline-item left">
-                        <div class="timeline-content">
-                            <span class="timeline-date">Phase 5: Resilient Architecture</span>
-                            <h3>Fault-Tolerant & High-Availability Systems</h3>
-                            <p>Designing fault-tolerant, self-healing distributed backends. Implementing resiliency patterns such as Retries with Exponential Backoff, Dead Letter Queues (DLQ) for message failure isolation, Circuit Breakers, Rate Limiting, Idempotent consumers, and Outbox orchestration to ensure bulletproof message delivery and zero data loss.</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag">Resilience</span>
-                                <span class="timeline-tag">Circuit Breakers</span>
-                                <span class="timeline-tag">DLQ Routing</span>
-                                <span class="timeline-tag">Idempotency</span>
-                                <span class="timeline-tag">Self-Healing</span>
-                                <span class="timeline-tag">Fault Tolerance</span>
-                            </div>
+
+                    <!-- Step 05: Resilient Architecture -->
+                    <div class="timeline-step">
+                        <div class="step-marker">05</div>
+                        <div class="step-content">
+                            <h3>Resilient & Self-Healing Architecture</h3>
+                            <p>Designing fault-tolerant, self-healing distributed backends. Implementing resiliency patterns such as Retries with Exponential Backoff, Dead Letter Queues (DLQ) for message failure isolation, Circuit Breakers, Rate Limiting, and Idempotency.</p>
                         </div>
                     </div>
                 </div>
