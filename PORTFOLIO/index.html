@@ -110,6 +110,32 @@
                     </div>
                 </div>
                 <div class="hero-visual">
+                    <!-- Floating Outbox Publisher Code Mockup -->
+                    <div class="hero-code-window">
+                        <div class="window-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="window-title">outbox-publisher.go</span>
+                        </div>
+                        <div class="window-content">
+                            <pre><code><span class="pl-k">func</span> <span class="pl-en">PublishEvents</span>() {
+  events <span class="pl-k">:=</span> db.GetOutbox()
+  <span class="pl-k">for</span> _, ev <span class="pl-k">:=</span> <span class="pl-k">range</span> events {
+    broker.Publish(ev)
+    db.MarkSent(ev.ID)
+  }
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Real-Time Status Badge -->
+                    <div class="hero-metric-badge">
+                        <span class="metric-dot"></span>
+                        <span class="metric-lbl">Status:</span>
+                        <span class="metric-val">200 OK</span>
+                    </div>
+
                     <div class="hero-img-container">
                         <img src="PORTO CONTENT/me_code.png" alt="Sumit Coding Avatar">
                     </div>
@@ -122,17 +148,62 @@
             <div class="container">
                 <div class="section-header">
                     <h2>About Me</h2>
-                    <p>A detail-oriented software engineer focused on clean code, software patterns, and resilient system architecture.</p>
                 </div>
                 <div class="about-content-layout">
-                    <div class="about-img-container">
-                        <img src="PORTO CONTENT/boy.png" alt="Sumit Kumar">
+                    <div class="about-left-col">
+                        <div class="about-img-container">
+                            <img src="PORTO CONTENT/boy.png" alt="Sumit Kumar">
+                        </div>
+                        <div class="about-quick-info">
+                            <div class="info-card">
+                                <span class="info-val">2+</span>
+                                <span class="info-lbl">Years Dev Exp</span>
+                            </div>
+                            <div class="info-card">
+                                <span class="info-val">220+</span>
+                                <span class="info-lbl">DSA Solved</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="about-bio">
-                        <h3>Core Background & Expertise</h3>
-                        <p>Hello! My name is <strong>Sumit Kumar (Birwal)</strong>. I design resilient, decoupled, and distributed software systems. My engineering focus lies at the intersection of robust backend patterns and secure web integrations.</p>
-                        <p>I specialize in backend architecture utilizing <strong>Domain-Driven Design (DDD)</strong>, <strong>CQRS</strong>, <strong>Event Sourcing</strong>, and <strong>Event-Driven Architectures (EDA)</strong>. I focus on transaction integrity using patterns like the <strong>Inbox-Outbox Pattern</strong> with <strong>RabbitMQ</strong> to guarantee reliable event delivery. On the integration layer, I design payment architectures including <strong>Stripe Connected Account architectures</strong> and local gateways like <strong>Paymongo Philippines</strong>.</p>
-                        <p>I am continuously improving my system design thinking, writing cleaner architectures, and exploring AI/ML agentic systems to solve real-world problems.</p>
+                    <div class="about-right-col">
+                        <div class="about-bio">
+                            <h3>Core Background & Expertise</h3>
+                            <p>Hello! My name is <strong>Sumit Kumar (Birwal)</strong>. I design resilient, decoupled, and distributed software systems. My engineering focus lies at the intersection of robust backend patterns and secure web integrations.</p>
+                            <p>I specialize in backend architecture utilizing <strong>Domain-Driven Design (DDD)</strong>, <strong>CQRS</strong>, <strong>Event Sourcing</strong>, and <strong>Event-Driven Architectures (EDA)</strong>. I focus on transaction integrity using patterns like the <strong>Inbox-Outbox Pattern</strong> with <strong>RabbitMQ</strong> to guarantee reliable event delivery. On the integration layer, I design payment architectures including <strong>Stripe Connected Account architectures</strong> and local gateways like <strong>Paymongo Philippines</strong>.</p>
+                            <p>I am continuously improving my system design thinking, writing cleaner architectures, and exploring AI/ML agentic systems to solve real-world problems.</p>
+                        </div>
+                        
+                        <!-- Core Competencies Grid -->
+                        <div class="about-stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">🔧</div>
+                                <div class="stat-text">
+                                    <h4>Backend Architecture</h4>
+                                    <p>DDD, CQRS, Event Sourcing, Microservices</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">⚙️</div>
+                                <div class="stat-text">
+                                    <h4>Reliable Messaging</h4>
+                                    <p>RabbitMQ, Inbox-Outbox Pattern, Saga</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon"> 💳</div>
+                                <div class="stat-text">
+                                    <h4>Payment Gateways</h4>
+                                    <p>Stripe Connect, Localized E-wallets, Escrows</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">💻</div>
+                                <div class="stat-text">
+                                    <h4>Problem Solving</h4>
+                                    <p>Data Structures, Algorithms (C++/Python)</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
