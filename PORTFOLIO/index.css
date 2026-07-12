@@ -1880,37 +1880,53 @@ footer p {
     }
     
     .hero-visual {
-        flex-direction: column;
+        position: relative;
+        width: 100%;
+        height: 380px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         min-height: auto;
-        padding-top: 1.5rem;
-        gap: 1.5rem;
+        padding: 0;
     }
     
     .hero-img-container {
+        position: absolute;
         width: 200px;
         height: 250px;
         border-radius: 16px;
-        transform: none !important;
+        z-index: 5;
+        left: 50%;
+        top: 50%;
+        transform: translate(-35%, -55%);
+        transition: var(--transition);
     }
     
     .hero-code-window {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: 260px;
-        margin: -25px auto 0 auto;
-        z-index: 6;
-        transform: rotate(-1deg);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-65%, -35%) rotate(-3deg);
+        width: 230px;
+        margin: 0;
+        z-index: 2;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .hero-code-window.forward {
+        z-index: 8 !important;
+        transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important;
     }
     
     .hero-metric-badge {
         position: absolute;
-        right: 15px;
-        top: 0px;
-        bottom: auto;
+        right: 10%;
+        bottom: 8%;
+        top: auto;
         padding: 0.35rem 0.75rem;
-        z-index: 7;
+        z-index: 6;
     }
     
     .nav-links {

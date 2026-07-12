@@ -229,9 +229,21 @@ class ParticleNetwork {
     }
 }
 
-// Instantiate canvas background after load
+// Instantiate canvas background and hero visual interactive states after load
 document.addEventListener('DOMContentLoaded', () => {
     window.particleNetwork = new ParticleNetwork('particle-canvas');
+    
+    const codeWindow = document.querySelector('.hero-code-window');
+    if (codeWindow) {
+        codeWindow.addEventListener('click', (e) => {
+            e.stopPropagation();
+            codeWindow.classList.toggle('forward');
+        });
+        
+        document.addEventListener('click', () => {
+            codeWindow.classList.remove('forward');
+        });
+    }
 });
 
 // Timeline & Experience Scroll & Glow Observer
