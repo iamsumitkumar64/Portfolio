@@ -234,20 +234,29 @@ document.addEventListener('DOMContentLoaded', () => {
     window.particleNetwork = new ParticleNetwork('particle-canvas');
 });
 
-// Timeline Intersection Observer
+// Timeline & Experience Scroll & Glow Observer
 const timelineItems = document.querySelectorAll('.timeline-item');
-if (timelineItems.length > 0) {
-    const timelineObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+const experienceItems = document.querySelectorAll('.experience-item');
 
-    timelineItems.forEach(item => {
-        timelineObserver.observe(item);
+const glowObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            entry.target.classList.add('glowing');
+        } else {
+            entry.target.classList.remove('glowing');
+        }
     });
+}, { 
+    threshold: 0.1, 
+    rootMargin: '-25% 0px -25% 0px' /* active zone in the center of the viewport */
+});
+
+if (timelineItems.length > 0) {
+    timelineItems.forEach(item => glowObserver.observe(item));
+}
+if (experienceItems.length > 0) {
+    experienceItems.forEach(item => glowObserver.observe(item));
 }
 
 // Resume PDF Download action
