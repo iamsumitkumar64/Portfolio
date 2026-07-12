@@ -4,15 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUMIT KUMAR PORT</title>
-    <link rel="shortcut icon" href="PORTO CONTENT/favicon.png" type="image/x-icon">
+    <title>Sumit Kumar | Full Stack Developer & Backend Architect</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Professional portfolio of Sumit Kumar, a Full Stack Developer and Backend Architect specializing in microservices, Domain-Driven Design (DDD), CQRS, and AI/ML systems.">
+    <meta name="keywords" content="Sumit Kumar, Sumit Birwal, Full Stack Developer, Backend Architect, Microservices, DDD, CQRS, NestJS, Django, Python, C++, DSA, Systems Design">
+    <meta name="author" content="Sumit Kumar">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Sumit Kumar | Full Stack Developer & Backend Architect">
+    <meta property="og:description" content="Explore Sumit Kumar's technical journey, projects, and architecture mastery.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/iamsumitkumar64">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="PORTO CONTENT/logo.png" type="image/x-icon">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Playwrite+GB+J+Guides:ital@0;1&display=swap"
-        rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
+    
+    <!-- EmailJS integration -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
             emailjs.init({
@@ -22,283 +34,882 @@
     </script>
 </head>
 
-<body id="body">
+<body id="top">
+    <!-- Interactive Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header & Navigation -->
     <header>
-        <!-- <p>SUMIT</p> -->
-        <img loading="lazy" src="PORTO CONTENT/SLEAF-Logo-animation-unscreen.gif" id="head-img" alt="logo">
-        <div>
+        <div class="nav-container">
+            <a href="#top" class="logo-container" aria-label="Go to Top">
+                <img src="PORTO CONTENT/logo.png" alt="Sumit Logo">
+            </a>
+            
             <nav>
-                <a href="#body">HOME</a>
-                <a href="#about">ABOUT</a>
-                <a href="#project">PROJECT</a>
-                <a href="#skill">SKILLS</a>
-                <a href="#contact">CONTACT</a>
+                <ul class="nav-links">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#about-section">About</a></li>
+                    <li><a href="#experience-section">Experience</a></li>
+                    <li><a href="#journey-section">Journey</a></li>
+                    <li><a href="#projects-section">Projects</a></li>
+                    <li><a href="#skills-section">Skills</a></li>
+                    <li><a href="#achievements-section">Achievements</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
+                </ul>
             </nav>
-            <img loading="lazy" src="PORTO CONTENT/light.png" alt="mode" id="mode">
+
+            <div class="nav-actions">
+                <button id="mode-toggle" aria-label="Toggle Light/Dark Theme">
+                    <img id="mode-icon" src="PORTO CONTENT/light.png" alt="Light Mode Toggle">
+                </button>
+                <button class="menu-toggle" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </header>
-    <aside>
-        <nav>
-            <a href="https://leetcode.com/u/iamsumitkumar64/" target="_blank">
-                <img loading="lazy" src="PORTO CONTENT/leetcode-svgrepo-com.png" alt="miss" class="mode-img">
-                <p>LEETCODE</p>
-            </a>
-            <a href="https://github.com/iamsumitkumar64" target="_blank">
-                <img loading="lazy" src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img">
-                <p>GITHUB</p>
-            </a>
-            <a href="https://www.linkedin.com/in/iamsumitkumar64" target="_blank">
-                <img loading="lazy" src="PORTO CONTENT/linkedin-sketched-logo-svgrepo-com.png" alt="miss"
-                    class="mode-img">
-                <p>LINKEDIN</p>
-            </a>
-            <a href="mailto:iam.sumitkumar64@gmail.com">
-                <img loading="lazy" src="PORTO CONTENT/email-14-svgrepo-com.png" alt="miss" class="mode-img">
-                <p>EMAIL</p>
-            </a>
-        </nav>
+
+    <!-- Social Sidebar Links -->
+    <aside class="social-sidebar">
+        <a href="https://leetcode.com/u/iamsumitkumar64/" target="_blank" aria-label="LeetCode Profile">
+            <img src="PORTO CONTENT/leetcode-svgrepo-com.png" alt="LeetCode">
+            <span class="tooltip">LeetCode</span>
+        </a>
+        <a href="https://github.com/iamsumitkumar64" target="_blank" aria-label="GitHub Profile">
+            <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub">
+            <span class="tooltip">GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/iamsumitkumar64" target="_blank" aria-label="LinkedIn Profile">
+            <img src="PORTO CONTENT/linkedin-sketched-logo-svgrepo-com.png" alt="LinkedIn">
+            <span class="tooltip">LinkedIn</span>
+        </a>
+        <a href="mailto:iam.sumitkumar64@gmail.com" aria-label="Email Me">
+            <img src="PORTO CONTENT/email-14-svgrepo-com.png" alt="Email">
+            <span class="tooltip">Email</span>
+        </a>
     </aside>
+
     <main>
-        <div id="home">
-            <article>
-                <p>Hello,my name is</p>
-                <h1>SUMIT KUMAR</h1>
-                <p>I'm
-                    <span id="element"></span>
-                </p>
-                <button id="resume">RESUME</button>
-            </article>
-            <div>
-                <img loading="lazy" src="PORTO CONTENT/me_code.png" alt="mine-image">
-            </div>
-        </div>
-        <div id="about">
-            <p>
-                <span>All</span>
-                <span id="red-p">About</span>
-                <span>Me And My</span>
-                <span id="red-p">Experience</span>
-            </p>
-            <div id="about-btn">
-                <button class="about-btns">ABOUT Me</button>
-                <button class="about-btns">EXP. AT CodeQuotient</button>
-            </div>
-            <div id="about-btn-cont">
-                <div>
-                    <img loading="lazy" src="PORTO CONTENT/boy.png" alt="miss">
-                </div>
-                <p id="about-btn-cont-p"></p>
-            </div>
-        </div>
-        <div id="project">
-            <p id="project-head">
-                <span>My</span>
-                <span id="red-p">Project</span>
-                <span>List</span>
-            </p>
-            <div id="project-cont">
-                <div>
-                    <h1>Movie App</h1>
-                    <img loading="lazy" src="PORTO CONTENT/movie.jpg" alt="movie">
-                    <div>
-                        <a href="https://github.com/iamsumitkumar64/MOVIE-APP" target="_blank"><img
-                                src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img"></a>
-                        <a href="https://birwal-movie.vercel.app/" target="_blank"><img loading="lazy"
-                                src="PORTO CONTENT/eye.png" alt="miss" class="mode-img"></a>
+        <!-- Hero Section -->
+        <section id="home-section" class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="hero-greeting">Hi, my name is</span>
+                    <h1 class="hero-title">SUMIT KUMAR</h1>
+                    <div class="hero-subtitle">
+                        <span id="element"></span>
+                    </div>
+                    <p class="hero-desc">
+                        Designing scalable backend systems and distributed architectures utilizing Event-Driven Microservices, Domain-Driven Design (DDD), CQRS, and Event Sourcing, while integrating Stripe Connected Account/Paymongo payment flows and exploring agentic AI/ML structures.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#contact-section" class="btn btn-primary">Get In Touch</a>
+                        <button id="resume-btn" class="btn btn-secondary">Download Resume</button>
                     </div>
                 </div>
-                <div>
-                    <h1>Amazon Clone</h1>
-                    <img loading="lazy" src="PORTO CONTENT/amazon.webp" alt="movie">
-                    <div>
-                        <a href="https://github.com/iamsumitkumar64/AMAZON-CLONE" target="_blank"><img
-                                src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img"></a>
-                        <a href="PROJECT 1 AMAZON/INDEX.html" target="_blank"><img loading="lazy"
-                                src="PORTO CONTENT/eye.png" alt="miss" class="mode-img"></a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Tic-Tac-Toe</h1>
-                    <img loading="lazy" src="PORTO CONTENT/tic-tac-toe.png" alt="movie">
-                    <div>
-                        <a href="https://github.com/iamsumitkumar64/Tic-Tac-Toe.git" target="_blank"><img
-                                src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img"></a>
-                        <a href="https://birwal-tic-tac-toe.vercel.app/" target="_blank"><img loading="lazy"
-                                src="PORTO CONTENT/eye.png" alt="miss" class="mode-img"></a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Rock-Paper-Scissor</h1>
-                    <img loading="lazy" src="PORTO CONTENT/Rock-Paper-Scissor.webp" alt="movie">
-                    <div>
-                        <a href="https://github.com/iamsumitkumar64/ROCK-PAPER-SCISSOR" target="_blank"><img
-                                src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img"></a>
-                        <a href="PROJECT 2 RPS/index.html" target="_blank"><img loading="lazy"
-                                src="PORTO CONTENT/eye.png" alt="miss" class="mode-img"></a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Dictionary</h1>
-                    <img loading="lazy" src="PORTO CONTENT/dictionary.webp" alt="movie">
-                    <div>
-                        <a href="https://github.com/iamsumitkumar64/API-DICTIONARY" target="_blank"><img
-                                src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img"></a>
-                        <a href="PROJECT 3 DICTIONARY/index.html" target="_blank"><img loading="lazy"
-                                src="PORTO CONTENT/eye.png" alt="miss" class="mode-img"></a>
-                    </div>
-                </div>
-                <div>
-                    <h1>PomoDoro Clock</h1>
-                    <img loading="lazy" src="https://www.ntaskmanager.com/wp-content/uploads/2019/05/best-pomodoro-apps-blog-header-main-1.png" alt="movie">
-                    <div>
-                        <a href="" target="_blank"><img
-                                src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img"></a>
-                        <a href="PROJECT 9 Pomodoro Clock/index.html" target="_blank"><img loading="lazy"
-                                src="PORTO CONTENT/eye.png" alt="miss" class="mode-img"></a>
-                    </div>
-                </div>
-                <div>
-                    <h1>To-Do</h1>
-                    <img loading="lazy" src="PORTO CONTENT/todo.png" alt="movie">
-                    <div>
-                        <a href="https://github.com/iamsumitkumar64/TO-DO" target="_blank"><img
-                                src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img"></a>
-                        <a href="https://birwal-to-do.vercel.app" target="_blank"><img loading="lazy"
-                                src="PORTO CONTENT/eye.png" alt="miss" class="mode-img"></a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Social-Media-Download</h1>
-                    <img loading="lazy" src="PORTO CONTENT/socialmedia.png" alt="movie">
-                    <div>
-                        <a href="https://github.com/iamsumitkumar64/Social-Media-Download" target="_blank"><img
-                                src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img"></a>
-                        <a href="PROJECT 10 SOCIAL/index.html" target="_blank"><img loading="lazy"
-                                src="PORTO CONTENT/eye.png" alt="miss" class="mode-img"></a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Stop-Watch</h1>
-                    <img loading="lazy" src="PORTO CONTENT/stopwatch.png" alt="movie">
-                    <div>
-                        <a href="https://github.com/iamsumitkumar64/STOP-WATCH" target="_blank"><img
-                                src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img"></a>
-                        <a href="PROJECT 7 STOP_WATCH/index.html" target="_blank"><img loading="lazy"
-                                src="PORTO CONTENT/eye.png" alt="miss" class="mode-img"></a>
-                    </div>
-                </div>
-                <div>
-                    <h1>Quiz App</h1>
-                    <img loading="lazy" src="PORTO CONTENT/quiz.png" alt="movie">
-                    <div>
-                        <a href="https://github.com/iamsumitkumar64/Quiz-App.git" target="_blank"><img
-                                src="PORTO CONTENT/github-142-svgrepo-com.png" alt="miss" class="mode-img"></a>
-                        <a href="https://birwal-quiz.vercel.app/" target="_blank"><img loading="lazy"
-                                src="PORTO CONTENT/eye.png" alt="miss" class="mode-img"></a>
+                <div class="hero-visual">
+                    <div class="hero-img-container">
+                        <img src="PORTO CONTENT/me_code.png" alt="Sumit Coding Avatar">
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="skill">
-            <p id="skill-head">
-                <span>My</span>
-                <span id="red-p">Technical</span>
-                <span>Skills</span>
-            </p>
-            <div id="skill-cont">
-                <div>
-                    <img loading="lazy" src="PORTO CONTENT/c++.png" alt="miss">
-                    <p>C++</p>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <p>A detail-oriented software engineer focused on clean code, software patterns, and resilient system architecture.</p>
                 </div>
-                <div>
-                    <img loading="lazy" src="PORTO CONTENT/dsa.png" alt="miss">
-                    <p>DSA</p>
-                </div>
-                <div>
-                    <img loading="lazy" src="PORTO CONTENT/html.png" alt="miss">
-                    <p>HTML</p>
-                </div>
-                <div>
-                    <img loading="lazy" src="PORTO CONTENT/css.png" alt="miss">
-                    <p>CSS</p>
-                </div>
-                <div>
-                    <img loading="lazy" src="PORTO CONTENT/js.png" alt="miss">
-                    <p>JavaScript</p>
-                </div>
-                <div>
-                    <img loading="lazy" src="PORTO CONTENT/py.png" alt="miss">
-                    <p>Python</p>
-                </div>
-                <div>
-                    <img loading="lazy" src="PORTO CONTENT/dj.png" alt="miss">
-                    <p>Django</p>
-                </div>
-                <div>
-                    <img loading="lazy" src="PORTO CONTENT/mongodb.png" alt="miss">
-                    <p>MongDb</p>
-                </div>
-                <div>
-                    <img loading="lazy" src="PORTO CONTENT/mysql.png" alt="miss">
-                    <p>MySQL</p>
+                <div class="about-content-layout">
+                    <div class="about-img-container">
+                        <img src="PORTO CONTENT/boy.png" alt="Sumit Kumar">
+                    </div>
+                    <div class="about-bio">
+                        <h3>Core Background & Expertise</h3>
+                        <p>Hello! My name is <strong>Sumit Kumar (Birwal)</strong>. I design resilient, decoupled, and distributed software systems. My engineering focus lies at the intersection of robust backend patterns and secure web integrations.</p>
+                        <p>I specialize in backend architecture utilizing <strong>Domain-Driven Design (DDD)</strong>, <strong>CQRS</strong>, <strong>Event Sourcing</strong>, and <strong>Event-Driven Architectures (EDA)</strong>. I focus on transaction integrity using patterns like the <strong>Inbox-Outbox Pattern</strong> with <strong>RabbitMQ</strong> to guarantee reliable event delivery. On the integration layer, I design payment architectures including <strong>Stripe Connected Account architectures</strong> and local gateways like <strong>Paymongo Philippines</strong>.</p>
+                        <p>I am continuously improving my system design thinking, writing cleaner architectures, and exploring AI/ML agentic systems to solve real-world problems.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="contact">
-            <p id="contact-head">
-                <span>Come</span>
-                <span id="red-p">Interact</span>
-                <span>with</span>
-                <span id="red-p">Me</span>
-            </p>
-            <div id="contact-cont">
-                <div id="contact-cont-img">
-                    <img loading="lazy" src="PORTO CONTENT/contact.gif" alt="miss">
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section id="experience-section" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Professional Experience</h2>
+                    <p>My corporate journey, software engineering roles, and technical project execution.</p>
                 </div>
-                <form id="contact-cont-in" onsubmit="event.preventDefault(); SendMail();">
-                    <div>
-                        <input type="text" placeholder="" required draggable="true" class="form">
-                        <label for="full-name">NAME</label>
+                <div class="experience-container">
+                    <!-- Item 1: Zenmonk -->
+                    <div class="experience-item">
+                        <div class="experience-node"></div>
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h4>Full Stack Developer</h4>
+                                    <span class="exp-company">Zenmonk Software & Services</span>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span class="exp-date">Feb 2026 - Current</span>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; font-family: var(--font-mono);">NestJS & System Architectures</div>
+                                </div>
+                            </div>
+                            <div class="exp-tech-badges">
+                                <span class="tech-badge">NestJS</span>
+                                <span class="tech-badge">Next.js</span>
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">TypeScript</span>
+                                <span class="tech-badge">RabbitMQ</span>
+                                <span class="tech-badge">Docker</span>
+                                <span class="tech-badge">Microservices</span>
+                                <span class="tech-badge">DDD</span>
+                                <span class="tech-badge">CQRS</span>
+                                <span class="tech-badge">Event Sourcing</span>
+                                <span class="tech-badge">Inbox-Outbox</span>
+                            </div>
+                            <ul class="exp-list">
+                                <li>Engineered highly scalable backend services using <strong>NestJS, Next.js, React, and TypeScript</strong>.</li>
+                                <li>Implemented core system architectures including <strong>Domain-Driven Design (DDD)</strong> and <strong>CQRS (Command Query Responsibility Segregation)</strong> to isolate workloads.</li>
+                                <li>Designed and executed <strong>Event Sourcing</strong> ledgers and transactionally secure event brokers using the <strong>Inbox-Outbox Pattern</strong> with <strong>RabbitMQ</strong>.</li>
+                                <li>Orchestrated inter-service async communication, containerizing domains via <strong>Docker</strong> into distributed microservices.</li>
+                                <li>Worked closely with senior architects in Agile environments, driving code reviews, testing routes in <strong>Postman</strong>, and merging branch components.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <input type="text" placeholder="" required draggable="true" class="form">
-                        <label for="email">EMAIL</label>
+
+                    <!-- Item 2: Techbuilder -->
+                    <div class="experience-item">
+                        <div class="experience-node"></div>
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h4>Node.js Developer</h4>
+                                    <span class="exp-company">Techbuilder</span>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span class="exp-date">Nov 2025 - Feb 2026</span>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; font-family: var(--font-mono);">Node.js & Payment Systems</div>
+                                </div>
+                            </div>
+                            <div class="exp-tech-badges">
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">Express</span>
+                                <span class="tech-badge">Stripe Connect</span>
+                                <span class="tech-badge">Paymongo API</span>
+                                <span class="tech-badge">Postman</span>
+                                <span class="tech-badge">REST APIs</span>
+                            </div>
+                            <ul class="exp-list">
+                                <li>Specialized in backend service design and API integrations using <strong>Node.js and Express</strong>.</li>
+                                <li>Designed and implemented secure billing and payment channels utilizing <strong>Stripe Connected Account architectures</strong> for split payout vendor structures.</li>
+                                <li>Integrated localized payment networks including credit card gateways and mobile e-wallets (GCash, GrabPay) using the <strong>Paymongo Philippines API</strong>.</li>
+                                <li>Standardized integration testing profiles, verifying payload schemas and validating routes in <strong>Postman</strong>.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <input type="text" placeholder="" draggable="true" class="form">
-                        <label for="mobile">MOBILE</label>
+
+                    <!-- Item 3: CodeQuotient -->
+                    <div class="experience-item">
+                        <div class="experience-node"></div>
+                        <div class="experience-card">
+                            <div class="exp-header">
+                                <div>
+                                    <h4>MERN Stack Intern</h4>
+                                    <span class="exp-company">CodeQuotient</span>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span class="exp-date">Feb 2025 - Nov 2025</span>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem; font-family: var(--font-mono);">MERN Stack & Algorithms</div>
+                                </div>
+                            </div>
+                            <div class="exp-tech-badges">
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">Express</span>
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">C++</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">DSA</span>
+                                <span class="tech-badge">OOP</span>
+                            </div>
+                            <ul class="exp-list">
+                                <li>Developed full-stack web applications utilizing the MERN (MongoDB, Express, React, Node.js) stack.</li>
+                                <li>Solidified basic algorithms, computer science paradigms, and database relations.</li>
+                                <li>Completed over <strong>120+ Data Structures & Algorithms (DSA) challenges on LeetCode</strong> using C++ and Python.</li>
+                                <li>Coordinated with cohort engineering leads to test, debug, and launch responsive user interfaces.</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <textarea rows="5" cols="" placeholder="" required draggable="true" class="form"></textarea>
-                        <label for="message">YOUR MESSAGE</label>
-                    </div>
-                    <div>
-                        <button type="submit">SUBMIT FORM</button>
-                        <button type="reset">RESET FORM</button>
-                    </div>
-                </form>
+                </div>
             </div>
+        </section>
+
+        <!-- Architectural Journey (Timeline) -->
+        <section id="journey-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Architectural Journey</h2>
+                    <p>My evolution from building traditional monolithic CRUD applications to designing complex, decoupled, and distributed systems.</p>
+                </div>
+                <div class="timeline">
+                    <!-- Item 1 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <span class="timeline-date">Phase 1: Monolithic Foundation</span>
+                            <h3>MERN Monoliths (MVC)</h3>
+                            <p>Began building standard web apps using the MERN stack with monolithic MVC architecture. While great for learning, I quickly faced bottlenecks like tight code coupling, coordination conflicts, and difficult scaling as codebases grew.</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">React</span>
+                                <span class="timeline-tag">Express</span>
+                                <span class="timeline-tag">Node.js</span>
+                                <span class="timeline-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <span class="timeline-date">Phase 2: Modular Decoupling</span>
+                            <h3>Service Isolation & Separation</h3>
+                            <p>Shifted focus towards domain modularity. Began splitting routers, controllers, and database access logic into distinct, isolated layers, reducing dependency conflicts and improving codebase maintainability.</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">Clean Code</span>
+                                <span class="timeline-tag">Modular Design</span>
+                                <span class="timeline-tag">Separation of Concerns</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <span class="timeline-date">Phase 3: Scaling Out</span>
+                            <h3>Microservices Architecture</h3>
+                            <p>Adopted Microservices architecture to isolate services, enable independent scaling, and isolate failure domains. Utilized RESTful communication and orchestrated containers with Docker.</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">Microservices</span>
+                                <span class="timeline-tag">Docker</span>
+                                <span class="timeline-tag">NestJS</span>
+                                <span class="timeline-tag">Node.js</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <span class="timeline-date">Phase 4: Advanced Paradigms</span>
+                            <h3>DDD, CQRS & Event-Driven Systems</h3>
+                            <p>Deep-diving into robust architectural paradigms: Domain-Driven Design (DDD) to map complex business boundaries, CQRS to segregate command and query workloads, Event-Driven Architecture (EDA) via RabbitMQ, and the Inbox-Outbox pattern for resilient message delivery.</p>
+                            <div class="timeline-tags">
+                                <span class="timeline-tag">DDD</span>
+                                <span class="timeline-tag">CQRS</span>
+                                <span class="timeline-tag">RabbitMQ</span>
+                                <span class="timeline-tag">Event Sourcing</span>
+                                <span class="timeline-tag">Inbox-Outbox</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Grid Section -->
+        <section id="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <p>A showcase of technical repositories demonstrating advanced backend architectures, transaction patterns, payment engines, and AI/ML integrations.</p>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1: Inbox-Outbox Pattern -->
+                    <div class="project-card">
+                        <div class="project-img-wrapper project-gradient-1">
+                            <div class="project-acronym">MSG</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Inbox-Outbox Pattern Broker</h3>
+                            <p>A transactionally secure microservices messaging system implementing the Inbox-Outbox pattern using NestJS, PostgreSQL, and RabbitMQ to guarantee at-least-once message delivery.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">NestJS</span>
+                                <span class="project-tag">RabbitMQ</span>
+                                <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">Microservices</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/Inbox-Outbox-Pattern-With-Rabbit-MQ-in-nestjs-Postgres" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Event Sourcing NestJS -->
+                    <div class="project-card">
+                        <div class="project-img-wrapper project-gradient-2">
+                            <div class="project-acronym">EVT</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Event Sourcing POC</h3>
+                            <p>An event-sourced backend proof-of-concept built with NestJS. Stores chronological, immutable system state transitions, supporting event replays, audits, and CQRS handlers.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">NestJS</span>
+                                <span class="project-tag">Event Sourcing</span>
+                                <span class="project-tag">CQRS</span>
+                                <span class="project-tag">TypeScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/Event-Sourcing-Nestjs-POC" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: C++ Custom Web Crawler -->
+                    <div class="project-card">
+                        <div class="project-img-wrapper project-gradient-3">
+                            <div class="project-acronym">CWL</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>C++ Custom Web Crawler</h3>
+                            <p>Built a web crawler in raw C++ using my own generic string, linked list, and hashmap libraries — completely avoiding external dependencies or standard string methods. It gave me full control over memory management, performance, and data structures, designed for low-level efficiency and zero unnecessary overhead.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">C++</span>
+                                <span class="project-tag">Data Structures</span>
+                                <span class="project-tag">Memory Management</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/CPP-Crawler" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3b: Custom C++ Library Suite -->
+                    <div class="project-card">
+                        <div class="project-img-wrapper project-gradient-9">
+                            <div class="project-acronym">LIB</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Custom C++ Library Suite</h3>
+                            <p>Designed and engineered generic C++ data structure and utility libraries from scratch, including custom implementation of HashMap, LinkedList, and String classes with manual memory management and optimized search-complexity bounds.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">C++</span>
+                                <span class="project-tag">Templates</span>
+                                <span class="project-tag">Algorithms</span>
+                                <span class="project-tag">Memory Audit</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/My-CPP-Library" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3c: LinkedIn Clone -->
+                    <div class="project-card">
+                        <div class="project-img-wrapper project-gradient-10">
+                            <div class="project-acronym">LKD</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>LinkedIn Clone</h3>
+                            <p>A full-featured LinkedIn clone platform designed to explore scalable backend messaging, post feeds, user network relations, dynamic updates, and connection search graphs.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Nest.js</span>
+                                <span class="project-tag">Next.js</span>
+                                <span class="project-tag">TypeScript</span>
+                                <span class="project-tag">TypeORM</span>
+                                <span class="project-tag">WebSockets</span>
+                                <span class="project-tag">Docker</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/LinkeDin-Clone" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Modular Monolith to Microservices -->
+                    <div class="project-card">
+                        <div class="project-img-wrapper project-gradient-4">
+                            <div class="project-acronym">SYS</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Modular Monolith to Microservice</h3>
+                            <p>A comprehensive architectural migration POC detailing the separation of tightly coupled monolithic subdomains into Dockerized event-driven microservices.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">NestJS</span>
+                                <span class="project-tag">Docker</span>
+                                <span class="project-tag">Microservices</span>
+                                <span class="project-tag">System Design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/Modular-Monolith-Microservice" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: LangChain AI Agent -->
+                    <div class="project-card">
+                        <div class="project-img-wrapper project-gradient-5">
+                            <div class="project-acronym">AGY</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>LangChain AI Agent POC</h3>
+                            <p>An intelligent agentic POC exploring AI frontiers using LangChain libraries, LLM function calling, memory layers, and custom tool binding architectures.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">LangChain</span>
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">AI/ML</span>
+                                <span class="project-tag">LLM Orchestration</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/langchan-poc" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: RabbitMQ Exchanges POC -->
+                    <div class="project-card">
+                        <div class="project-img-wrapper project-gradient-6">
+                            <div class="project-acronym">QUE</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>RabbitMQ Exchanges POC</h3>
+                            <p>A message routing architecture implementing Direct, Topic, and Fanout exchanges in RabbitMQ for asynchronous multi-service event orchestration.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">RabbitMQ</span>
+                                <span class="project-tag">NestJS</span>
+                                <span class="project-tag">Microservices</span>
+                                <span class="project-tag">Event-Driven</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/Microservice-RabbitMQ-POC" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: AI Problem Analyzer -->
+                    <div class="project-card">
+                        <div class="project-img-wrapper project-gradient-7">
+                            <div class="project-acronym">ANA</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>AI Problem Analyzer</h3>
+                            <p>An intelligent engineering assistant leveraging LLM APIs to ingest system bug reports and synthesize detailed architectural design reviews and debugging paths.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">LLM APIs</span>
+                                <span class="project-tag">AI/ML</span>
+                                <span class="project-tag">System Design</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/AI-Problem-Analyzer" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 8: AI Resume Builder -->
+                    <div class="project-card">
+                        <div class="project-img-wrapper project-gradient-8">
+                            <div class="project-acronym">CVB</div>
+                        </div>
+                        <div class="project-content">
+                            <h3>AI Resume Customizer</h3>
+                            <p>A responsive application using prompt engineering to dynamically parse candidate profiles and customize CV blocks to match targeted corporate job specifications.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Next.js</span>
+                                <span class="project-tag">React</span>
+                                <span class="project-tag">OpenAI API</span>
+                                <span class="project-tag">Node.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/AI-Resume-Builder" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Technical Skills</h2>
+                    <p>Categorized layout of technologies, programming languages, and core software architecture designs I specialize in.</p>
+                </div>
+                <div class="skills-wrapper">
+                    <!-- Category: Architecture & Design -->
+                    <div class="skills-category">
+                        <h3>Architectural Paradigms</h3>
+                        <div class="architecture-badges">
+                            <div class="arch-badge">
+                                <span class="arch-badge-dot"></span>
+                                Domain-Driven Design (DDD)
+                            </div>
+                            <div class="arch-badge">
+                                <span class="arch-badge-dot"></span>
+                                CQRS (Command Query Segregation)
+                            </div>
+                            <div class="arch-badge">
+                                <span class="arch-badge-dot"></span>
+                                Event-Driven Architecture (EDA)
+                            </div>
+                            <div class="arch-badge">
+                                <span class="arch-badge-dot"></span>
+                                Event Sourcing
+                            </div>
+                            <div class="arch-badge">
+                                <span class="arch-badge-dot"></span>
+                                Inbox-Outbox Pattern
+                            </div>
+                            <div class="arch-badge">
+                                <span class="arch-badge-dot"></span>
+                                Microservices
+                            </div>
+                            <div class="arch-badge">
+                                <span class="arch-badge-dot"></span>
+                                Saga Pattern
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Core Engineering & Languages -->
+                    <div class="skills-category">
+                        <h3>Languages & Backend Engineering</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <img src="PORTO CONTENT/c++.png" alt="C++" loading="lazy">
+                                <p>C++</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="PORTO CONTENT/py.png" alt="Python" loading="lazy">
+                                <p>Python</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="PORTO CONTENT/js.png" alt="JavaScript" loading="lazy">
+                                <p>JavaScript</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="PORTO CONTENT/dj.png" alt="Django" loading="lazy">
+                                <p>Django</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="PORTO CONTENT/dsa.png" alt="DSA" loading="lazy">
+                                <p>DSA & OOP</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem;">☕</div>
+                                <p>Java</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #e0234e; font-weight: 800;">N</div>
+                                <p>NestJS</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #339933;">Node.js</div>
+                                <p>Node.js / Express</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Databases & Infra -->
+                    <div class="skills-category">
+                        <h3>Databases & Infrastructure</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <img src="PORTO CONTENT/mongodb.png" alt="MongoDB" loading="lazy">
+                                <p>MongoDB</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="PORTO CONTENT/mysql.png" alt="MySQL" loading="lazy">
+                                <p>MySQL</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #336791;">🐘</div>
+                                <p>PostgreSQL</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #ff6600;">🐇</div>
+                                <p>RabbitMQ</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #2496ed;">🐳</div>
+                                <p>Docker</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #fcc624;">🐧</div>
+                                <p>Linux (CLI)</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #f05032;">🐙</div>
+                                <p>Git / GitHub</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Frontend & Prototyping -->
+                    <div class="skills-category">
+                        <h3>Frontend & Tools</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <img src="PORTO CONTENT/html.png" alt="HTML5" loading="lazy">
+                                <p>HTML5</p>
+                            </div>
+                            <div class="skill-card">
+                                <img src="PORTO CONTENT/css.png" alt="CSS3" loading="lazy">
+                                <p>CSS3</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #61dafb;">⚛️</div>
+                                <p>React</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #007fff;">Ⓜ️</div>
+                                <p>MUI / Tailwind</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #ff6c37;">📮</div>
+                                <p>Postman</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #00bfff;">⚡</div>
+                                <p>HeroUI</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #1890ff;">🐜</div>
+                                <p>Ant Design</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #ec5990;">📋</div>
+                                <p>React Hook Form</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #3e863d; font-weight: bold;">Z</div>
+                                <p>Zod</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Payment Gateways -->
+                    <div class="skills-category">
+                        <h3>Payment Gateways</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #635bff;">💳</div>
+                                <p>Stripe</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #008cff; font-weight: bold;">R</div>
+                                <p>Razorpay</p>
+                            </div>
+                            <div class="skill-card">
+                                <div style="font-size: 40px; margin-bottom: 0.75rem; color: #00d285;">🇵🇭</div>
+                                <p>Paymongo Philippines</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements & Volunteering Section -->
+        <section id="achievements-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Achievements & Leadership</h2>
+                    <p>Key technical milestones, coding victories, and leadership initiatives that shaped my discipline.</p>
+                </div>
+                <div class="achievements-grid">
+                    <!-- Column: Tech Awards -->
+                    <div class="achievements-col">
+                        <h3>Technical Milestones</h3>
+                        <div class="achievements-list">
+                            <!-- Card 1 -->
+                            <div class="achievement-card">
+                                <div class="achievement-icon">🥇</div>
+                                <div class="achievement-details">
+                                    <h4>1st Place – On-Spot Coding</h4>
+                                    <span class="org">Zerone24 IT Fest</span>
+                                    <p>Competed in real-time to solve complex algorithmic puzzles under high pressure. Showcased strong logical layout and execution speeds.</p>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="achievement-card">
+                                <div class="achievement-icon">🥈</div>
+                                <div class="achievement-details">
+                                    <h4>2nd Place – On-Spot Debugging</h4>
+                                    <span class="org">Zerone24 IT Fest</span>
+                                    <p>Diagnosed, verified, and resolved runtime errors, design logic vulnerabilities, and syntax faults in competitive code layouts.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column: Community & Service -->
+                    <div class="achievements-col">
+                        <h3>Community & Volunteering</h3>
+                        <div class="achievements-list">
+                            <!-- Card 1 -->
+                            <div class="achievement-card">
+                                <div class="achievement-icon">🎖️</div>
+                                <div class="achievement-details">
+                                    <h4>NCC (National Cadet Corps) Cadet</h4>
+                                    <span class="org">School Service Division</span>
+                                    <p>Trained in systematic physical discipline, defense values, and collaborative operations. Formed solid team-centric focus and resilience.</p>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="achievement-card">
+                                <div class="achievement-icon">🤝</div>
+                                <div class="achievement-details">
+                                    <h4>NSS (National Service Scheme) Volunteer</h4>
+                                    <span class="org">College Service Division</span>
+                                    <p>Contributed to civic campaigns, local welfare drives, and social welfare programs, developing strong soft skills and collaborative empathy.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quotes Section -->
+        <section class="quotes-section">
+            <div class="container quote-slider">
+                <div class="quote-card">
+                    <div class="quote-icon">“</div>
+                    <blockquote id="quote-text" class="quote-text">
+                        You have the right to perform your actions, but not to claim the results.
+                    </blockquote>
+                    <cite id="quote-author" class="quote-author">– Bhagavad Gita 2.47</cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>Have an interesting project or opportunities you'd like to discuss? Drop a message!</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Let's collaborate.</h3>
+                        <p>
+                            I am open to discuss full-stack engineering roles, system architecture design opportunities, and AI/ML project collaboration. Feel free to contact me through the form or direct networks.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper">✉️</div>
+                                <div class="contact-item-details">
+                                    <span>Direct Email</span>
+                                    <a href="mailto:iam.sumitkumar64@gmail.com">iam.sumitkumar64@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper">🔗</div>
+                                <div class="contact-item-details">
+                                    <span>Professional Network</span>
+                                    <a href="https://linkedin.com/in/iamsumitkumar64" target="_blank">linkedin.com/in/iamsumitkumar64</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon-wrapper">📍</div>
+                                <div class="contact-item-details">
+                                    <span>Location</span>
+                                    <p>Haryana, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="user-name">Full Name</label>
+                                <input type="text" id="user-name" name="from_name" class="form-control" placeholder="John Doe" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="user-email">Email Address</label>
+                                <input type="email" id="user-email" name="email_id" class="form-control" placeholder="john@example.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="user-mobile">Mobile Number (Optional)</label>
+                                <input type="text" id="user-mobile" name="mobile" class="form-control" placeholder="+91 99999 99999">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="user-message">Your Message</label>
+                                <textarea id="user-message" name="message" class="form-control" placeholder="Hi Sumit, I would love to connect..." required></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" style="flex: 1;">SUBMIT FORM</button>
+                                <button type="reset" class="btn btn-secondary">RESET</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Footer -->
     <footer>
-        <p>Designed and build by SUMIT BIRWAL,2024 ALL RIGHTS RESERVED ®</p>
+        <div class="container">
+            <p>© 2026 Sumit Kumar. Designed and Engineered with Care. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Typed.js & Main Script -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const typed = new Typed('#element', {
+                strings: [
+                    'Full Stack Developer',
+                    'Backend Architect',
+                    'Aspiring AI/ML Engineer',
+                    'Problem Solver'
+                ],
+                typeSpeed: 80,
+                backSpeed: 50,
+                backDelay: 1500,
+                loop: true,
+                showCursor: true,
+                cursorChar: '|'
+            });
+        });
+    </script>
+    <script src="index.js"></script>
 </body>
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<script>
-    let typed = new Typed('#element', {
-        strings: [
-            '<i style="font-faimly:fantasy;font-size: 5vmin; color:rgb(0, 217, 255);">PYTHON DEVELOPER</i>',
-            '<i style="font-faimly:fantasy;font-size: 5vmin; color:rgb(0, 217, 255);">DJANGO DEVELOPER</i>',
-            '<i style="font-faimly:fantasy;font-size: 5vmin; color:rgb(0, 217, 255);">LEET-CODER</i>',
-        ],
-        typeSpeed: 150,
-        loop: true,
-        showCursor: true,
-        // cursorChar: '@',
-        cursorChar: '<span style="font-size: 4.5vmin; color: rgb(0, 255, 106);">@</span>',
-        autoInsertCss: true,
-    });
-</script>
-<script src="index.js"></script>
 
 </html>
