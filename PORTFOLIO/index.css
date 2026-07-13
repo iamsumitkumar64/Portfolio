@@ -15,6 +15,17 @@
     --border-hover: rgba(99, 102, 241, 0.3);
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     
+    /* Card backgrounds and borders for experience/journey sections */
+    --experience-card-bg: rgba(18, 18, 22, 0.5);
+    --journey-card-bg: rgba(18, 18, 22, 0.7);
+    --journey-card-border: rgba(63, 63, 70, 0.3);
+    --journey-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    
+    /* Code window variables in dark theme */
+    --window-bg: rgba(10, 10, 10, 0.85);
+    --window-header-bg: rgba(0, 0, 0, 0.5);
+    --window-border: rgba(255, 255, 255, 0.08);
+    
     --font-sans: 'Inter', sans-serif;
     --font-heading: 'Outfit', sans-serif;
     --font-mono: 'Fira Code', monospace;
@@ -24,18 +35,29 @@
 
 .light-theme {
     --bg-primary: #ffffff;       /* Color 2: White */
-    --bg-secondary: #fafafa;     /* Color 3: Gray (Light variant 1) */
-    --bg-tertiary: #f4f4f5;      /* Color 3: Gray (Light variant 2) */
-    --accent-color: #4f46e5;     /* Color 4: Indigo */
+    --bg-secondary: #f3f4f6;     /* Color 3: Gray (Light variant 1 - clean contrast background) */
+    --bg-tertiary: #e5e7eb;      /* Color 3: Gray (Light variant 2 - slightly darker) */
+    --accent-color: #4f46e5;     /* Color 4: Indigo (The single accent color) */
     --accent-secondary: #4f46e5; /* Identical to accent-color */
     --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #ffffff 100%);
     --accent-glow: rgba(79, 70, 229, 0.05);
     --text-primary: #000000;     /* Color 1: Black */
-    --text-secondary: #4b5563;   /* Color 3: Gray (Dark text) */
-    --text-muted: #9ca3af;       /* Color 3: Gray (Muted text) */
-    --border-color: rgba(0, 0, 0, 0.08);
-    --border-hover: rgba(79, 70, 229, 0.3);
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    --text-secondary: #374151;   /* Color 3: Gray (Dark text for maximum legibility) */
+    --text-muted: #6b7280;       /* Color 3: Gray (Muted gray text) */
+    --border-color: #e5e7eb;     /* Color 3: Gray (Solid light gray border) */
+    --border-hover: rgba(79, 70, 229, 0.4);
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    
+    /* Card backgrounds and borders for experience/journey sections in light mode */
+    --experience-card-bg: #ffffff;               /* White card on Gray background */
+    --journey-card-bg: #f9fafb;                  /* Gray card on White background */
+    --journey-card-border: #e5e7eb;              /* Solid Gray border */
+    --journey-card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft gray shadow */
+    
+    /* Code window variables in light theme */
+    --window-bg: rgba(255, 255, 255, 0.95);
+    --window-header-bg: #f3f4f6;
+    --window-border: #e5e7eb;
 }
 
 .light-theme .logo-container img {
@@ -558,12 +580,12 @@ header.scrolled .nav-container {
 .hero-code-window {
     position: absolute;
     width: 240px;
-    background-color: rgba(10, 10, 10, 0.85);
+    background-color: var(--window-bg);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--window-border);
     border-radius: 12px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--card-shadow);
     left: -40px;
     top: 30px;
     z-index: 2;
@@ -581,12 +603,12 @@ header.scrolled .nav-container {
 }
 
 .window-header {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--window-header-bg);
     padding: 0.5rem 0.75rem;
     display: flex;
     align-items: center;
     gap: 0.35rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--window-border);
 }
 
 .window-header .dot {
@@ -627,16 +649,16 @@ header.scrolled .nav-container {
 /* Floating Status Metric Badge */
 .hero-metric-badge {
     position: absolute;
-    background-color: rgba(10, 10, 10, 0.85);
+    background-color: var(--window-bg);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--window-border);
     border-radius: 50px;
     padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--card-shadow);
     right: -20px;
     bottom: 50px;
     z-index: 6;
@@ -894,7 +916,7 @@ header.scrolled .nav-container {
 
 /* Content card */
 .experience-card {
-    background: rgba(18, 18, 22, 0.5);
+    background: var(--experience-card-bg);
     border: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -1182,14 +1204,14 @@ header.scrolled .nav-container {
 
 /* Glassmorphism Cards */
 .step-content {
-    background: rgba(18, 18, 22, 0.7);
-    border: 1px solid rgba(63, 63, 70, 0.3);
+    background: var(--journey-card-bg);
+    border: 1px solid var(--journey-card-border);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     padding: 24px;
     border-radius: 12px;
     width: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--journey-card-shadow);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
