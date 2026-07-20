@@ -322,60 +322,69 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education-section" style="padding: 80px 0;">
+        <section id="education-section" style="padding: 70px 0;">
             <div class="container">
                 <div class="section-header">
                     <h2>Education</h2>
-                    <p>Academic degrees, specialization, and university education.</p>
+                    <p>Academic degrees, institutional qualifications, and educational history.</p>
                 </div>
                 
-                <div class="experience-timeline">
-                    <!-- MCA Item -->
-                    <div class="experience-item">
-                        <div class="experience-dot"></div>
-                        <div class="experience-card">
-                            <div class="exp-header">
-                                <div class="exp-title-company">
-                                    <h3>Master of Computer Applications (MCA) – AI & ML <span>@ Chandigarh University (CU)</span></h3>
-                                    <span class="exp-type-text">Postgraduate Degree</span>
-                                </div>
-                                <div class="exp-meta-info">
-                                    <div class="exp-date-pill">2025 – 2027</div>
-                                </div>
-                            </div>
-                            <div class="exp-tech-badges">
-                                <span class="tech-badge">Artificial Intelligence</span>
-                                <span class="tech-badge">Machine Learning</span>
-                                <span class="tech-badge">System Architectures</span>
-                            </div>
-                            <ul class="exp-list">
-                                <li>Specializing in AI & Machine Learning algorithms, intelligent systems, data modeling, and distributed backend architectures.</li>
-                            </ul>
+                <div class="education-grid">
+                    <!-- MCA Card -->
+                    <div class="education-card">
+                        <div class="edu-card-top">
+                            <div class="edu-icon">🎓</div>
+                            <span class="edu-badge edu-badge-active">Pursuing</span>
+                        </div>
+                        <h3 class="edu-degree">Master of Computer Applications (MCA)</h3>
+                        <div class="edu-institution">Chandigarh University</div>
+                        <div class="edu-tags">
+                            <span class="edu-tag">Postgraduate</span>
+                            <span class="edu-tag">System Architecture</span>
+                            <span class="edu-tag">AI / ML</span>
                         </div>
                     </div>
                     
-                    <!-- BCA Item -->
-                    <div class="experience-item">
-                        <div class="experience-dot"></div>
-                        <div class="experience-card">
-                            <div class="exp-header">
-                                <div class="exp-title-company">
-                                    <h3>Bachelor of Computer Applications (BCA) <span>@ Kurukshetra University (KUK)</span></h3>
-                                    <span class="exp-type-text">Undergraduate Degree</span>
-                                </div>
-                                <div class="exp-meta-info">
-                                    <div class="exp-date-pill">2022 – 2025</div>
-                                </div>
-                            </div>
-                            <div class="exp-tech-badges">
-                                <span class="tech-badge">Computer Science</span>
-                                <span class="tech-badge">Software Engineering</span>
-                                <span class="tech-badge">Database Management</span>
-                                <span class="tech-badge">Data Structures & Algorithms</span>
-                            </div>
-                            <ul class="exp-list">
-                                <li>Solidified core computer science fundamentals, data structures, algorithms, database systems, and object-oriented programming.</li>
-                            </ul>
+                    <!-- BCA Card -->
+                    <div class="education-card">
+                        <div class="edu-card-top">
+                            <div class="edu-icon">🏛️</div>
+                            <span class="edu-badge">2021 – 2025</span>
+                        </div>
+                        <h3 class="edu-degree">Bachelor of Computer Applications (BCA)</h3>
+                        <div class="edu-institution">Arya P.G. College, Panipat <span class="edu-subinst">(Kurukshetra University)</span></div>
+                        <div class="edu-tags">
+                            <span class="edu-tag highlight-cgpa">CGPA: 7.5</span>
+                            <span class="edu-tag">Undergraduate</span>
+                            <span class="edu-tag">Computer Science</span>
+                        </div>
+                    </div>
+
+                    <!-- Class 12 Card -->
+                    <div class="education-card">
+                        <div class="edu-card-top">
+                            <div class="edu-icon">🏫</div>
+                            <span class="edu-badge">Senior Secondary</span>
+                        </div>
+                        <h3 class="edu-degree">Class 12 (Senior Secondary)</h3>
+                        <div class="edu-institution">Arya Sr. Sec. School, Panipat</div>
+                        <div class="edu-tags">
+                            <span class="edu-tag">HBSE Board (Bhiwani)</span>
+                            <span class="edu-tag">High School Diploma</span>
+                        </div>
+                    </div>
+
+                    <!-- Class 10 Card -->
+                    <div class="education-card">
+                        <div class="edu-card-top">
+                            <div class="edu-icon">📚</div>
+                            <span class="edu-badge">High School</span>
+                        </div>
+                        <h3 class="edu-degree">Class 10 (High School)</h3>
+                        <div class="edu-institution">Arya Sr. Sec. School, Panipat</div>
+                        <div class="edu-tags">
+                            <span class="edu-tag">HBSE Board</span>
+                            <span class="edu-tag">Secondary Education</span>
                         </div>
                     </div>
                 </div>
@@ -467,9 +476,12 @@
                                 <span class="project-tag">PostgreSQL</span>
                                 <span class="project-tag">TailwindCSS</span>
                             </div>
-                            <div class="project-links">
-                                <a href="https://github.com/iamsumitkumar64/Eternal-Frames" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
-                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
+                            <div class="project-links" style="display: flex; gap: 8px;">
+                                <a href="https://github.com/iamsumitkumar64/Eternal-Frames" target="_blank" class="project-link project-link-github" style="flex: 1;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> GitHub
+                                </a>
+                                <a href="https://birwal-portfolio.vercel.app/" target="_blank" class="project-link" style="flex: 1; text-align: center; justify-content: center; background: var(--accent-gradient); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                                    🌐 Live Demo
                                 </a>
                             </div>
                         </div>
