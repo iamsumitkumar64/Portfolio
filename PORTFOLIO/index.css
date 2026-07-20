@@ -2003,6 +2003,31 @@ footer p {
         transition: var(--transition);
     }
     
+    .hero-img-container:hover,
+    .hero-img-container:active,
+    .hero-img-container:focus {
+        transform: translate(-35%, -55%) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-img-container:hover img,
+    .hero-img-container:active img,
+    .hero-img-container:focus img {
+        transform: none !important;
+    }
+
+    .about-img-container:hover,
+    .about-img-container:active,
+    .about-img-container:focus {
+        transform: none !important;
+    }
+
+    .about-img-container:hover img,
+    .about-img-container:active img,
+    .about-img-container:focus img {
+        transform: none !important;
+    }
+    
     .hero-code-window {
         position: absolute;
         left: 50%;
