@@ -273,10 +273,11 @@ if (experienceItems.length > 0) {
 
 // Resume PDF Download action
 const resumeBtn = document.getElementById('resume-btn');
-if (resumeBtn) {
-    resumeBtn.addEventListener('click', () => {
+if (resumeBtn && resumeBtn.tagName === 'BUTTON') {
+    resumeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         const link = document.createElement('a');
-        link.href = 'PORTO CONTENT/My Resume.pdf';
+        link.href = 'PORTO%20CONTENT/Sumit%20Kumar%20Resume.pdf';
         link.download = 'Sumit Kumar Resume.pdf';
         link.click();
     });
