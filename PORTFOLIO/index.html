@@ -466,22 +466,21 @@
                         </div>
                         <div class="project-content">
                             <h3>Eternal Frames</h3>
-                            <p>A responsive web platform for dynamic canvas rendering, custom frame compositions, visual asset layer management, and real-time asset processing pipelines.</p>
+                            <p>A multi-tenant event photography gallery & studio management platform. Features subscription tier billing via Razorpay, modular NestJS DDD architecture, transactional Outbox pattern messaging with RabbitMQ, and a Next.js App Router frontend.</p>
                             <div class="project-tags">
-                                <span class="project-tag">React.js</span>
-                                <span class="project-tag">TypeScript</span>
-                                <span class="project-tag">Canvas API</span>
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">Express.js</span>
+                                <span class="project-tag">NestJS</span>
+                                <span class="project-tag">TypeORM</span>
                                 <span class="project-tag">PostgreSQL</span>
-                                <span class="project-tag">TailwindCSS</span>
+                                <span class="project-tag">RabbitMQ</span>
+                                <span class="project-tag">Razorpay</span>
+                                <span class="project-tag">Next.js</span>
+                                <span class="project-tag">Redux Toolkit</span>
+                                <span class="project-tag">TypeScript</span>
+                                <span class="project-tag">Outbox Pattern</span>
                             </div>
-                            <div class="project-links" style="display: flex; gap: 8px;">
-                                <a href="https://github.com/iamsumitkumar64/Eternal-Frames" target="_blank" class="project-link project-link-github" style="flex: 1;">
-                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> GitHub
-                                </a>
-                                <a href="https://birwal-portfolio.vercel.app/" target="_blank" class="project-link" style="flex: 1; text-align: center; justify-content: center; background: var(--accent-gradient); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
-                                    🌐 Live Demo
+                            <div class="project-links">
+                                <a href="https://github.com/iamsumitkumar64/Eternal-Frames" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
+                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
                                 </a>
                             </div>
                         </div>
@@ -494,16 +493,18 @@
                         </div>
                         <div class="project-content">
                             <h3>Deca Chat</h3>
-                            <p>A high-concurrency real-time chat platform featuring multi-room WebSockets messaging, live presence tracking, Redis Pub/Sub orchestration, and persistent conversation stores.</p>
+                            <p>A real-time multi-room messaging system built on NestJS Domain-Driven Design (DDD). Features WebSockets/Socket.io communication, public & room member management, transactional Inbox-Outbox message synchronization via RabbitMQ, and a weekly chat analytics dashboard.</p>
                             <div class="project-tags">
                                 <span class="project-tag">NestJS</span>
                                 <span class="project-tag">WebSockets</span>
                                 <span class="project-tag">Socket.io</span>
-                                <span class="project-tag">React</span>
+                                <span class="project-tag">TypeORM</span>
+                                <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">RabbitMQ</span>
+                                <span class="project-tag">Next.js</span>
+                                <span class="project-tag">Redux Toolkit</span>
+                                <span class="project-tag">Chart.js</span>
                                 <span class="project-tag">TypeScript</span>
-                                <span class="project-tag">Redis</span>
-                                <span class="project-tag">MongoDB</span>
-                                <span class="project-tag">Docker</span>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/iamsumitkumar64/Deca-Chat" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
@@ -664,256 +665,325 @@
         <section id="skills-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Technical Skills</h2>
+                    <h2>Core <span class="gradient-text">Skills &amp; Technologies</span></h2>
                     <p>Categorized layout of technologies, programming languages, and core software architecture designs I specialize in.</p>
                 </div>
-                <div class="skills-wrapper">
-                    <!-- Category: Architecture & Design -->
-                    <div class="skills-category">
-                        <h3>Architectural Paradigms</h3>
-                        <div class="architecture-badges">
-                            <div class="arch-badge">
-                                <span class="arch-badge-dot"></span>
-                                Domain-Driven Design (DDD)
+                <div class="skills-rows-container">
+                    <!-- Row 1: Architectural Paradigms -->
+                    <div class="skills-row reveal-on-scroll">
+                        <div class="skills-row-header">
+                            <h3>Architectural Paradigms</h3>
+                        </div>
+                        <div class="skills-row-items">
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                                <span>Domain-Driven Design (DDD)</span>
                             </div>
-                            <div class="arch-badge">
-                                <span class="arch-badge-dot"></span>
-                                CQRS (Command Query Segregation)
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <polyline points="16 3 21 3 21 8"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"></path>
+                                </svg>
+                                <span>CQRS Architecture</span>
                             </div>
-                            <div class="arch-badge">
-                                <span class="arch-badge-dot"></span>
-                                Event-Driven Architecture (EDA)
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <circle cx="18" cy="18" r="3"></circle>
+                                    <circle cx="6" cy="6" r="3"></circle>
+                                    <circle cx="6" cy="18" r="3"></circle>
+                                    <path d="M18 14.5c0-2-3-3-3-3s-3 1-3 3v.5"></path>
+                                    <path d="M6 9v6"></path>
+                                </svg>
+                                <span>Event-Driven (EDA)</span>
                             </div>
-                             <div class="arch-badge">
-                                <span class="arch-badge-dot"></span>
-                                Event Sourcing
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                                <span>Event Sourcing</span>
                             </div>
-                            <div class="arch-badge">
-                                <span class="arch-badge-dot"></span>
-                                Resilient Architecture
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                                    <line x1="12" y1="4" x2="12" y2="20"></line>
+                                </svg>
+                                <span>Inbox-Outbox Pattern</span>
                             </div>
-                            <div class="arch-badge">
-                                <span class="arch-badge-dot"></span>
-                                Inbox-Outbox Pattern
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                                <span>Microservices</span>
                             </div>
-                            <div class="arch-badge">
-                                <span class="arch-badge-dot"></span>
-                                Microservices
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                </svg>
+                                <span>Saga Pattern</span>
                             </div>
-                            <div class="arch-badge">
-                                <span class="arch-badge-dot"></span>
-                                Saga Pattern
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <rect x="3" y="3" width="18" height="6" rx="1"></rect>
+                                    <rect x="3" y="15" width="18" height="6" rx="1"></rect>
+                                    <line x1="12" y1="9" x2="12" y2="15"></line>
+                                </svg>
+                                <span>Broker &amp; Job Queues</span>
                             </div>
-                            <div class="arch-badge">
-                                <span class="arch-badge-dot"></span>
-                                Message Broker & Job Queues
-                            </div>
-                            <div class="arch-badge">
-                                <span class="arch-badge-dot"></span>
-                                Pub/Sub & Real-Time Sync
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <path d="M17 2.1l4 4-4 4M3 22l8-8M7 22l14-14M3 18l4 4" />
+                                </svg>
+                                <span>Pub/Sub &amp; Real-Time</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: Core Engineering & Languages -->
-                    <div class="skills-category">
-                        <h3>Languages & Backend Engineering</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/cpp.svg" alt="C++" loading="lazy">
-                                <p>C++</p>
+                    <!-- Row 2: Languages & Backend Engineering -->
+                    <div class="skills-row reveal-on-scroll">
+                        <div class="skills-row-header">
+                            <h3>Languages &amp; Backend</h3>
+                        </div>
+                        <div class="skills-row-items">
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+                                <span>C++ (STL)</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/python.svg" alt="Python" loading="lazy">
-                                <p>Python</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+                                <span>Python</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/javascript.svg" alt="JavaScript" loading="lazy">
-                                <p>JavaScript</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                                <span>JavaScript</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/django.svg" alt="Django" loading="lazy">
-                                <p>Django</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
+                                <span>TypeScript</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/dsa.svg" alt="DSA" loading="lazy">
-                                <p>DSA & OOP</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" />
+                                <span>Django</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/java.svg" alt="Java" loading="lazy">
-                                <p>Java</p>
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <path d="M16 18l6-6-6-6M8 6L2 12l6 6" />
+                                </svg>
+                                <span>DSA &amp; OOP</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/nestjs.svg" alt="NestJS" loading="lazy">
-                                <p>NestJS</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+                                <span>Java</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/nodejs.svg" alt="Node.js" loading="lazy">
-                                <p>Node.js / Express</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" alt="NestJS" />
+                                <span>NestJS</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" />
+                                <span>Node.js / Express</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: Databases & Infra -->
-                    <div class="skills-category">
-                        <h3>Databases & Infrastructure</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/mongodb.svg" alt="MongoDB" loading="lazy">
-                                <p>MongoDB</p>
+                    <!-- Row 3: Databases & Infrastructure -->
+                    <div class="skills-row reveal-on-scroll">
+                        <div class="skills-row-header">
+                            <h3>Databases &amp; Infrastructure</h3>
+                        </div>
+                        <div class="skills-row-items">
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+                                <span>MongoDB</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/mysql.svg" alt="MySQL" loading="lazy">
-                                <p>MySQL</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+                                <span>MySQL</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/postgresql.svg" alt="PostgreSQL" loading="lazy">
-                                <p>PostgreSQL</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+                                <span>PostgreSQL</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/redis.svg" alt="Redis" loading="lazy">
-                                <p>Redis</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" />
+                                <span>Redis</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/bullmq.svg" alt="BullMQ" loading="lazy">
-                                <p>BullMQ</p>
+                            <div class="skill-badge">
+                                <img src="https://github.com/taskforcesh.png" alt="BullMQ" />
+                                <span>BullMQ</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/socketdotio.svg" alt="Socket.io" loading="lazy">
-                                <p>Socket.io</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" alt="Socket.io" />
+                                <span>Socket.io</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/rabbitmq.svg" alt="RabbitMQ" loading="lazy">
-                                <p>RabbitMQ</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg" alt="RabbitMQ" />
+                                <span>RabbitMQ</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/typeorm.svg" alt="TypeORM" loading="lazy">
-                                <p>TypeORM</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/typeorm/FE0808" alt="TypeORM" />
+                                <span>TypeORM</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/mongoose.svg" alt="Mongoose" loading="lazy">
-                                <p>Mongoose</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/mongoose/880000" alt="Mongoose" />
+                                <span>Mongoose</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/docker.svg" alt="Docker" loading="lazy">
-                                <p>Docker</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+                                <span>Docker</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/linux.svg" alt="Linux" loading="lazy">
-                                <p>Linux (CLI)</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
+                                <span>Linux (CLI)</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/git.svg" alt="Git" loading="lazy">
-                                <p>Git</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/github.svg" alt="GitHub" loading="lazy">
-                                <p>GitHub</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                                <span>Git &amp; GitHub</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: Frontend & Prototyping -->
-                    <div class="skills-category">
-                        <h3>Frontend & Tools</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/html.svg" alt="HTML5" loading="lazy">
-                                <p>HTML5</p>
+                    <!-- Row 4: AI, Agents & Specialized Tech -->
+                    <div class="skills-row reveal-on-scroll">
+                        <div class="skills-row-header">
+                            <h3>AI, Agents &amp; Specialized Tech</h3>
+                        </div>
+                        <div class="skills-row-items">
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/langchain/1C3C3C" alt="LangChain" />
+                                <span>LangChain / LangGraph</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/css.svg" alt="CSS3" loading="lazy">
-                                <p>CSS3</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/google/4285F4" alt="Gemini API" />
+                                <span>Google Gemini API</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/react.svg" alt="React" loading="lazy">
-                                <p>React</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/deepgram/13EF95" alt="Deepgram STT" />
+                                <span>Deepgram Voice STT</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/tailwind.svg" alt="Tailwind CSS" loading="lazy">
-                                <p>Tailwind CSS</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/redux.svg" alt="Redux" loading="lazy">
-                                <p>Redux</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/redux.svg" alt="Redux Toolkit" loading="lazy">
-                                <p>Redux Toolkit</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/poimandres.svg" alt="Zustand" loading="lazy">
-                                <p>Zustand</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/postman.svg" alt="Postman" loading="lazy">
-                                <p>Postman</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/nextui.svg" alt="HeroUI" loading="lazy">
-                                <p>HeroUI</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/antdesign.svg" alt="Ant Design" loading="lazy">
-                                <p>Ant Design</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/reacthookform.svg" alt="React Hook Form" loading="lazy">
-                                <p>React Hook Form</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/zod.svg" alt="Zod" loading="lazy">
-                                <p>Zod</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/ffmpeg/007808" alt="FFmpeg" />
+                                <span>FFmpeg Processing</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: Payment Gateways -->
-                    <div class="skills-category">
-                        <h3>Payment Gateways</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/stripe.svg" alt="Stripe" loading="lazy">
-                                <p>Stripe</p>
+                    <!-- Row 5: Frontend & Modern Tools -->
+                    <div class="skills-row reveal-on-scroll">
+                        <div class="skills-row-header">
+                            <h3>Frontend &amp; Tools</h3>
+                        </div>
+                        <div class="skills-row-items">
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+                                <span>HTML5 &amp; CSS3</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/razorpay.svg" alt="Razorpay" loading="lazy">
-                                <p>Razorpay</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+                                <span>React</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/paymongo.svg" alt="Paymongo" loading="lazy">
-                                <p>Paymongo Philippines</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" />
+                                <span>Next.js</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" />
+                                <span>Tailwind CSS</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="MUI" />
+                                <span>MUI</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux" />
+                                <span>Redux &amp; RTK</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/zustand/zustand-original.svg" alt="Zustand" />
+                                <span>Zustand</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" />
+                                <span>Postman</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/nextui/0099FF" alt="HeroUI" />
+                                <span>HeroUI</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/antdesign/018FF8" alt="Ant Design" />
+                                <span>Ant Design</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/reacthookform/EC5990" alt="React Hook Form" />
+                                <span>React Hook Form</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/zod/3E67B1" alt="Zod" />
+                                <span>Zod</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Category: Cloud & Deployment -->
-                    <div class="skills-category">
-                        <h3>Cloud & Deployment</h3>
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/vercel.svg" alt="Vercel" loading="lazy">
-                                <p>Vercel</p>
+                    <!-- Row 6: Payment Gateways Integration -->
+                    <div class="skills-row reveal-on-scroll">
+                        <div class="skills-row-header">
+                            <h3>Payment Gateways</h3>
+                        </div>
+                        <div class="skills-row-items">
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe" />
+                                <span>Stripe</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/render.svg" alt="Render" loading="lazy">
-                                <p>Render</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/razorpay/0B72E7" alt="Razorpay" />
+                                <span>Razorpay</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/railway.svg" alt="Railway" loading="lazy">
-                                <p>Railway</p>
+                            <div class="skill-badge">
+                                <img src="https://github.com/paymongo.png" alt="Paymongo" />
+                                <span>Paymongo</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/netlify.svg" alt="Netlify" loading="lazy">
-                                <p>Netlify</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 7: Cloud Platforms & Hosting -->
+                    <div class="skills-row reveal-on-scroll">
+                        <div class="skills-row-header">
+                            <h3>Cloud &amp; Hosting</h3>
+                        </div>
+                        <div class="skills-row-items">
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/vercel/000000" alt="Vercel" />
+                                <span>Vercel</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/cloud.svg" alt="InfinityFree" loading="lazy">
-                                <p>InfinityFree</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/render/46E3B7" alt="Render" />
+                                <span>Render</span>
                             </div>
-                            <div class="skill-card">
-                                <img src="PORTO CONTENT/aiven.svg" alt="Aiven" loading="lazy">
-                                <p>Aiven</p>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/railway/000000" alt="Railway" />
+                                <span>Railway</span>
+                            </div>
+                            <div class="skill-badge">
+                                <img src="https://cdn.simpleicons.org/netlify/00C7B7" alt="Netlify" />
+                                <span>Netlify</span>
+                            </div>
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <path d="M12 2a10 10 0 0 0-7.07 17.07l14.14-14.14A10 10 0 0 0 12 2zM12 22a10 10 0 0 0 7.07-17.07L4.93 19.07A10 10 0 0 0 12 22z"/>
+                                </svg>
+                                <span>InfinityFree</span>
+                            </div>
+                            <div class="skill-badge">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
+                                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                                </svg>
+                                <span>Aiven</span>
                             </div>
                         </div>
                     </div>
