@@ -33,7 +33,6 @@
 
       <nav class="nav-pill-container" aria-label="Main Navigation">
         <a href="#home" class="nav-link active">Overview</a>
-        <a href="#journey-section" class="nav-link">Architecture</a>
         <a href="#skills-section" class="nav-link">Skills</a>
         <a href="#projects-section" class="nav-link">Projects</a>
         <a href="#experience-section" class="nav-link">Experience</a>
@@ -78,7 +77,6 @@
     </div>
     <div style="display: flex; flex-direction: column; gap: 0.4rem;">
       <a href="#home" class="mobile-nav-link">⚡ Overview</a>
-      <a href="#journey-section" class="mobile-nav-link">🫧 Architecture Roadmap</a>
       <a href="#skills-section" class="mobile-nav-link">🛠️ Core Stack Matrix</a>
       <a href="#projects-section" class="mobile-nav-link">📁 Featured Projects</a>
       <a href="#experience-section" class="mobile-nav-link">💼 Work Experience (Git Log)</a>
@@ -176,12 +174,12 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-card">
-            <div class="stat-number">2+</div>
-            <div class="stat-label">Years Exp</div>
+            <div class="stat-number" id="experience-stat-number">2+</div>
+            <div class="stat-label" id="experience-stat-label">Years Exp</div>
             <div class="stat-desc">Full-stack &amp; Backend Engineering</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">8+</div>
+            <div class="stat-number">50+</div>
             <div class="stat-label">Repositories</div>
             <div class="stat-desc">Architected systems &amp; AI POCs</div>
           </div>
@@ -194,202 +192,6 @@
             <div class="stat-number">99.9%</div>
             <div class="stat-label">Zero Message Loss</div>
             <div class="stat-desc">Transactional Outbox + DLQ Mesh</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="journey-section" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-tag">Evolutionary Engineering</div>
-          <h2 class="section-title">Architecture Evolution Roadmap</h2>
-          <p class="section-desc">
-            Hover or tap on each architecture bubble below to explore how scaling challenges prompted the transition to
-            resilient event-driven systems.
-          </p>
-        </div>
-
-        <div class="arch-bubble-constellation">
-          <div class="arch-bubble-pipeline"></div>
-
-          <div class="arch-bubble-track">
-            <div class="arch-bubble-node" tabindex="0">
-              <div class="arch-bubble-disc">
-                <span class="arch-bubble-icon">🧱</span>
-                <span class="arch-bubble-phase">#01</span>
-              </div>
-              <div class="arch-bubble-label">Monolith</div>
-              <div class="arch-bubble-hint">Hover / Tap 🫧</div>
-
-              <div class="arch-pop-bubble">
-                <div class="pop-bubble-header">
-                  <strong class="pop-bubble-title">01. Monolithic Beginnings</strong>
-                  <span class="pop-bubble-tag">Phase 01</span>
-                </div>
-                <div class="pop-bubble-section">
-                  <div class="pop-bubble-label">⚠️ The Scaling Challenge</div>
-                  <p class="pop-bubble-text">
-                    Tight coupling between business logic and database models led to coordinate conflicts, slow
-                    deployments, and bottlenecks under concurrent traffic.
-                  </p>
-                </div>
-                <div class="pop-bubble-section">
-                  <div class="pop-bubble-label">💡 Solution &amp; Pattern</div>
-                  <p class="pop-bubble-text">
-                    Centralized controllers, REST routing, and modular controllers in MERN stack while mastering
-                    database normalization.
-                  </p>
-                </div>
-                <div class="pop-bubble-badges">
-                  <span class="tech-pill">MERN Stack</span>
-                  <span class="tech-pill">Express MVC</span>
-                  <span class="tech-pill">MongoDB</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="arch-bubble-node" tabindex="0">
-              <div class="arch-bubble-disc">
-                <span class="arch-bubble-icon">🧩</span>
-                <span class="arch-bubble-phase">#02</span>
-              </div>
-              <div class="arch-bubble-label">Modular Monolith</div>
-              <div class="arch-bubble-hint">Hover / Tap 🫧</div>
-
-              <div class="arch-pop-bubble">
-                <div class="pop-bubble-header">
-                  <strong class="pop-bubble-title">02. Modular Monolith</strong>
-                  <span class="pop-bubble-tag">Phase 02</span>
-                </div>
-                <div class="pop-bubble-section">
-                  <div class="pop-bubble-label">⚠️ The Scaling Challenge</div>
-                  <p class="pop-bubble-text">
-                    Unenforced domain boundaries caused tangled cross-imports and fragile unit tests.
-                  </p>
-                </div>
-                <div class="pop-bubble-section">
-                  <div class="pop-bubble-label">💡 Solution &amp; Pattern</div>
-                  <p class="pop-bubble-text">
-                    Isolated Bounded Contexts, Dependency Injection, and strict DTO schema validation in NestJS with
-                    clean TypeORM mappers.
-                  </p>
-                </div>
-                <div class="pop-bubble-badges">
-                  <span class="tech-pill">NestJS</span>
-                  <span class="tech-pill">TypeScript</span>
-                  <span class="tech-pill">DTO Contracts</span>
-                  <span class="tech-pill">Domain Boundaries</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="arch-bubble-node" tabindex="0">
-              <div class="arch-bubble-disc">
-                <span class="arch-bubble-icon">🐳</span>
-                <span class="arch-bubble-phase">#03</span>
-              </div>
-              <div class="arch-bubble-label">Microservices</div>
-              <div class="arch-bubble-hint">Hover / Tap 🫧</div>
-
-              <div class="arch-pop-bubble">
-                <div class="pop-bubble-header">
-                  <strong class="pop-bubble-title">03. Distributed Microservices</strong>
-                  <span class="pop-bubble-tag">Phase 03</span>
-                </div>
-                <div class="pop-bubble-section">
-                  <div class="pop-bubble-label">⚠️ The Scaling Challenge</div>
-                  <p class="pop-bubble-text">
-                    Single deployment units risked full outage upon partial failures; independent team velocity was
-                    limited.
-                  </p>
-                </div>
-                <div class="pop-bubble-section">
-                  <div class="pop-bubble-label">💡 Solution &amp; Pattern</div>
-                  <p class="pop-bubble-text">
-                    Containerized isolated domain pods using Docker, separating database storage and allowing autonomous
-                    CI/CD releases.
-                  </p>
-                </div>
-                <div class="pop-bubble-badges">
-                  <span class="tech-pill">Docker</span>
-                  <span class="tech-pill">Microservices</span>
-                  <span class="tech-pill">PostgreSQL</span>
-                  <span class="tech-pill">Service Mesh</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="arch-bubble-node" tabindex="0">
-              <div class="arch-bubble-disc">
-                <span class="arch-bubble-icon">⚡</span>
-                <span class="arch-bubble-phase">#04</span>
-              </div>
-              <div class="arch-bubble-label">Event-Driven CQRS</div>
-              <div class="arch-bubble-hint">Hover / Tap 🫧</div>
-
-              <div class="arch-pop-bubble">
-                <div class="pop-bubble-header">
-                  <strong class="pop-bubble-title">04. Event-Driven CQRS &amp; Outbox</strong>
-                  <span class="pop-bubble-tag">Phase 04</span>
-                </div>
-                <div class="pop-bubble-section">
-                  <div class="pop-bubble-label">⚠️ The Scaling Challenge</div>
-                  <p class="pop-bubble-text">
-                    Dual writes (DB commit + broker message publish) suffered from network partitions, creating lost
-                    event deliveries.
-                  </p>
-                </div>
-                <div class="pop-bubble-section">
-                  <div class="pop-bubble-label">💡 Solution &amp; Pattern</div>
-                  <p class="pop-bubble-text">
-                    Implemented Command Query Responsibility Segregation (CQRS) and Transactional Outbox Pattern with
-                    RabbitMQ for guaranteed delivery.
-                  </p>
-                </div>
-                <div class="pop-bubble-badges">
-                  <span class="tech-pill">RabbitMQ</span>
-                  <span class="tech-pill">Transactional Outbox</span>
-                  <span class="tech-pill">CQRS</span>
-                  <span class="tech-pill">DDD</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="arch-bubble-node" tabindex="0">
-              <div class="arch-bubble-disc">
-                <span class="arch-bubble-icon">🛡️</span>
-                <span class="arch-bubble-phase">#05</span>
-              </div>
-              <div class="arch-bubble-label">Resilient Mesh</div>
-              <div class="arch-bubble-hint">Hover / Tap 🫧</div>
-
-              <div class="arch-pop-bubble">
-                <div class="pop-bubble-header">
-                  <strong class="pop-bubble-title">05. Resilient &amp; Self-Healing</strong>
-                  <span class="pop-bubble-tag">Phase 05</span>
-                </div>
-                <div class="pop-bubble-section">
-                  <div class="pop-bubble-label">⚠️ The Scaling Challenge</div>
-                  <p class="pop-bubble-text">
-                    Poisoned payloads and downstream API latency caused retry storms and consumer worker lockouts.
-                  </p>
-                </div>
-                <div class="pop-bubble-section">
-                  <div class="pop-bubble-label">💡 Solution &amp; Pattern</div>
-                  <p class="pop-bubble-text">
-                    Dead Letter Queues (DLQ) for isolation, Exponential Backoff Retries, Circuit Breakers, and Redis
-                    Idempotency guards.
-                  </p>
-                </div>
-                <div class="pop-bubble-badges">
-                  <span class="tech-pill">Dead Letter Queues</span>
-                  <span class="tech-pill">Circuit Breakers</span>
-                  <span class="tech-pill">Exponential Backoff</span>
-                  <span class="tech-pill">Redis Idempotency</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1317,13 +1119,13 @@
               <div class="edu-card">
                 <div
                   style="font-size: 0.78rem; color: var(--accent); font-family: var(--font-mono); font-weight: bold;">🎓
-                  PURSUING</div>
+                  2025 – 2027 (CGPA: 8.0)</div>
                 <h4 style="font-size: 1.1rem; margin: 0.25rem 0;">Master of Computer Applications (MCA)</h4>
-                <div style="color: var(--text-secondary); font-size: 0.88rem;">Chandigarh University • Postgraduate
-                </div>
+                <div style="color: var(--text-secondary); font-size: 0.88rem;">Chandigarh University • Specialization in
+                  AI/ML</div>
                 <div class="project-tags" style="margin-top: 0.5rem;">
+                  <span class="tech-pill">Specialization in AI/ML</span>
                   <span class="tech-pill">System Architecture</span>
-                  <span class="tech-pill">AI / ML</span>
                 </div>
               </div>
 
@@ -1473,24 +1275,29 @@
             </div>
           </div>
 
-          <form id="contact-form" class="contact-form">
+          <form id="contact-form" class="contact-form" onsubmit="return SendMail(event)">
             <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); font-weight: bold;">
               &gt; DISPATCH INQUIRY PACKET
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="contact-name">Your Full Name</label>
-              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Alex Henderson" required>
+              <label class="form-label" for="user-name">Your Full Name</label>
+              <input type="text" id="user-name" name="from_name" class="form-input" placeholder="e.g. Alex Henderson" required>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="contact-email">Email Address</label>
-              <input type="email" id="contact-email" class="form-input" placeholder="name@company.com" required>
+              <label class="form-label" for="user-email">Email Address</label>
+              <input type="email" id="user-email" name="email_id" class="form-input" placeholder="name@company.com" required>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="contact-msg">Message &amp; Project Scope</label>
-              <textarea id="contact-msg" class="form-textarea" rows="4"
+              <label class="form-label" for="user-mobile">Mobile Number (Optional)</label>
+              <input type="tel" id="user-mobile" name="mobile" class="form-input" placeholder="+91 99999 99999">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="user-message">Message &amp; Project Scope</label>
+              <textarea id="user-message" name="message" class="form-textarea" rows="4"
                 placeholder="Describe the role or engineering architecture you'd like to collaborate on..."
                 required></textarea>
             </div>
@@ -1539,6 +1346,15 @@
     </div>
   </footer>
 
+  <!-- EmailJS integration -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "Gj3Jhn-9vvMOvH8oa",
+      });
+    })();
+  </script>
   <script src="index.js"></script>
 </body>
 

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initNavbar();
   initMinimalTerminal();
-  initBubbleRoadmap();
+  initDynamicExperience();
   initSkillsFilter();
   initContactForm();
   initCopyButtons();
@@ -234,24 +234,36 @@ function initMinimalTerminal() {
   }
 }
 
-function initBubbleRoadmap() {
-  const bubbles = document.querySelectorAll('.arch-bubble-node');
+function initDynamicExperience() {
+  const startDate = new Date(2025, 1, 1); // July 1, 2025 (Month index 1 is Feb)
+  const now = new Date();
 
-  bubbles.forEach(bubble => {
-    bubble.addEventListener('click', () => {
-      const isAlreadyActive = bubble.classList.contains('active');
-      bubbles.forEach(b => b.classList.remove('active'));
-      if (!isAlreadyActive) {
-        bubble.classList.add('active');
-      }
-    });
-  });
+  // Total full elapsed months from July 2025 to current date
+  let totalMonths = (now.getFullYear() - startDate.getFullYear()) * 12 + (now.getMonth() - startDate.getMonth());
+  if (now.getDate() < startDate.getDate()) {
+    totalMonths--;
+  }
+  if (totalMonths < 0) totalMonths = 0;
 
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.arch-bubble-node')) {
-      bubbles.forEach(b => b.classList.remove('active'));
-    }
-  });
+  let displayExp = '2+';
+  let labelExp = 'Years Exp';
+
+  if (totalMonths < 12) {
+    displayExp = `${totalMonths}+`;
+    labelExp = totalMonths === 1 ? 'Month Exp' : 'Months Exp';
+  } else {
+    const decimalYears = (totalMonths / 12).toFixed(1);
+    displayExp = decimalYears.endsWith('.0')
+      ? `${parseInt(decimalYears, 10)}+`
+      : `${decimalYears}+`;
+    labelExp = 'Years Exp';
+  }
+
+  const statNumberEl = document.getElementById('experience-stat-number');
+  const statLabelEl = document.getElementById('experience-stat-label');
+
+  if (statNumberEl) statNumberEl.textContent = displayExp;
+  if (statLabelEl) statLabelEl.textContent = labelExp;
 }
 
 function initSkillsFilter() {
@@ -280,24 +292,75 @@ function initSkillsFilter() {
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Transmitting Message...';
-      }
-
-      setTimeout(() => {
-        showToast('Message Transmitted! Sumit will get back to you shortly.');
-        form.reset();
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Message 🚀';
-        }
-      }, 800);
-    });
+    form.addEventListener('submit', SendMail);
   }
+}
+
+// Contact Form submission using EmailJS
+function SendMail(event) {
+  if (event) event.preventDefault();
+
+  const nameInput = document.getElementById('user-name') || document.getElementById('contact-name');
+  const emailInput = document.getElementById('user-email') || document.getElementById('contact-email');
+  const mobileInput = document.getElementById('user-mobile');
+  const messageInput = document.getElementById('user-message') || document.getElementById('contact-msg');
+  const submitBtn = document.querySelector('#contact-form button[type="submit"]');
+
+  if (!nameInput || !emailInput || !messageInput) {
+    showToast('Form structure is invalid.', 'error');
+    return false;
+  }
+
+  const params = {
+    from_name: nameInput.value.trim(),
+    email_id: emailInput.value.trim(),
+    mobile: mobileInput ? mobileInput.value.trim() : '',
+    message: messageInput.value.trim()
+  };
+
+  if (!params.from_name || !params.email_id || !params.message) {
+    showToast('Please fill in all required fields.', 'error');
+    return false;
+  }
+
+  const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Send Message 🚀';
+
+  // Set loading state
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'SENDING...';
+  }
+
+  if (typeof emailjs === 'undefined') {
+    showToast('Email service is loading. Please try again or email directly.', 'error');
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnText;
+    }
+    return false;
+  }
+
+  emailjs.send("service_nvpczn8", "template_fjbjz6e", params)
+    .then((res) => {
+      showToast('Message sent successfully! Sumit will get back to you soon.', 'success');
+      // Reset fields
+      nameInput.value = '';
+      emailInput.value = '';
+      if (mobileInput) mobileInput.value = '';
+      messageInput.value = '';
+    })
+    .catch((error) => {
+      console.error("Failed to send email:", error);
+      showToast('Failed to send message. Please try again or email directly.', 'error');
+    })
+    .finally(() => {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
+    });
+
+  return false;
 }
 
 function initCopyButtons() {
@@ -306,16 +369,16 @@ function initCopyButtons() {
       const text = btn.getAttribute('data-copy');
       if (text) {
         navigator.clipboard.writeText(text).then(() => {
-          showToast(`Copied to clipboard: "${text}"`);
+          showToast(`Copied to clipboard: "${text}"`, 'success');
         }).catch(() => {
-          showToast('Failed to copy');
+          showToast('Failed to copy', 'error');
         });
       }
     });
   });
 }
 
-function showToast(message) {
+function showToast(message, type = 'info') {
   let toastContainer = document.querySelector('.toast-container');
   if (!toastContainer) {
     toastContainer = document.createElement('div');
@@ -323,9 +386,11 @@ function showToast(message) {
     document.body.appendChild(toastContainer);
   }
 
+  const dotColor = type === 'error' ? '#ef4444' : type === 'success' ? '#10b981' : 'var(--text-primary)';
+
   const toast = document.createElement('div');
   toast.className = 'toast';
-  toast.innerHTML = `<span style="color:var(--text-primary);">●</span> <span>${escapeHtml(message)}</span>`;
+  toast.innerHTML = `<span style="color:${dotColor}; font-size: 0.85rem;">●</span> <span>${escapeHtml(message)}</span>`;
   toastContainer.appendChild(toast);
 
   setTimeout(() => {
@@ -333,7 +398,7 @@ function showToast(message) {
     toast.style.transform = 'translateY(10px)';
     toast.style.transition = 'all 0.3s ease';
     setTimeout(() => toast.remove(), 300);
-  }, 3500);
+  }, 4000);
 }
 
 function escapeHtml(str) {
