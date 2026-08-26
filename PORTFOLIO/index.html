@@ -2,1245 +2,1544 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumit Kumar | Full Stack Developer & Backend Architect</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Professional portfolio of Sumit Kumar, a Full Stack Developer and Backend Architect specializing in microservices, Domain-Driven Design (DDD), CQRS, and AI/ML systems.">
-    <meta name="keywords" content="Sumit Kumar, Sumit Birwal, Full Stack Developer, Backend Architect, Microservices, DDD, CQRS, NestJS, Django, Python, C++, DSA, Systems Design">
-    <meta name="author" content="Sumit Kumar">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Sumit Kumar | Full Stack Developer & Backend Architect">
-    <meta property="og:description" content="Explore Sumit Kumar's technical journey, projects, and architecture mastery.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.com/iamsumitkumar64">
-    
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="PORTO CONTENT/logo.png" type="image/x-icon">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="index.css">
-    
-    <!-- EmailJS integration -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init({
-                publicKey: "Gj3Jhn-9vvMOvH8oa",
-            });
-        })();
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumit Kumar | Full Stack & Distributed Systems Engineer</title>
+  <meta name="description"
+    content="Portfolio of Sumit Kumar - Full Stack Developer & Distributed Systems Architect specializing in Event-Driven Microservices, NestJS, Next.js, RabbitMQ, and Resilient Backends.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Shantell+Sans:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="shortcut icon" href="PORTO CONTENT/logo.png" type="image/png">
 </head>
 
-<body id="top">
-    <!-- Interactive Background Canvas -->
-    <canvas id="particle-canvas"></canvas>
+<body>
 
-    <!-- Header & Navigation -->
-    <header>
-        <div class="nav-container">
-            <a href="#top" class="logo-container" aria-label="Go to Top">
-                <img src="PORTO CONTENT/logo.png" alt="Sumit Logo">
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#home" class="site-logo" aria-label="Sumit Kumar Homepage">
+        <span class="logo-badge">&gt;_</span>
+        <span>SUMIT.DEV</span>
+        <span class="logo-version">v1.5</span>
+      </a>
+
+      <nav class="nav-pill-container" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Overview</a>
+        <a href="#journey-section" class="nav-link">Architecture</a>
+        <a href="#skills-section" class="nav-link">Skills</a>
+        <a href="#projects-section" class="nav-link">Projects</a>
+        <a href="#experience-section" class="nav-link">Experience</a>
+
+        <div id="nav-more-dropdown" class="nav-dropdown-wrap">
+          <button id="nav-more-btn" class="nav-link dropdown-toggle" aria-expanded="false">
+            Explore <span>▾</span>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="#about-section" class="dropdown-item">
+              <span>🎓</span> Education &amp; Milestones
             </a>
-            
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#top">Home</a></li>
-                    <li><a href="#about-section">About</a></li>
-                    <li><a href="#experience-section">Experience</a></li>
-                    <li><a href="#education-section">Education</a></li>
-                    <li><a href="#journey">Journey</a></li>
-                    <li><a href="#projects-section">Projects</a></li>
-                    <li><a href="#skills-section">Skills</a></li>
-                    <li><a href="#achievements-section">Achievements</a></li>
-                    <li><a href="#contact-section">Contact</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav-actions">
-                <button id="mode-toggle" aria-label="Toggle Light/Dark Theme">
-                    <img id="mode-icon" src="PORTO CONTENT/light.png" alt="Light Mode Toggle">
-                </button>
-                <button class="menu-toggle" aria-label="Open Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+            <a href="#contact-section" class="dropdown-item">
+              <span>📬</span> Direct Coordinates
+            </a>
+          </div>
         </div>
-    </header>
+      </nav>
 
-    <!-- Social Sidebar Links -->
-    <aside class="social-sidebar">
-        <a href="https://leetcode.com/u/iamsumitkumar64/" target="_blank" aria-label="LeetCode Profile">
-            <img src="PORTO CONTENT/leetcode-svgrepo-com.png" alt="LeetCode">
-            <span class="tooltip">LeetCode</span>
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          <span id="theme-icon">☀️</span>
+        </button>
+        <a href="#contact-section" class="btn btn-sm btn-white">
+          Get In Touch
         </a>
-        <a href="https://github.com/iamsumitkumar64" target="_blank" aria-label="GitHub Profile">
-            <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub">
-            <span class="tooltip">GitHub</span>
-        </a>
-        <a href="https://www.linkedin.com/in/iamsumitkumar64" target="_blank" aria-label="LinkedIn Profile">
-            <img src="PORTO CONTENT/linkedin-sketched-logo-svgrepo-com.png" alt="LinkedIn">
-            <span class="tooltip">LinkedIn</span>
-        </a>
-        <a href="mailto:iam.sumitkumar64@gmail.com" aria-label="Email Me">
-            <img src="PORTO CONTENT/email-14-svgrepo-com.png" alt="Email">
-            <span class="tooltip">Email</span>
-        </a>
-    </aside>
+        <button id="mobile-menu-btn" class="icon-btn mobile-menu-btn" aria-label="Open Navigation Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home-section" class="hero-section">
-            <div class="container hero-grid">
-                <div class="hero-content">
-                    <span class="hero-greeting">Hi, my name is</span>
-                    <h1 class="hero-title">SUMIT KUMAR</h1>
-                    <div class="hero-subtitle">
-                        <span id="element"></span>
-                    </div>
-                    <p class="hero-desc">
-                        Designing scalable backend systems and distributed architectures utilizing Event-Driven Microservices, Domain-Driven Design (DDD), CQRS, Event Sourcing, and Resilient Architecture, while integrating Stripe Connected Account/Paymongo payment flows and exploring agentic AI/ML structures.
-                    </p>
-                    <div class="hero-ctas">
-                        <a href="#contact-section" class="btn btn-primary">Get In Touch</a>
-                        <a id="resume-btn" href="PORTO CONTENT/Sumit%20Kumar%20Resume.pdf" download="Sumit Kumar Resume.pdf" target="_blank" class="btn btn-secondary">Download Resume</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <!-- Floating Outbox Publisher Code Mockup -->
-                    <div class="hero-code-window">
-                        <div class="window-header">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
-                            <span class="window-title">outbox-publisher.go</span>
-                        </div>
-                        <div class="window-content">
-                            <pre><code><span class="pl-k">func</span> <span class="pl-en">PublishEvents</span>() {
-  events <span class="pl-k">:=</span> db.GetOutbox()
-  <span class="pl-k">for</span> _, ev <span class="pl-k">:=</span> <span class="pl-k">range</span> events {
-    broker.Publish(ev)
-    db.MarkSent(ev.ID)
-  }
-}</code></pre>
-                        </div>
-                    </div>
-                    
-                    <!-- Floating Real-Time Status Badge -->
-                    <div class="hero-metric-badge">
-                        <span class="metric-dot"></span>
-                        <span class="metric-lbl">Status:</span>
-                        <span class="metric-val">200 OK</span>
-                    </div>
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay"></div>
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="mobile-drawer-header">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="logo-badge">&gt;_</span>
+        <span style="font-weight: 700; font-family: var(--font-display);">SUMIT.DEV</span>
+      </div>
+      <button id="mobile-drawer-close" class="icon-btn" aria-label="Close Navigation Menu">✕</button>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+      <a href="#home" class="mobile-nav-link">⚡ Overview</a>
+      <a href="#journey-section" class="mobile-nav-link">🫧 Architecture Roadmap</a>
+      <a href="#skills-section" class="mobile-nav-link">🛠️ Core Stack Matrix</a>
+      <a href="#projects-section" class="mobile-nav-link">📁 Featured Projects</a>
+      <a href="#experience-section" class="mobile-nav-link">💼 Work Experience (Git Log)</a>
+      <a href="#about-section" class="mobile-nav-link">🎓 Education &amp; Achievements</a>
+      <a href="#contact-section" class="mobile-nav-link">📬 Get In Touch</a>
+    </div>
+    <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+      <a href="PORTO CONTENT/Sumit%20Kumar%20Resume.pdf" target="_blank" class="btn btn-white"
+        style="width: 100%; justify-content: center;">
+        📄 Download Resume (.PDF)
+      </a>
+    </div>
+  </div>
 
-                    <div class="hero-img-container">
-                        <img src="PORTO CONTENT/me_code.png" alt="Sumit Coding Avatar">
-                    </div>
-                </div>
-            </div>
-        </section>
+  <main>
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>AVAILABLE FOR FULL STACK &amp; BACKEND ROLES</span>
+          </div>
 
-        <!-- About Me Section -->
-        <section id="about-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>About Me</h2>
-                </div>
-                <div class="about-content-layout">
-                    <div class="about-left-col">
-                        <div class="about-img-container">
-                            <img src="PORTO CONTENT/boy.png" alt="Sumit Kumar">
-                        </div>
-                        <div class="about-quick-info">
-                            <div class="info-card">
-                                <span class="info-val">2+</span>
-                                <span class="info-lbl">Years Dev Exp</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-val">220+</span>
-                                <span class="info-lbl">DSA Solved</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-right-col">
-                        <div class="about-bio">
-                            <h3>Core Background & Expertise</h3>
-                            <p>Hello! My name is <strong>Sumit Kumar (Birwal)</strong>. I design resilient, decoupled, and distributed software systems. My engineering focus lies at the intersection of robust backend patterns and secure web integrations.</p>
-                            <p>I specialize in backend architecture utilizing <strong>Domain-Driven Design (DDD)</strong>, <strong>CQRS</strong>, <strong>Event Sourcing</strong>, <strong>Event-Driven Architectures (EDA)</strong>, and <strong>Resilient Architecture</strong>. I focus on transaction integrity and fault tolerance using patterns like the <strong>Inbox-Outbox Pattern</strong> with <strong>RabbitMQ</strong> to guarantee reliable event delivery. On the integration layer, I design payment architectures including <strong>Stripe Connected Account architectures</strong> and local gateways like <strong>Paymongo Philippines</strong>.</p>
-                            <p>I am continuously improving my system design thinking, writing cleaner architectures, and exploring AI/ML agentic systems to solve real-world problems.</p>
-                        </div>
-                        
-                        <!-- Core Competencies Grid -->
-                        <div class="about-stats-grid">
-                            <div class="stat-card">
-                                <div class="stat-icon">🔧</div>
-                                <div class="stat-text">
-                                    <h4>Backend Architecture</h4>
-                                    <p>DDD, CQRS, Event Sourcing, Resilient Systems</p>
-                                </div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-icon">⚙️</div>
-                                <div class="stat-text">
-                                    <h4>Reliable Messaging</h4>
-                                    <p>RabbitMQ, Inbox-Outbox Pattern, Saga</p>
-                                </div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-icon"> 💳</div>
-                                <div class="stat-text">
-                                    <h4>Payment Gateways</h4>
-                                    <p>Stripe Connect, Localized E-wallets, Escrows</p>
-                                </div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-icon">💻</div>
-                                <div class="stat-text">
-                                    <h4>Problem Solving</h4>
-                                    <p>Data Structures, Algorithms (C++/Python)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <h1 class="hero-title">
+            BUILDING RESILIENT BACKENDS &amp; <span class="highlight-accent">DISTRIBUTED SYSTEMS</span>, BIT BY BIT.
+          </h1>
 
-        <!-- Professional Experience Section -->
-        <section id="experience-section" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Professional Experience</h2>
-                    <p>My corporate journey, software engineering roles, and technical project execution.</p>
-                </div>
-                
-                <div class="experience-timeline">
-                    <!-- Item 1: Zenmonk -->
-                    <div class="experience-item">
-                        <div class="experience-dot"></div>
-                        <div class="experience-card">
-                            <div class="exp-header">
-                                <div class="exp-title-company">
-                                    <h3>Full Stack Developer <span>@ Zenmonk Software & Services</span></h3>
-                                    <span class="exp-type-text">NestJS & System Architectures • Mohali, India</span>
-                                </div>
-                                <div class="exp-meta-info">
-                                    <div class="exp-date-pill">Feb 2026 - Current</div>
-                                </div>
-                            </div>
-                            <div class="exp-tech-badges">
-                                <span class="tech-badge">NestJS</span>
-                                <span class="tech-badge">Next.js</span>
-                                <span class="tech-badge">React</span>
-                                <span class="tech-badge">TypeScript</span>
-                                <span class="tech-badge">RabbitMQ</span>
-                                <span class="tech-badge">Docker</span>
-                                <span class="tech-badge">Microservices</span>
-                                <span class="tech-badge">DDD</span>
-                                <span class="tech-badge">CQRS</span>
-                                <span class="tech-badge">Event Sourcing</span>
-                                <span class="tech-badge">Inbox-Outbox</span>
-                                <span class="tech-badge">Resilient Architecture</span>
-                            </div>
-                            <ul class="exp-list">
-                                <li>Engineered highly scalable backend services using <strong>NestJS, Next.js, React, and TypeScript</strong>.</li>
-                                <li>Implemented core system architectures including <strong>Domain-Driven Design (DDD)</strong> and <strong>CQRS (Command Query Responsibility Segregation)</strong> to isolate workloads.</li>
-                                <li>Designed and executed <strong>Event Sourcing</strong> ledgers and transactionally secure event brokers using the <strong>Inbox-Outbox Pattern</strong> with <strong>RabbitMQ</strong>.</li>
-                                <li>Orchestrated inter-service async communication, containerizing domains via <strong>Docker</strong> into distributed microservices.</li>
-                                <li>Worked closely with senior architects in Agile environments, driving code reviews, testing routes in <strong>Postman</strong>, and merging branch components.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 2: Techbuilder -->
-                    <div class="experience-item">
-                        <div class="experience-dot"></div>
-                        <div class="experience-card">
-                            <div class="exp-header">
-                                <div class="exp-title-company">
-                                    <h3>Junior Node.js Developer Intern <span>@ Techbuilder</span></h3>
-                                    <span class="exp-type-text">Node.js & Payment Systems • Mohali, India</span>
-                                </div>
-                                <div class="exp-meta-info">
-                                    <div class="exp-date-pill">Nov 2025 - Feb 2026</div>
-                                </div>
-                            </div>
-                            <div class="exp-tech-badges">
-                                <span class="tech-badge">Node.js</span>
-                                <span class="tech-badge">Express</span>
-                                <span class="tech-badge">Stripe Connect</span>
-                                <span class="tech-badge">Paymongo API</span>
-                                <span class="tech-badge">Postman</span>
-                                <span class="tech-badge">REST APIs</span>
-                            </div>
-                            <ul class="exp-list">
-                                <li>Maintained scalable backend services in <strong>Node.js</strong> for a ride & food delivery platform (mobile app + web dashboard), supporting real-time orders.</li>
-                                <li>Integrated <strong>PayMongo</strong> and <strong>GWallet (Philippines)</strong> payment gateways and architected <strong>Stripe Connected Accounts</strong> for vendor/driver onboarding and automated payouts.</li>
-                                <li>Designed webhook-driven payment flows.</li>
-                                <li>Worked extensively with <strong>Git and GitHub</strong> (feature branches, pull requests, code reviews, merge conflict resolution) to ensure clean collaboration and stable production releases.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Item 3: CodeQuotient -->
-                    <div class="experience-item">
-                        <div class="experience-dot"></div>
-                        <div class="experience-card">
-                            <div class="exp-header">
-                                <div class="exp-title-company">
-                                    <h3>Software Developer Intern <span>@ CodeQuotient</span></h3>
-                                    <span class="exp-type-text">MERN Stack & Algorithms • Panchkula, India</span>
-                                </div>
-                                <div class="exp-meta-info">
-                                    <div class="exp-date-pill">Feb 2025 - Nov 2025</div>
-                                </div>
-                            </div>
-                            <div class="exp-tech-badges">
-                                <span class="tech-badge">MongoDB</span>
-                                <span class="tech-badge">Express</span>
-                                <span class="tech-badge">React</span>
-                                <span class="tech-badge">Node.js</span>
-                                <span class="tech-badge">C++</span>
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">DSA</span>
-                                <span class="tech-badge">OOP</span>
-                            </div>
-                            <ul class="exp-list">
-                                <li>Developed full-stack web applications utilizing the MERN (MongoDB, Express, React, Node.js) stack.</li>
-                                <li>Solidified basic algorithms, computer science paradigms, and database relations.</li>
-                                <li>Completed over <strong>120+ Data Structures & Algorithms (DSA) challenges on LeetCode</strong> using C++ and Python.</li>
-                                <li>Coordinated with cohort engineering leads to test, debug, and launch responsive user interfaces.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <p class="hero-subtitle">
+            Hi, I'm <strong>Sumit Kumar</strong>. I engineer scalable, decoupled backends and web applications utilizing
+            <strong>Event-Driven Microservices</strong>, <strong>Domain-Driven Design (DDD)</strong>,
+            <strong>CQRS</strong>,
+            <strong>Transactional Outbox Pattern</strong>, <strong>RabbitMQ</strong>, <strong>NestJS</strong>,
+            <strong>Next.js</strong>, and <strong>Agentic AI</strong> workflows.
+          </p>
 
-        <!-- Education Section -->
-        <section id="education-section" style="padding: 70px 0;">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Education</h2>
-                    <p>Academic degrees, institutional qualifications, and educational history.</p>
-                </div>
-                
-                <div class="education-grid">
-                    <!-- MCA Card -->
-                    <div class="education-card">
-                        <div class="edu-card-top">
-                            <div class="edu-icon">🎓</div>
-                            <span class="edu-badge edu-badge-active">Pursuing</span>
-                        </div>
-                        <h3 class="edu-degree">Master of Computer Applications (MCA)</h3>
-                        <div class="edu-institution">Chandigarh University</div>
-                        <div class="edu-tags">
-                            <span class="edu-tag">Postgraduate</span>
-                            <span class="edu-tag">System Architecture</span>
-                            <span class="edu-tag">AI / ML</span>
-                        </div>
-                    </div>
-                    
-                    <!-- BCA Card -->
-                    <div class="education-card">
-                        <div class="edu-card-top">
-                            <div class="edu-icon">🏛️</div>
-                            <span class="edu-badge">2021 – 2025</span>
-                        </div>
-                        <h3 class="edu-degree">Bachelor of Computer Applications (BCA)</h3>
-                        <div class="edu-institution">Arya P.G. College, Panipat <span class="edu-subinst">(Kurukshetra University)</span></div>
-                        <div class="edu-tags">
-                            <span class="edu-tag highlight-cgpa">CGPA: 7.5</span>
-                            <span class="edu-tag">Undergraduate</span>
-                            <span class="edu-tag">Computer Science</span>
-                        </div>
-                    </div>
+          <div class="hero-cta-group">
+            <a href="PORTO CONTENT/Sumit%20Kumar%20Resume.pdf" target="_blank" class="btn btn-white">
+              <span>📄</span> Download CV (.PDF)
+            </a>
+          </div>
 
-                    <!-- Class 12 Card -->
-                    <div class="education-card">
-                        <div class="edu-card-top">
-                            <div class="edu-icon">🏫</div>
-                            <span class="edu-badge">Senior Secondary</span>
-                        </div>
-                        <h3 class="edu-degree">Class 12 (Senior Secondary)</h3>
-                        <div class="edu-institution">Arya Sr. Sec. School, Panipat</div>
-                        <div class="edu-tags">
-                            <span class="edu-tag">High School Diploma</span>
-                        </div>
-                    </div>
-
-                    <!-- Class 10 Card -->
-                    <div class="education-card">
-                        <div class="edu-card-top">
-                            <div class="edu-icon">📚</div>
-                            <span class="edu-badge">High School</span>
-                        </div>
-                        <h3 class="edu-degree">Class 10 (High School)</h3>
-                        <div class="edu-institution">Arya Sr. Sec. School, Panipat</div>
-                        <div class="edu-tags">
-                            <span class="edu-tag">Secondary Education</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Architecture Learning Journey Section -->
-        <section id="journey" class="journey-section">
-            <div class="container">
-                <!-- Header -->
-                <div class="journey-header">
-                    <h2>Architecture Learning Journey</h2>
-                    <p class="journey-quote">"Good Architecture Comes From Solving Real Problems."</p>
-                    <div class="glow-separator"></div>
-                </div>
-                
-                <!-- Timeline Wrapper -->
-                <div class="journey-timeline">
-                    <!-- Step 01: Monolithic Beginnings -->
-                    <div class="timeline-step">
-                        <div class="step-marker">01</div>
-                        <div class="step-content">
-                            <h3>Monolithic Beginnings</h3>
-                            <p>Started with traditional monolithic MERN stack projects using MVC structure. Faced tightly-coupled codebases, scaling bottlenecks, and coordinate conflicts.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 02: Modular Monolith Shift -->
-                    <div class="timeline-step">
-                        <div class="step-marker">02</div>
-                        <div class="step-content">
-                            <h3>Modular Monolith Shift</h3>
-                            <p>Gradually transitioned to modular architectures and domain isolation. Separated routers, controllers, and services to increase testability and manage features independently.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 03: Scaling Out (Microservices) -->
-                    <div class="timeline-step">
-                        <div class="step-marker">03</div>
-                        <div class="step-content">
-                            <h3>Scaling Out (Microservices)</h3>
-                            <p>Adopted Microservices architecture to isolate services, enable independent scaling, and isolate failure domains. Utilized RESTful communication and orchestrated containers with Docker.</p>
-                        </div>
-                    </div>
-
-                    <!-- Step 04: Advanced Paradigms (Events) -->
-                    <div class="timeline-step">
-                        <div class="step-marker">04</div>
-                        <div class="step-content">
-                            <h3>Advanced Paradigms & Messaging</h3>
-                            <p>Deep-dived into robust messaging patterns: Domain-Driven Design (DDD), CQRS, Event-Driven Architecture, RabbitMQ exchanges (Direct/Topic/Fanout), and the Inbox-Outbox pattern for guaranteed delivery.</p>
-                        </div>
-                    </div>
-
-                    <!-- Step 05: Resilient Architecture -->
-                    <div class="timeline-step">
-                        <div class="step-marker">05</div>
-                        <div class="step-content">
-                            <h3>Resilient & Self-Healing Architecture</h3>
-                            <p>Designing fault-tolerant, self-healing distributed backends. Implementing resiliency patterns such as Retries with Exponential Backoff, Dead Letter Queues (DLQ) for message failure isolation, Circuit Breakers, Rate Limiting, and Idempotency.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Grid Section -->
-        <section id="projects-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Featured Projects</h2>
-                    <p>A showcase of technical repositories demonstrating advanced backend architectures, transaction patterns, payment engines, and AI/ML integrations.</p>
-                </div>
-                <div class="projects-grid">
-                    <!-- Project 1: LangChain AI Agent -->
-                    <div class="project-card">
-                        <div class="project-img-wrapper project-gradient-5">
-                            <div class="project-acronym">AGY</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>LangChain AI Agent POC</h3>
-                            <p>An intelligent agentic POC exploring AI agent workflows using LangGraph and LangChain JS/TS, leveraging Google Gemini LLM API, memory layers, and custom tool binding architectures.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">LangChain</span>
-                                <span class="project-tag">LangGraph</span>
-                                <span class="project-tag">Gemini API</span>
-                                <span class="project-tag">TypeScript</span>
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">AI/ML</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/iamsumitkumar64/langchan-poc" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
-                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: Eternal Frames -->
-                    <div class="project-card">
-                        <div class="project-img-wrapper project-gradient-1">
-                            <div class="project-acronym">EFR</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Eternal Frames</h3>
-                            <p>A multi-tenant event photography gallery & studio management platform. Features subscription tier billing via Razorpay, modular NestJS DDD architecture, transactional Outbox pattern messaging with RabbitMQ, and a Next.js App Router frontend.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">NestJS</span>
-                                <span class="project-tag">TypeORM</span>
-                                <span class="project-tag">PostgreSQL</span>
-                                <span class="project-tag">RabbitMQ</span>
-                                <span class="project-tag">Razorpay</span>
-                                <span class="project-tag">Next.js</span>
-                                <span class="project-tag">Redux Toolkit</span>
-                                <span class="project-tag">TypeScript</span>
-                                <span class="project-tag">Outbox Pattern</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/iamsumitkumar64/Eternal-Frames" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
-                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 2: Deca Chat -->
-                    <div class="project-card">
-                        <div class="project-img-wrapper project-gradient-2">
-                            <div class="project-acronym">DCA</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Deca Chat</h3>
-                            <p>A real-time multi-room messaging system built on NestJS Domain-Driven Design (DDD). Features WebSockets/Socket.io communication, public & room member management, transactional Inbox-Outbox message synchronization via RabbitMQ, and a weekly chat analytics dashboard.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">NestJS</span>
-                                <span class="project-tag">WebSockets</span>
-                                <span class="project-tag">Socket.io</span>
-                                <span class="project-tag">TypeORM</span>
-                                <span class="project-tag">PostgreSQL</span>
-                                <span class="project-tag">RabbitMQ</span>
-                                <span class="project-tag">Next.js</span>
-                                <span class="project-tag">Redux Toolkit</span>
-                                <span class="project-tag">Chart.js</span>
-                                <span class="project-tag">TypeScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/iamsumitkumar64/Deca-Chat" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
-                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: C++ Custom Web Crawler -->
-                    <div class="project-card">
-                        <div class="project-img-wrapper project-gradient-3">
-                            <div class="project-acronym">CWL</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>C++ Custom Web Crawler</h3>
-                            <p>Built a web crawler in raw C++ using custom generic string, linked list, and hashmap libraries — completely avoiding external dependencies or standard string methods.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">C++</span>
-                                <span class="project-tag">Sockets</span>
-                                <span class="project-tag">Data Structures</span>
-                                <span class="project-tag">Memory Management</span>
-                                <span class="project-tag">Linux</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/iamsumitkumar64/CPP-Crawler" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
-                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: Custom C++ Library Suite -->
-                    <div class="project-card">
-                        <div class="project-img-wrapper project-gradient-9">
-                            <div class="project-acronym">LIB</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>Custom C++ Library Suite</h3>
-                            <p>Designed and engineered generic C++ data structure and utility libraries from scratch, including custom implementation of HashMap, LinkedList, and String classes with manual memory management and optimized search-complexity bounds.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">C++</span>
-                                <span class="project-tag">Templates</span>
-                                <span class="project-tag">Algorithms</span>
-                                <span class="project-tag">Memory Audit</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/iamsumitkumar64/My-CPP-Library" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
-                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 6: RabbitMQ Exchanges POC -->
-                    <div class="project-card">
-                        <div class="project-img-wrapper project-gradient-6">
-                            <div class="project-acronym">QUE</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>RabbitMQ Exchanges POC</h3>
-                            <p>A message routing architecture implementing Direct, Topic, and Fanout exchanges in RabbitMQ for asynchronous multi-service event orchestration.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">NestJS</span>
-                                <span class="project-tag">RabbitMQ</span>
-                                <span class="project-tag">PostgreSQL</span>
-                                <span class="project-tag">Docker</span>
-                                <span class="project-tag">Microservices</span>
-                                <span class="project-tag">Event-Driven</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/iamsumitkumar64/Microservice-RabbitMQ-POC" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
-                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 7: AI Problem Analyzer -->
-                    <div class="project-card">
-                        <div class="project-img-wrapper project-gradient-7">
-                            <div class="project-acronym">ANA</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>AI Problem Analyzer</h3>
-                            <p>An intelligent engineering assistant using React, Express.js, and Google Gemini API to analyze system bug reports, utilizing Redis and BullMQ for task queues, and MongoDB for state tracking.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">React</span>
-                                <span class="project-tag">Express.js</span>
-                                <span class="project-tag">Gemini API</span>
-                                <span class="project-tag">BullMQ</span>
-                                <span class="project-tag">Redis</span>
-                                <span class="project-tag">MongoDB</span>
-                                <span class="project-tag">TailwindCSS</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/iamsumitkumar64/AI-Problem-Analyzer" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
-                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 8: AI Resume Builder -->
-                    <div class="project-card">
-                        <div class="project-img-wrapper project-gradient-8">
-                            <div class="project-acronym">ARB</div>
-                        </div>
-                        <div class="project-content">
-                            <h3>AI Resume Builder</h3>
-                            <p>An AI-powered profile and resume synthesis platform built with Node.js and Express.js. Uses FFmpeg to extract audio and Deepgram API (Nova-3 STT model) to transcribe pre-recorded speech, then leverages Google Gemini API (gemini-1.5-flash) to structure transcriptions into validated JSON profile data, backed by BullMQ/Redis async queues and MongoDB.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">Express.js</span>
-                                <span class="project-tag">Deepgram API</span>
-                                <span class="project-tag">Gemini API</span>
-                                <span class="project-tag">FFmpeg</span>
-                                <span class="project-tag">BullMQ</span>
-                                <span class="project-tag">Redis</span>
-                                <span class="project-tag">MongoDB</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/iamsumitkumar64/AI-Resume-Builder" target="_blank" class="project-link project-link-github" style="flex: unset; width: 100%;">
-                                    <img src="PORTO CONTENT/github-142-svgrepo-com.png" alt="GitHub"> View Repository
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Technical Skills Section -->
-        <section id="skills-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Core <span class="gradient-text">Skills &amp; Technologies</span></h2>
-                    <p>Categorized layout of technologies, programming languages, and core software architecture designs I specialize in.</p>
-                </div>
-                <div class="skills-rows-container">
-                    <!-- Row 1: Architectural Paradigms -->
-                    <div class="skills-row reveal-on-scroll">
-                        <div class="skills-row-header">
-                            <h3>Architectural Paradigms</h3>
-                        </div>
-                        <div class="skills-row-items">
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                </svg>
-                                <span>Domain-Driven Design (DDD)</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <polyline points="16 3 21 3 21 8"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                    <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"></path>
-                                </svg>
-                                <span>CQRS Architecture</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <circle cx="18" cy="18" r="3"></circle>
-                                    <circle cx="6" cy="6" r="3"></circle>
-                                    <circle cx="6" cy="18" r="3"></circle>
-                                    <path d="M18 14.5c0-2-3-3-3-3s-3 1-3 3v.5"></path>
-                                    <path d="M6 9v6"></path>
-                                </svg>
-                                <span>Event-Driven (EDA)</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                                </svg>
-                                <span>Event Sourcing</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-                                    <line x1="12" y1="4" x2="12" y2="20"></line>
-                                </svg>
-                                <span>Inbox-Outbox Pattern</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <rect x="3" y="3" width="7" height="7"></rect>
-                                    <rect x="14" y="3" width="7" height="7"></rect>
-                                    <rect x="14" y="14" width="7" height="7"></rect>
-                                    <rect x="3" y="14" width="7" height="7"></rect>
-                                </svg>
-                                <span>Microservices</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                                </svg>
-                                <span>Saga Pattern</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <rect x="3" y="3" width="18" height="6" rx="1"></rect>
-                                    <rect x="3" y="15" width="18" height="6" rx="1"></rect>
-                                    <line x1="12" y1="9" x2="12" y2="15"></line>
-                                </svg>
-                                <span>Broker &amp; Job Queues</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <path d="M17 2.1l4 4-4 4M3 22l8-8M7 22l14-14M3 18l4 4" />
-                                </svg>
-                                <span>Pub/Sub &amp; Real-Time</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 2: Languages & Backend Engineering -->
-                    <div class="skills-row reveal-on-scroll">
-                        <div class="skills-row-header">
-                            <h3>Languages &amp; Backend</h3>
-                        </div>
-                        <div class="skills-row-items">
-                            <div class="skill-badge">
-                                <img src="PORTO CONTENT/c.svg" alt="C" />
-                                <span>C</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" />
-                                <span>C++ (STL)</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-                                <span>Python</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
-                                <span>TypeScript</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" />
-                                <span>Django</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <path d="M16 18l6-6-6-6M8 6L2 12l6 6" />
-                                </svg>
-                                <span>DSA &amp; OOP</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
-                                <span>Java</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" alt="NestJS" />
-                                <span>NestJS</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" />
-                                <span>Node.js / Express</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 3: Databases & Infrastructure -->
-                    <div class="skills-row reveal-on-scroll">
-                        <div class="skills-row-header">
-                            <h3>Databases &amp; Infrastructure</h3>
-                        </div>
-                        <div class="skills-row-items">
-                            <div class="skill-badge">
-                                <img src="PORTO CONTENT/sql.svg" alt="SQL" />
-                                <span>SQL</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-                                <span>MongoDB</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
-                                <span>MySQL</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
-                                <span>PostgreSQL</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" />
-                                <span>Redis</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://github.com/taskforcesh.png" alt="BullMQ" />
-                                <span>BullMQ</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" alt="Socket.io" />
-                                <span>Socket.io</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg" alt="RabbitMQ" />
-                                <span>RabbitMQ</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/typeorm/FE0808" alt="TypeORM" />
-                                <span>TypeORM</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/mongoose/880000" alt="Mongoose" />
-                                <span>Mongoose</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
-                                <span>Docker</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
-                                <span>Linux (CLI)</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-                                <span>Git &amp; GitHub</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 4: AI, Agents & Specialized Tech -->
-                    <div class="skills-row reveal-on-scroll">
-                        <div class="skills-row-header">
-                            <h3>AI, Agents &amp; Specialized Tech</h3>
-                        </div>
-                        <div class="skills-row-items">
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/langchain/1C3C3C" alt="LangChain" />
-                                <span>LangChain / LangGraph</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="PORTO CONTENT/gemini.svg" alt="Gemini API" />
-                                <span>Google Gemini API</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/deepgram/13EF95" alt="Deepgram STT" />
-                                <span>Deepgram Voice STT</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/ffmpeg/007808" alt="FFmpeg" />
-                                <span>FFmpeg Processing</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 5: Frontend & Modern Tools -->
-                    <div class="skills-row reveal-on-scroll">
-                        <div class="skills-row-header">
-                            <h3>Frontend &amp; Tools</h3>
-                        </div>
-                        <div class="skills-row-items">
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
-                                <span>HTML5 &amp; CSS3</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-                                <span>React</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" />
-                                <span>Next.js</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" />
-                                <span>Tailwind CSS</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg" alt="MUI" />
-                                <span>MUI</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux" />
-                                <span>Redux &amp; RTK</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="PORTO CONTENT/zustand.svg" alt="Zustand" />
-                                <span>Zustand</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" />
-                                <span>Postman</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/nextui/0099FF" alt="HeroUI" />
-                                <span>HeroUI</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/antdesign/018FF8" alt="Ant Design" />
-                                <span>Ant Design</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/reacthookform/EC5990" alt="React Hook Form" />
-                                <span>React Hook Form</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/zod/3E67B1" alt="Zod" />
-                                <span>Zod</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 6: Payment Gateways Integration -->
-                    <div class="skills-row reveal-on-scroll">
-                        <div class="skills-row-header">
-                            <h3>Payment Gateways</h3>
-                        </div>
-                        <div class="skills-row-items">
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe" />
-                                <span>Stripe</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/razorpay/0B72E7" alt="Razorpay" />
-                                <span>Razorpay</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://github.com/paymongo.png" alt="Paymongo" />
-                                <span>Paymongo</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 7: Cloud Platforms & Hosting -->
-                    <div class="skills-row reveal-on-scroll">
-                        <div class="skills-row-header">
-                            <h3>Cloud &amp; Hosting</h3>
-                        </div>
-                        <div class="skills-row-items">
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/vercel/000000" alt="Vercel" />
-                                <span>Vercel</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/render/46E3B7" alt="Render" />
-                                <span>Render</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/railway/000000" alt="Railway" />
-                                <span>Railway</span>
-                            </div>
-                            <div class="skill-badge">
-                                <img src="https://cdn.simpleicons.org/netlify/00C7B7" alt="Netlify" />
-                                <span>Netlify</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <path d="M12 2a10 10 0 0 0-7.07 17.07l14.14-14.14A10 10 0 0 0 12 2zM12 22a10 10 0 0 0 7.07-17.07L4.93 19.07A10 10 0 0 0 12 22z"/>
-                                </svg>
-                                <span>InfinityFree</span>
-                            </div>
-                            <div class="skill-badge">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="skill-icon-svg">
-                                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
-                                </svg>
-                                <span>Aiven</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Achievements & Volunteering Section -->
-        <section id="achievements-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Achievements & Leadership</h2>
-                    <p>Key technical milestones, coding victories, and leadership initiatives that shaped my discipline.</p>
-                </div>
-                <div class="achievements-grid">
-                    <!-- Column: Tech Awards -->
-                    <div class="achievements-col">
-                        <h3>Technical Milestones</h3>
-                        <div class="achievements-list">
-                            <!-- Card 1 -->
-                            <div class="achievement-card">
-                                <div class="achievement-icon">🥇</div>
-                                <div class="achievement-details">
-                                    <h4>1st Place – On-Spot Coding</h4>
-                                    <span class="org">Zerone24 IT Fest</span>
-                                    <p>Competed in real-time to solve complex algorithmic puzzles under high pressure. Showcased strong logical layout and execution speeds.</p>
-                                </div>
-                            </div>
-                            <!-- Card 2 -->
-                            <div class="achievement-card">
-                                <div class="achievement-icon">🥈</div>
-                                <div class="achievement-details">
-                                    <h4>2nd Place – On-Spot Debugging</h4>
-                                    <span class="org">Zerone24 IT Fest</span>
-                                    <p>Diagnosed, verified, and resolved runtime errors, design logic vulnerabilities, and syntax faults in competitive code layouts.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Column: Community & Service -->
-                    <div class="achievements-col">
-                        <h3>Community & Volunteering</h3>
-                        <div class="achievements-list">
-                            <!-- Card 1 -->
-                            <div class="achievement-card">
-                                <div class="achievement-icon">🎖️</div>
-                                <div class="achievement-details">
-                                    <h4>NCC (National Cadet Corps) Cadet</h4>
-                                    <span class="org">School Service Division</span>
-                                    <p>Trained in systematic physical discipline, defense values, and collaborative operations. Formed solid team-centric focus and resilience.</p>
-                                </div>
-                            </div>
-                            <!-- Card 2 -->
-                            <div class="achievement-card">
-                                <div class="achievement-icon">🤝</div>
-                                <div class="achievement-details">
-                                    <h4>NSS (National Service Scheme) Volunteer</h4>
-                                    <span class="org">College Service Division</span>
-                                    <p>Contributed to civic campaigns, local welfare drives, and social welfare programs, developing strong soft skills and collaborative empathy.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Hobbies & Interests Section -->
-        <section id="hobbies-section" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Hobbies & Interests</h2>
-                    <p>What I enjoy doing when I am not coding or building distributed systems.</p>
-                </div>
-                <div class="hobbies-grid">
-                    <div class="hobby-card">
-                        <div class="hobby-icon-wrapper">
-                            <!-- Cooking SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hobby-svg"><path d="M6 12h12M4 12V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6M3 12h18a1 1 0 0 1 1 1v2a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4v-2a1 1 0 0 1 1-1zM12 2v2M8 2v2M16 2v2"/></svg>
-                        </div>
-                        <h3>Cooking</h3>
-                        <p>Experimenting and preparing unique, creative dishes in the kitchen.</p>
-                    </div>
-                    
-                    <div class="hobby-card">
-                        <div class="hobby-icon-wrapper">
-                            <!-- Watching Movies SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hobby-svg"><path d="M2 10V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5M2 10h20M2 10v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-9M7 3l4 7M13 3l4 7"/></svg>
-                        </div>
-                        <h3>Watching Movies</h3>
-                        <p>Enjoying mind-bending sci-fi, cinema classics, and insightful documentaries.</p>
-                    </div>
-                    
-                    <div class="hobby-card">
-                        <div class="hobby-icon-wrapper">
-                            <!-- Playing Badminton SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hobby-svg"><path d="M12 2a4 4 0 0 0-4 4v4c0 3 2.5 6 4 10 1.5-4 4-7 4-10V6a4 4 0 0 0-4-4zm-4 4h8M8 8h8M12 2v18M12 20a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
-                        </div>
-                        <h3>Badminton</h3>
-                        <p>Engaging in energetic, fast-paced matches on the court.</p>
-                    </div>
-                    
-                    <div class="hobby-card">
-                        <div class="hobby-icon-wrapper">
-                            <!-- Gaming SVG -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hobby-svg"><rect width="20" height="12" x="2" y="6" rx="3"/><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"/></svg>
-                        </div>
-                        <h3>Gaming</h3>
-                        <p>Casual relaxation and competitive match-ups with friends.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quotes Section -->
-        <section class="quotes-section">
-            <div class="container quote-slider-container">
-                <div class="quote-slider">
-                    <button id="prev-quote-btn" class="quote-control-btn prev" aria-label="Previous Quote">
-                        <span>&larr;</span>
-                    </button>
-                    
-                    <div class="quote-card">
-                        <div class="quote-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h3c0 4-2 6-4 6m11 0c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-4c-1.25 0-2 .75-2 2v4c0 1.25.75 2 2 2h3c0 4-2 6-4 6"/></svg>
-                        </div>
-                        <blockquote id="quote-text" class="quote-text">
-                            You have the right to perform your actions, but not to claim the results.
-                        </blockquote>
-                        <cite id="quote-author" class="quote-author">– Bhagavad Gita 2.47</cite>
-                    </div>
-                    
-                    <button id="next-quote-btn" class="quote-control-btn next" aria-label="Next Quote">
-                        <span>&rarr;</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Get In Touch</h2>
-                    <p>Have an interesting project or opportunities you'd like to discuss? Drop a message!</p>
-                </div>
-                
-                <div class="contact-grid">
-                    <div class="contact-info">
-                        <h3>Let's collaborate.</h3>
-                        <p>
-                            I am open to discuss full-stack engineering roles, system architecture design opportunities, and AI/ML project collaboration. Feel free to contact me through the form or direct networks.
-                        </p>
-                        
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <div class="contact-icon-wrapper">✉️</div>
-                                <div class="contact-item-details">
-                                    <span>Direct Email</span>
-                                    <a href="mailto:iam.sumitkumar64@gmail.com">iam.sumitkumar64@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon-wrapper">📞</div>
-                                <div class="contact-item-details">
-                                    <span>Direct Phone</span>
-                                    <a href="tel:+919992528037">+91 99925 28037</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon-wrapper">🔗</div>
-                                <div class="contact-item-details">
-                                    <span>Professional Network</span>
-                                    <a href="https://linkedin.com/in/iamsumitkumar64" target="_blank">linkedin.com/in/iamsumitkumar64</a>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon-wrapper">📍</div>
-                                <div class="contact-item-details">
-                                    <span>Location</span>
-                                    <p>Panipat, Haryana, India</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-form-container">
-                        <form id="contact-form" class="contact-form">
-                            <div class="form-group">
-                                <label for="user-name">Full Name</label>
-                                <input type="text" id="user-name" name="from_name" class="form-control" placeholder="John Doe" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="user-email">Email Address</label>
-                                <input type="email" id="user-email" name="email_id" class="form-control" placeholder="john@example.com" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="user-mobile">Mobile Number (Optional)</label>
-                                <input type="text" id="user-mobile" name="mobile" class="form-control" placeholder="+91 99925 28037">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="user-message">Your Message</label>
-                                <textarea id="user-message" name="message" class="form-control" placeholder="Hi Sumit, I would love to connect..." required></textarea>
-                            </div>
-                            
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary" style="flex: 1;">SUBMIT FORM</button>
-                                <button type="reset" class="btn btn-secondary">RESET</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Toast Notification Container -->
-    <div id="toast-container" class="toast-container"></div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2026 Sumit Kumar. Designed and Engineered with Care. All rights reserved.</p>
+          <div class="hero-tags">
+            <span class="tech-pill">NestJS</span>
+            <span class="tech-pill">Next.js</span>
+            <span class="tech-pill">RabbitMQ</span>
+            <span class="tech-pill">Docker</span>
+            <span class="tech-pill">PostgreSQL</span>
+            <span class="tech-pill">Redis</span>
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">LangChain AI</span>
+          </div>
         </div>
-    </footer>
 
-    <!-- Typed.js & Main Script -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const typed = new Typed('#element', {
-                strings: [
-                    'Full Stack Developer',
-                    'Resilient Backend Architect',
-                    'Aspiring AI/ML Engineer',
-                    'Problem Solver'
-                ],
-                typeSpeed: 80,
-                backSpeed: 50,
-                backDelay: 1500,
-                loop: true,
-                showCursor: true,
-                cursorChar: '|'
-            });
-        });
-    </script>
-    <script src="index.js"></script>
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="window-dots">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <div class="terminal-title">sumit@dev ~ interactive shell</div>
+            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent);">● online</div>
+          </div>
+
+          <div class="terminal-body">
+            <div id="terminal-output" class="terminal-output">
+              <div
+                style="color: var(--text-muted); font-size: 0.78rem; font-family: var(--font-mono); margin-bottom: 0.25rem;">
+                Sumit.dev Cloud Shell [Version 1.5.0]<br>
+                Type <b style="color: var(--text-primary)">help</b> or click chips below to inspect skills, projects,
+                and architecture.
+              </div>
+            </div>
+
+            <div class="terminal-prompt-line" style="margin-top: 0.5rem;">
+              <span class="terminal-prompt">sumit@dev:~$</span>
+              <input type="text" id="terminal-input" class="terminal-input" placeholder="try: skills, projects, arch..."
+                autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+
+          <div class="terminal-quick-actions">
+            <button class="quick-cmd-btn" data-cmd="skills">skills</button>
+            <button class="quick-cmd-btn" data-cmd="projects">projects</button>
+            <button class="quick-cmd-btn" data-cmd="arch">arch</button>
+            <button class="quick-cmd-btn" data-cmd="experience">experience</button>
+            <button class="quick-cmd-btn" data-cmd="contact">contact</button>
+            <button class="quick-cmd-btn" data-cmd="clear">clear</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years Exp</div>
+            <div class="stat-desc">Full-stack &amp; Backend Engineering</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Repositories</div>
+            <div class="stat-desc">Architected systems &amp; AI POCs</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">220+</div>
+            <div class="stat-label">DSA Solved</div>
+            <div class="stat-desc">Competitive logic in C++ &amp; Python</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Zero Message Loss</div>
+            <div class="stat-desc">Transactional Outbox + DLQ Mesh</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey-section" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Evolutionary Engineering</div>
+          <h2 class="section-title">Architecture Evolution Roadmap</h2>
+          <p class="section-desc">
+            Hover or tap on each architecture bubble below to explore how scaling challenges prompted the transition to
+            resilient event-driven systems.
+          </p>
+        </div>
+
+        <div class="arch-bubble-constellation">
+          <div class="arch-bubble-pipeline"></div>
+
+          <div class="arch-bubble-track">
+            <div class="arch-bubble-node" tabindex="0">
+              <div class="arch-bubble-disc">
+                <span class="arch-bubble-icon">🧱</span>
+                <span class="arch-bubble-phase">#01</span>
+              </div>
+              <div class="arch-bubble-label">Monolith</div>
+              <div class="arch-bubble-hint">Hover / Tap 🫧</div>
+
+              <div class="arch-pop-bubble">
+                <div class="pop-bubble-header">
+                  <strong class="pop-bubble-title">01. Monolithic Beginnings</strong>
+                  <span class="pop-bubble-tag">Phase 01</span>
+                </div>
+                <div class="pop-bubble-section">
+                  <div class="pop-bubble-label">⚠️ The Scaling Challenge</div>
+                  <p class="pop-bubble-text">
+                    Tight coupling between business logic and database models led to coordinate conflicts, slow
+                    deployments, and bottlenecks under concurrent traffic.
+                  </p>
+                </div>
+                <div class="pop-bubble-section">
+                  <div class="pop-bubble-label">💡 Solution &amp; Pattern</div>
+                  <p class="pop-bubble-text">
+                    Centralized controllers, REST routing, and modular controllers in MERN stack while mastering
+                    database normalization.
+                  </p>
+                </div>
+                <div class="pop-bubble-badges">
+                  <span class="tech-pill">MERN Stack</span>
+                  <span class="tech-pill">Express MVC</span>
+                  <span class="tech-pill">MongoDB</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arch-bubble-node" tabindex="0">
+              <div class="arch-bubble-disc">
+                <span class="arch-bubble-icon">🧩</span>
+                <span class="arch-bubble-phase">#02</span>
+              </div>
+              <div class="arch-bubble-label">Modular Monolith</div>
+              <div class="arch-bubble-hint">Hover / Tap 🫧</div>
+
+              <div class="arch-pop-bubble">
+                <div class="pop-bubble-header">
+                  <strong class="pop-bubble-title">02. Modular Monolith</strong>
+                  <span class="pop-bubble-tag">Phase 02</span>
+                </div>
+                <div class="pop-bubble-section">
+                  <div class="pop-bubble-label">⚠️ The Scaling Challenge</div>
+                  <p class="pop-bubble-text">
+                    Unenforced domain boundaries caused tangled cross-imports and fragile unit tests.
+                  </p>
+                </div>
+                <div class="pop-bubble-section">
+                  <div class="pop-bubble-label">💡 Solution &amp; Pattern</div>
+                  <p class="pop-bubble-text">
+                    Isolated Bounded Contexts, Dependency Injection, and strict DTO schema validation in NestJS with
+                    clean TypeORM mappers.
+                  </p>
+                </div>
+                <div class="pop-bubble-badges">
+                  <span class="tech-pill">NestJS</span>
+                  <span class="tech-pill">TypeScript</span>
+                  <span class="tech-pill">DTO Contracts</span>
+                  <span class="tech-pill">Domain Boundaries</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arch-bubble-node" tabindex="0">
+              <div class="arch-bubble-disc">
+                <span class="arch-bubble-icon">🐳</span>
+                <span class="arch-bubble-phase">#03</span>
+              </div>
+              <div class="arch-bubble-label">Microservices</div>
+              <div class="arch-bubble-hint">Hover / Tap 🫧</div>
+
+              <div class="arch-pop-bubble">
+                <div class="pop-bubble-header">
+                  <strong class="pop-bubble-title">03. Distributed Microservices</strong>
+                  <span class="pop-bubble-tag">Phase 03</span>
+                </div>
+                <div class="pop-bubble-section">
+                  <div class="pop-bubble-label">⚠️ The Scaling Challenge</div>
+                  <p class="pop-bubble-text">
+                    Single deployment units risked full outage upon partial failures; independent team velocity was
+                    limited.
+                  </p>
+                </div>
+                <div class="pop-bubble-section">
+                  <div class="pop-bubble-label">💡 Solution &amp; Pattern</div>
+                  <p class="pop-bubble-text">
+                    Containerized isolated domain pods using Docker, separating database storage and allowing autonomous
+                    CI/CD releases.
+                  </p>
+                </div>
+                <div class="pop-bubble-badges">
+                  <span class="tech-pill">Docker</span>
+                  <span class="tech-pill">Microservices</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                  <span class="tech-pill">Service Mesh</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arch-bubble-node" tabindex="0">
+              <div class="arch-bubble-disc">
+                <span class="arch-bubble-icon">⚡</span>
+                <span class="arch-bubble-phase">#04</span>
+              </div>
+              <div class="arch-bubble-label">Event-Driven CQRS</div>
+              <div class="arch-bubble-hint">Hover / Tap 🫧</div>
+
+              <div class="arch-pop-bubble">
+                <div class="pop-bubble-header">
+                  <strong class="pop-bubble-title">04. Event-Driven CQRS &amp; Outbox</strong>
+                  <span class="pop-bubble-tag">Phase 04</span>
+                </div>
+                <div class="pop-bubble-section">
+                  <div class="pop-bubble-label">⚠️ The Scaling Challenge</div>
+                  <p class="pop-bubble-text">
+                    Dual writes (DB commit + broker message publish) suffered from network partitions, creating lost
+                    event deliveries.
+                  </p>
+                </div>
+                <div class="pop-bubble-section">
+                  <div class="pop-bubble-label">💡 Solution &amp; Pattern</div>
+                  <p class="pop-bubble-text">
+                    Implemented Command Query Responsibility Segregation (CQRS) and Transactional Outbox Pattern with
+                    RabbitMQ for guaranteed delivery.
+                  </p>
+                </div>
+                <div class="pop-bubble-badges">
+                  <span class="tech-pill">RabbitMQ</span>
+                  <span class="tech-pill">Transactional Outbox</span>
+                  <span class="tech-pill">CQRS</span>
+                  <span class="tech-pill">DDD</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arch-bubble-node" tabindex="0">
+              <div class="arch-bubble-disc">
+                <span class="arch-bubble-icon">🛡️</span>
+                <span class="arch-bubble-phase">#05</span>
+              </div>
+              <div class="arch-bubble-label">Resilient Mesh</div>
+              <div class="arch-bubble-hint">Hover / Tap 🫧</div>
+
+              <div class="arch-pop-bubble">
+                <div class="pop-bubble-header">
+                  <strong class="pop-bubble-title">05. Resilient &amp; Self-Healing</strong>
+                  <span class="pop-bubble-tag">Phase 05</span>
+                </div>
+                <div class="pop-bubble-section">
+                  <div class="pop-bubble-label">⚠️ The Scaling Challenge</div>
+                  <p class="pop-bubble-text">
+                    Poisoned payloads and downstream API latency caused retry storms and consumer worker lockouts.
+                  </p>
+                </div>
+                <div class="pop-bubble-section">
+                  <div class="pop-bubble-label">💡 Solution &amp; Pattern</div>
+                  <p class="pop-bubble-text">
+                    Dead Letter Queues (DLQ) for isolation, Exponential Backoff Retries, Circuit Breakers, and Redis
+                    Idempotency guards.
+                  </p>
+                </div>
+                <div class="pop-bubble-badges">
+                  <span class="tech-pill">Dead Letter Queues</span>
+                  <span class="tech-pill">Circuit Breakers</span>
+                  <span class="tech-pill">Exponential Backoff</span>
+                  <span class="tech-pill">Redis Idempotency</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills-section" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Core <span class="gradient-text">Skills &amp; Technologies</span></h2>
+          <p>Categorized layout of technologies, programming languages, and core software architecture designs I
+            specialize in.</p>
+        </div>
+        <div class="skills-rows-container">
+          <div class="skills-row reveal-on-scroll">
+            <div class="skills-row-header">
+              <h3>Architectural Paradigms</h3>
+            </div>
+            <div class="skills-row-items">
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+                <span>Domain-Driven Design (DDD)</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <polyline points="16 3 21 3 21 8"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                  <path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"></path>
+                </svg>
+                <span>CQRS Architecture</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <circle cx="18" cy="18" r="3"></circle>
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <circle cx="6" cy="18" r="3"></circle>
+                  <path d="M18 14.5c0-2-3-3-3-3s-3 1-3 3v.5"></path>
+                  <path d="M6 9v6"></path>
+                </svg>
+                <span>Event-Driven (EDA)</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>Event Sourcing</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                  <line x1="12" y1="4" x2="12" y2="20"></line>
+                </svg>
+                <span>Inbox-Outbox Pattern</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                <span>Microservices</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+                <span>Saga Pattern</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <rect x="3" y="3" width="18" height="6" rx="1"></rect>
+                  <rect x="3" y="15" width="18" height="6" rx="1"></rect>
+                  <line x1="12" y1="9" x2="12" y2="15"></line>
+                </svg>
+                <span>Broker &amp; Job Queues</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <path d="M17 2.1l4 4-4 4M3 22l8-8M7 22l14-14M3 18l4 4" />
+                </svg>
+                <span>Pub/Sub &amp; Real-Time</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-row reveal-on-scroll">
+            <div class="skills-row-header">
+              <h3>Languages &amp; Backend</h3>
+            </div>
+            <div class="skills-row-items">
+              <div class="skill-badge">
+                <img src="PORTO CONTENT/c.svg" alt="C" />
+                <span>C</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                  alt="C++" />
+                <span>C++ (STL)</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+                <span>Python</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  alt="JavaScript" />
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                  alt="TypeScript" />
+                <span>TypeScript</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" />
+                <span>Django</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <path d="M16 18l6-6-6-6M8 6L2 12l6 6" />
+                </svg>
+                <span>DSA &amp; OOP</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+                <span>Java</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg" alt="NestJS" />
+                <span>NestJS</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="NodeJS" />
+                <span>Node.js / Express</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-row reveal-on-scroll">
+            <div class="skills-row-header">
+              <h3>Databases &amp; Infrastructure</h3>
+            </div>
+            <div class="skills-row-items">
+              <div class="skill-badge">
+                <img src="PORTO CONTENT/sql.svg" alt="SQL" />
+                <span>SQL</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                  alt="MongoDB" />
+                <span>MongoDB</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+                <span>MySQL</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                  alt="PostgreSQL" />
+                <span>PostgreSQL</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" />
+                <span>Redis</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://github.com/taskforcesh.png" alt="BullMQ" />
+                <span>BullMQ</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg"
+                  alt="Socket.io" />
+                <span>Socket.io</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rabbitmq/rabbitmq-original.svg"
+                  alt="RabbitMQ" />
+                <span>RabbitMQ</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/typeorm/FE0808" alt="TypeORM" />
+                <span>TypeORM</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/mongoose/880000" alt="Mongoose" />
+                <span>Mongoose</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+                <span>Docker</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
+                <span>Linux (CLI)</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+                <span>Git &amp; GitHub</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-row reveal-on-scroll">
+            <div class="skills-row-header">
+              <h3>AI, Agents &amp; Specialized Tech</h3>
+            </div>
+            <div class="skills-row-items">
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/langchain/1C3C3C" alt="LangChain" />
+                <span>LangChain / LangGraph</span>
+              </div>
+              <div class="skill-badge">
+                <img src="PORTO CONTENT/gemini.svg" alt="Gemini API" />
+                <span>Google Gemini API</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/deepgram/13EF95" alt="Deepgram STT" />
+                <span>Deepgram Voice STT</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/ffmpeg/007808" alt="FFmpeg" />
+                <span>FFmpeg Processing</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-row reveal-on-scroll">
+            <div class="skills-row-header">
+              <h3>Frontend &amp; Tools</h3>
+            </div>
+            <div class="skills-row-items">
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+                <span>HTML5 &amp; CSS3</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+                <span>React</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                  alt="Next.js" />
+                <span>Next.js</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                  alt="Tailwind CSS" />
+                <span>Tailwind CSS</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg"
+                  alt="MUI" />
+                <span>MUI</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux" />
+                <span>Redux &amp; RTK</span>
+              </div>
+              <div class="skill-badge">
+                <img src="PORTO CONTENT/zustand.svg" alt="Zustand" />
+                <span>Zustand</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+                  alt="Postman" />
+                <span>Postman</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/nextui/0099FF" alt="HeroUI" />
+                <span>HeroUI</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/antdesign/018FF8" alt="Ant Design" />
+                <span>Ant Design</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/reacthookform/EC5990" alt="React Hook Form" />
+                <span>React Hook Form</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/zod/3E67B1" alt="Zod" />
+                <span>Zod</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-row reveal-on-scroll">
+            <div class="skills-row-header">
+              <h3>Payment Gateways</h3>
+            </div>
+            <div class="skills-row-items">
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/stripe/635BFF" alt="Stripe" />
+                <span>Stripe</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/razorpay/0B72E7" alt="Razorpay" />
+                <span>Razorpay</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://github.com/paymongo.png" alt="Paymongo" />
+                <span>Paymongo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-row reveal-on-scroll">
+            <div class="skills-row-header">
+              <h3>Cloud &amp; Hosting</h3>
+            </div>
+            <div class="skills-row-items">
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/vercel/000000" alt="Vercel" />
+                <span>Vercel</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/render/46E3B7" alt="Render" />
+                <span>Render</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/railway/000000" alt="Railway" />
+                <span>Railway</span>
+              </div>
+              <div class="skill-badge">
+                <img src="https://cdn.simpleicons.org/netlify/00C7B7" alt="Netlify" />
+                <span>Netlify</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <path
+                    d="M12 2a10 10 0 0 0-7.07 17.07l14.14-14.14A10 10 0 0 0 12 2zM12 22a10 10 0 0 0 7.07-17.07L4.93 19.07A10 10 0 0 0 12 22z" />
+                </svg>
+                <span>InfinityFree</span>
+              </div>
+              <div class="skill-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="skill-icon-svg">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                </svg>
+                <span>Aiven</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects-section" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Production Implementations</div>
+          <h2 class="section-title">Featured Projects &amp; Repositories</h2>
+          <p class="section-desc">
+            Engineered systems demonstrating transactional outbox patterns, payment pipelines, agentic AI, and low-level
+            custom C++ architectures.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <div>
+              <div class="project-header">
+                <div class="repo-badge">
+                  <span>🌿</span> <span>branch: main</span>
+                </div>
+                <div class="commit-hash">#a1c9e4</div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">
+                  LangChain AI Agent POC
+                  <span style="font-size: 0.8rem; color: var(--accent); font-family: var(--font-mono);">[AI/ML]</span>
+                </h3>
+                <p class="project-desc">
+                  An intelligent agentic POC exploring AI agent workflows using LangGraph and LangChain JS/TS,
+                  leveraging Google Gemini LLM API, memory layers, and custom tool binding architectures.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-pill">LangChain</span>
+                  <span class="tech-pill">LangGraph</span>
+                  <span class="tech-pill">Gemini API</span>
+                  <span class="tech-pill">TypeScript</span>
+                  <span class="tech-pill">Node.js</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/iamsumitkumar64/langchan-poc" target="_blank" class="btn btn-sm btn-dark">
+                <span>📂</span> View Repository ↗
+              </a>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);">● Production
+                POC</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <div class="project-header">
+                <div class="repo-badge">
+                  <span>🌿</span> <span>branch: main</span>
+                </div>
+                <div class="commit-hash">#8f4b21</div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">
+                  Eternal Frames
+                  <span style="font-size: 0.8rem; color: var(--accent); font-family: var(--font-mono);">[Outbox
+                    DDD]</span>
+                </h3>
+                <p class="project-desc">
+                  A multi-tenant event photography gallery &amp; studio management platform. Features subscription tier
+                  billing via Razorpay, modular NestJS DDD architecture, transactional Outbox pattern messaging with
+                  RabbitMQ, and a Next.js App Router frontend.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-pill">NestJS</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                  <span class="tech-pill">RabbitMQ</span>
+                  <span class="tech-pill">Razorpay</span>
+                  <span class="tech-pill">Next.js</span>
+                  <span class="tech-pill">Redux</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/iamsumitkumar64/Eternal-Frames" target="_blank" class="btn btn-sm btn-dark">
+                <span>📂</span> View Repository ↗
+              </a>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);">● Full Stack
+                App</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <div class="project-header">
+                <div class="repo-badge">
+                  <span>🌿</span> <span>branch: main</span>
+                </div>
+                <div class="commit-hash">#5e3d7a</div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">
+                  Deca Chat
+                  <span
+                    style="font-size: 0.8rem; color: var(--accent); font-family: var(--font-mono);">[WebSockets]</span>
+                </h3>
+                <p class="project-desc">
+                  A real-time multi-room messaging system built on NestJS Domain-Driven Design (DDD). Features
+                  WebSockets/Socket.io communication, member management, transactional Inbox-Outbox message
+                  synchronization via RabbitMQ, and weekly chat analytics.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-pill">NestJS</span>
+                  <span class="tech-pill">Socket.io</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                  <span class="tech-pill">RabbitMQ</span>
+                  <span class="tech-pill">Next.js</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/iamsumitkumar64/Deca-Chat" target="_blank" class="btn btn-sm btn-dark">
+                <span>📂</span> View Repository ↗
+              </a>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);">● Real-Time
+                Mesh</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <div class="project-header">
+                <div class="repo-badge">
+                  <span>🌿</span> <span>branch: main</span>
+                </div>
+                <div class="commit-hash">#9b20e1</div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">
+                  C++ Custom Web Crawler
+                  <span style="font-size: 0.8rem; color: var(--accent); font-family: var(--font-mono);">[Raw C++]</span>
+                </h3>
+                <p class="project-desc">
+                  Built a web crawler in raw C++ using custom generic string, linked list, and hashmap libraries —
+                  completely avoiding external dependencies or standard string methods with strict manual memory
+                  management.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-pill">C++</span>
+                  <span class="tech-pill">Sockets</span>
+                  <span class="tech-pill">Data Structures</span>
+                  <span class="tech-pill">Memory Mgmt</span>
+                  <span class="tech-pill">Linux</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/iamsumitkumar64/CPP-Crawler" target="_blank" class="btn btn-sm btn-dark">
+                <span>📂</span> View Repository ↗
+              </a>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);">● Zero Deps</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <div class="project-header">
+                <div class="repo-badge">
+                  <span>🌿</span> <span>branch: main</span>
+                </div>
+                <div class="commit-hash">#4a8f9c</div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">
+                  Custom C++ Library Suite
+                  <span style="font-size: 0.8rem; color: var(--accent); font-family: var(--font-mono);">[Systems]</span>
+                </h3>
+                <p class="project-desc">
+                  Designed and engineered generic C++ data structure and utility libraries from scratch, including
+                  custom implementation of HashMap, LinkedList, and String classes with manual heap audits and optimized
+                  search bounds.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-pill">C++</span>
+                  <span class="tech-pill">Templates</span>
+                  <span class="tech-pill">Algorithms</span>
+                  <span class="tech-pill">Memory Audit</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/iamsumitkumar64/My-CPP-Library" target="_blank" class="btn btn-sm btn-dark">
+                <span>📂</span> View Repository ↗
+              </a>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);">● Generic
+                Core</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <div class="project-header">
+                <div class="repo-badge">
+                  <span>🌿</span> <span>branch: main</span>
+                </div>
+                <div class="commit-hash">#2d11bc</div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">
+                  RabbitMQ Exchanges POC
+                  <span
+                    style="font-size: 0.8rem; color: var(--accent); font-family: var(--font-mono);">[Microservices]</span>
+                </h3>
+                <p class="project-desc">
+                  A message routing architecture implementing Direct, Topic, and Fanout exchanges in RabbitMQ for
+                  asynchronous multi-service event orchestration and distributed task distribution.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-pill">NestJS</span>
+                  <span class="tech-pill">RabbitMQ</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                  <span class="tech-pill">Docker</span>
+                  <span class="tech-pill">Microservices</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/iamsumitkumar64/Microservice-RabbitMQ-POC" target="_blank"
+                class="btn btn-sm btn-dark">
+                <span>📂</span> View Repository ↗
+              </a>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);">● Event Mesh</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <div class="project-header">
+                <div class="repo-badge">
+                  <span>🌿</span> <span>branch: main</span>
+                </div>
+                <div class="commit-hash">#6c99ef</div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">
+                  AI Problem Analyzer
+                  <span style="font-size: 0.8rem; color: var(--accent); font-family: var(--font-mono);">[BullMQ
+                    AI]</span>
+                </h3>
+                <p class="project-desc">
+                  An intelligent engineering assistant using React, Express.js, and Google Gemini API to analyze system
+                  bug reports, utilizing Redis and BullMQ for task queues, and MongoDB for state tracking.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-pill">React</span>
+                  <span class="tech-pill">Express.js</span>
+                  <span class="tech-pill">Gemini API</span>
+                  <span class="tech-pill">BullMQ</span>
+                  <span class="tech-pill">Redis</span>
+                  <span class="tech-pill">MongoDB</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/iamsumitkumar64/AI-Problem-Analyzer" target="_blank"
+                class="btn btn-sm btn-dark">
+                <span>📂</span> View Repository ↗
+              </a>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);">● Queue
+                Engine</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div>
+              <div class="project-header">
+                <div class="repo-badge">
+                  <span>🌿</span> <span>branch: main</span>
+                </div>
+                <div class="commit-hash">#3f88dd</div>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">
+                  AI Resume Builder
+                  <span style="font-size: 0.8rem; color: var(--accent); font-family: var(--font-mono);">[Deepgram +
+                    Gemini]</span>
+                </h3>
+                <p class="project-desc">
+                  An AI-powered profile synthesis platform built with Node.js and Express. Uses FFmpeg to extract audio
+                  and Deepgram API (Nova-3 STT) to transcribe speech, then leverages Google Gemini Flash to structure
+                  transcriptions into validated profile JSON.
+                </p>
+                <div class="project-tags">
+                  <span class="tech-pill">Node.js</span>
+                  <span class="tech-pill">Deepgram API</span>
+                  <span class="tech-pill">Gemini API</span>
+                  <span class="tech-pill">FFmpeg</span>
+                  <span class="tech-pill">BullMQ</span>
+                  <span class="tech-pill">Redis</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/iamsumitkumar64/AI-Resume-Builder" target="_blank"
+                class="btn btn-sm btn-dark">
+                <span>📂</span> View Repository ↗
+              </a>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);">● STT AI
+                Pipeline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience-section" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Production History</div>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-desc">
+            Production engineering deployments, distributed microservices, payment gateway integrations, and real-time
+            backend infrastructure.
+          </p>
+        </div>
+
+        <div class="experience-timeline">
+
+          <article class="exp-pipeline-card active-role">
+            <div class="exp-git-header">
+              <div class="git-header-left">
+                <span class="git-commit-hash">commit 7f8a9e2</span>
+                <span class="git-branch-tag">🌿 branch: production</span>
+              </div>
+              <div class="git-header-right">
+                <span class="git-tenure-tag">Feb 2026 – Present</span>
+                <span class="git-status-tag">
+                  <span class="status-dot" style="width:6px; height:6px;"></span>
+                  <span>CURRENT PRODUCTION ROLE</span>
+                </span>
+              </div>
+            </div>
+
+            <div class="exp-card-body">
+              <div class="exp-role-heading-row">
+                <div>
+                  <h3 class="exp-role-title">Full Stack Developer</h3>
+                  <div class="exp-company-subhead">
+                    <strong>Zenmonk Software &amp; Services</strong> • Mohali, India • Full-Time
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-impact-matrix">
+                <div class="impact-matrix-card">
+                  <div class="impact-matrix-title">🏛️ Domain Isolation</div>
+                  <div class="impact-matrix-desc">Enforced Domain-Driven Design (DDD) &amp; CQRS with NestJS to cleanly
+                    isolate domain boundaries.</div>
+                </div>
+                <div class="impact-matrix-card">
+                  <div class="impact-matrix-title">📬 Zero-Loss Outbox</div>
+                  <div class="impact-matrix-desc">Architected Transactional Outbox Pattern with RabbitMQ for atomic
+                    database writes &amp; event pub/sub.</div>
+                </div>
+                <div class="impact-matrix-card">
+                  <div class="impact-matrix-title">🐳 Microservices Mesh</div>
+                  <div class="impact-matrix-desc">Containerized isolated domain workloads via Docker into resilient,
+                    decoupled microservices.</div>
+                </div>
+              </div>
+
+              <div class="exp-engineering-duties">
+                <div class="exp-duty-row">
+                  <span class="chevron">▸</span>
+                  <div>
+                    <strong>Modular Architecture:</strong> Engineered scalable backend systems using
+                    <strong>NestJS</strong>, <strong>Next.js</strong>, and <strong>TypeScript</strong> with strict DTO
+                    contract schemas.
+                  </div>
+                </div>
+                <div class="exp-duty-row">
+                  <span class="chevron">▸</span>
+                  <div>
+                    <strong>Guaranteed Event Delivery:</strong> Eliminated dual-write failure points across PostgreSQL
+                    and message brokers using <strong>Transactional Outbox</strong> and idempotent consumer
+                    deduplication.
+                  </div>
+                </div>
+                <div class="exp-duty-row">
+                  <span class="chevron">▸</span>
+                  <div>
+                    <strong>Agile &amp; CI/CD Leadership:</strong> Collaborated with senior architects in Agile sprints,
+                    leading code reviews, Git pull request merges, and automated Postman API verification.
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-tech-footer">
+                <span class="exp-tech-label">Stack:</span>
+                <span class="tech-pill">NestJS</span>
+                <span class="tech-pill">Next.js</span>
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">RabbitMQ</span>
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">TypeORM</span>
+                <span class="tech-pill">CQRS / DDD</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="exp-pipeline-card">
+            <div class="exp-git-header">
+              <div class="git-header-left">
+                <span class="git-commit-hash">commit 4d11ca8</span>
+                <span class="git-branch-tag">🌿 branch: release/payments</span>
+              </div>
+              <div class="git-header-right">
+                <span class="git-tenure-tag">Nov 2025 – Feb 2026</span>
+                <span class="git-status-tag archived">COMPLETED INTERNSHIP</span>
+              </div>
+            </div>
+
+            <div class="exp-card-body">
+              <div class="exp-role-heading-row">
+                <div>
+                  <h3 class="exp-role-title">Junior Node.js Developer Intern</h3>
+                  <div class="exp-company-subhead">
+                    <strong>Techbuilder</strong> • Mohali, India • Internship
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-impact-matrix">
+                <div class="impact-matrix-card">
+                  <div class="impact-matrix-title">💳 Payment Gateways</div>
+                  <div class="impact-matrix-desc">Integrated PayMongo, GWallet (Philippines) &amp; Stripe Connected
+                    Accounts for vendor payouts.</div>
+                </div>
+                <div class="impact-matrix-card">
+                  <div class="impact-matrix-title">🛡️ Idempotent Webhooks</div>
+                  <div class="impact-matrix-desc">Engineered webhook listeners with duplicate prevention guards and
+                    retry fault tolerance.</div>
+                </div>
+                <div class="impact-matrix-card">
+                  <div class="impact-matrix-title">⚡ Delivery Order Scale</div>
+                  <div class="impact-matrix-desc">Optimized high-concurrency order dispatch REST routes for ride &amp;
+                    food delivery platform.</div>
+                </div>
+              </div>
+
+              <div class="exp-engineering-duties">
+                <div class="exp-duty-row">
+                  <span class="chevron">▸</span>
+                  <div>
+                    <strong>High-Throughput Order APIs:</strong> Maintained and optimized Node.js &amp; Express.js
+                    backend services supporting real-time delivery transactions.
+                  </div>
+                </div>
+                <div class="exp-duty-row">
+                  <span class="chevron">▸</span>
+                  <div>
+                    <strong>Automated Merchant Payouts:</strong> Designed end-to-end driver onboarding and scheduled
+                    payout pipelines using <strong>Stripe Connect</strong>.
+                  </div>
+                </div>
+                <div class="exp-duty-row">
+                  <span class="chevron">▸</span>
+                  <div>
+                    <strong>Version Control &amp; PR Reviews:</strong> Managed Git feature branching, pull request
+                    reviews, and production release staging.
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-tech-footer">
+                <span class="exp-tech-label">Stack:</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Express.js</span>
+                <span class="tech-pill">Stripe Connect</span>
+                <span class="tech-pill">PayMongo API</span>
+                <span class="tech-pill">REST APIs</span>
+                <span class="tech-pill">Postman</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="exp-pipeline-card">
+            <div class="exp-git-header">
+              <div class="git-header-left">
+                <span class="git-commit-hash">commit 1b09fc3</span>
+                <span class="git-branch-tag">🌿 branch: release/mern-dsa</span>
+              </div>
+              <div class="git-header-right">
+                <span class="git-tenure-tag">Feb 2025 – Nov 2025</span>
+                <span class="git-status-tag archived">COMPLETED INTERNSHIP</span>
+              </div>
+            </div>
+
+            <div class="exp-card-body">
+              <div class="exp-role-heading-row">
+                <div>
+                  <h3 class="exp-role-title">Software Developer Intern</h3>
+                  <div class="exp-company-subhead">
+                    <strong>CodeQuotient</strong> • Panchkula, India • Internship
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-impact-matrix">
+                <div class="impact-matrix-card">
+                  <div class="impact-matrix-title">🧩 Full-Stack MERN</div>
+                  <div class="impact-matrix-desc">Developed full-stack web applications utilizing MongoDB, Express,
+                    React, and Node.js.</div>
+                </div>
+                <div class="impact-matrix-card">
+                  <div class="impact-matrix-title">🧠 120+ LeetCode DSA</div>
+                  <div class="impact-matrix-desc">Mastered complex data structures, trees, dynamic programming, and
+                    graphs in C++ &amp; Python.</div>
+                </div>
+                <div class="impact-matrix-card">
+                  <div class="impact-matrix-title">⚡ State &amp; UI Tuning</div>
+                  <div class="impact-matrix-desc">Tested, debugged, and optimized React component rendering performance
+                    with team leads.</div>
+                </div>
+              </div>
+
+              <div class="exp-engineering-duties">
+                <div class="exp-duty-row">
+                  <span class="chevron">▸</span>
+                  <div>
+                    <strong>Full-Stack Applications:</strong> Engineered responsive web apps with decoupled Express REST
+                    backends and MongoDB state tracking.
+                  </div>
+                </div>
+                <div class="exp-duty-row">
+                  <span class="chevron">▸</span>
+                  <div>
+                    <strong>Algorithmic Rigor:</strong> Solved 120+ competitive algorithmic puzzles under strict
+                    time/space complexity constraints.
+                  </div>
+                </div>
+              </div>
+
+              <div class="exp-tech-footer">
+                <span class="exp-tech-label">Stack:</span>
+                <span class="tech-pill">MongoDB</span>
+                <span class="tech-pill">Express</span>
+                <span class="tech-pill">React</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">C++</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">DSA</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about-section" class="section">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div>
+            <div class="section-header" style="margin-bottom: 1.5rem;">
+              <div class="section-tag">Academic Background</div>
+              <h2 class="section-title" style="font-size: 1.8rem;">Education</h2>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="edu-card">
+                <div
+                  style="font-size: 0.78rem; color: var(--accent); font-family: var(--font-mono); font-weight: bold;">🎓
+                  PURSUING</div>
+                <h4 style="font-size: 1.1rem; margin: 0.25rem 0;">Master of Computer Applications (MCA)</h4>
+                <div style="color: var(--text-secondary); font-size: 0.88rem;">Chandigarh University • Postgraduate
+                </div>
+                <div class="project-tags" style="margin-top: 0.5rem;">
+                  <span class="tech-pill">System Architecture</span>
+                  <span class="tech-pill">AI / ML</span>
+                </div>
+              </div>
+
+              <div class="edu-card">
+                <div
+                  style="font-size: 0.78rem; color: var(--accent); font-family: var(--font-mono); font-weight: bold;">
+                  🏛️ 2021 – 2025 (CGPA: 7.5)</div>
+                <h4 style="font-size: 1.1rem; margin: 0.25rem 0;">Bachelor of Computer Applications (BCA)</h4>
+                <div style="color: var(--text-secondary); font-size: 0.88rem;">Arya P.G. College, Panipat (Kurukshetra
+                  University)</div>
+                <div class="project-tags" style="margin-top: 0.5rem;">
+                  <span class="tech-pill">Computer Science</span>
+                  <span class="tech-pill">Software Engineering</span>
+                </div>
+              </div>
+
+              <div class="edu-card">
+                <div
+                  style="font-size: 0.78rem; color: var(--accent); font-family: var(--font-mono); font-weight: bold;">🏫
+                  HIGHER SECONDARY</div>
+                <h4 style="font-size: 1.05rem; margin: 0.25rem 0;">Class 12 &amp; Class 10</h4>
+                <div style="color: var(--text-secondary); font-size: 0.88rem;">Arya Sr. Sec. School, Panipat</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="section-header" style="margin-bottom: 1.5rem;">
+              <div class="section-tag">Milestones &amp; Values</div>
+              <h2 class="section-title" style="font-size: 1.8rem;">Achievements &amp; Leadership</h2>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div class="ach-card">
+                <div style="font-size: 1.25rem; margin-bottom: 0.25rem;">🥇 1st Place – On-Spot Coding</div>
+                <div style="color: var(--accent); font-weight: 600; font-size: 0.88rem;">Zerone24 IT Fest</div>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.35rem;">
+                  Competed in real-time solving complex algorithmic puzzles under tight time pressure with maximum
+                  execution efficiency.
+                </p>
+              </div>
+
+              <div class="ach-card">
+                <div style="font-size: 1.25rem; margin-bottom: 0.25rem;">🥈 2nd Place – On-Spot Debugging</div>
+                <div style="color: var(--accent); font-weight: 600; font-size: 0.88rem;">Zerone24 IT Fest</div>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.35rem;">
+                  Diagnosed and patched runtime logic faults, syntax bugs, and concurrency defects in competitive code
+                  layouts.
+                </p>
+              </div>
+
+              <div class="ach-card">
+                <div style="font-size: 1.25rem; margin-bottom: 0.25rem;">🎖️ NCC &amp; NSS Service</div>
+                <div style="color: var(--accent); font-weight: 600; font-size: 0.88rem;">Discipline &amp; Community
+                  Operations</div>
+                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.35rem;">
+                  Trained in disciplined teamwork and social welfare campaigns, building high-resilience execution
+                  habits.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact-section" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Direct Channel</div>
+          <h2 class="section-title">Get In Touch &amp; Collaborate</h2>
+          <p class="section-desc">
+            Have an open full-stack or backend engineering opportunity, system architecture question, or AI project to
+            build? Let's connect!
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-box">
+            <div
+              style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); margin-bottom: 1.25rem; font-weight: bold;">
+              // DIRECT NETWORK COORDINATES
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">✉️</div>
+              <div style="flex: 1;">
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">DIRECT EMAIL
+                </div>
+                <div style="font-weight: 600; font-size: clamp(0.85rem, 2vw, 0.95rem); word-break: break-all;">
+                  iam.sumitkumar64@gmail.com</div>
+              </div>
+              <button class="btn btn-sm btn-dark" data-copy="iam.sumitkumar64@gmail.com" title="Copy Email">
+                📋 Copy
+              </button>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div style="flex: 1;">
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">MOBILE /
+                  WHATSAPP</div>
+                <div style="font-weight: 600; font-size: 0.95rem;">+91 99925 28037</div>
+              </div>
+              <button class="btn btn-sm btn-dark" data-copy="+919992528037" title="Copy Phone">
+                📋 Copy
+              </button>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">🔗</div>
+              <div style="flex: 1;">
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">LINKEDIN
+                  PROFILE</div>
+                <div style="font-weight: 600; font-size: clamp(0.85rem, 2vw, 0.95rem); word-break: break-all;">
+                  linkedin.com/in/iamsumitkumar64</div>
+              </div>
+              <a href="https://linkedin.com/in/iamsumitkumar64" target="_blank" class="btn btn-sm btn-dark">
+                ↗ Visit
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">🐙</div>
+              <div style="flex: 1;">
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">GITHUB
+                  REPOSITORIES</div>
+                <div style="font-weight: 600; font-size: clamp(0.85rem, 2vw, 0.95rem); word-break: break-all;">
+                  github.com/iamsumitkumar64</div>
+              </div>
+              <a href="https://github.com/iamsumitkumar64" target="_blank" class="btn btn-sm btn-dark">
+                ↗ Visit
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">⚡</div>
+              <div style="flex: 1;">
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">LEETCODE
+                  PROFILE</div>
+                <div style="font-weight: 600; font-size: clamp(0.85rem, 2vw, 0.95rem); word-break: break-all;">
+                  leetcode.com/u/iamsumitkumar64</div>
+              </div>
+              <a href="https://leetcode.com/u/iamsumitkumar64/" target="_blank" class="btn btn-sm btn-dark">
+                ↗ Visit
+              </a>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form">
+            <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); font-weight: bold;">
+              &gt; DISPATCH INQUIRY PACKET
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Your Full Name</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Alex Henderson" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="name@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-msg">Message &amp; Project Scope</label>
+              <textarea id="contact-msg" class="form-textarea" rows="4"
+                placeholder="Describe the role or engineering architecture you'd like to collaborate on..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-white" style="width: 100%; justify-content: center;">
+              Send Message 🚀
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <span class="logo-badge">&gt;_</span>
+          <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;">SUMIT KUMAR</span>
+          <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-left: 0.5rem;">
+            ● ALL SYSTEMS OPERATIONAL
+          </span>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+          <a href="PORTO CONTENT/Sumit%20Kumar%20Resume.pdf" target="_blank" class="btn btn-sm btn-dark">
+            Download Resume (.PDF)
+          </a>
+          <a href="https://github.com/iamsumitkumar64" target="_blank" class="btn btn-sm btn-dark">
+            GitHub ↗
+          </a>
+          <a href="https://linkedin.com/in/iamsumitkumar64" target="_blank" class="btn btn-sm btn-dark">
+            LinkedIn ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Sumit Kumar (Birwal). All rights reserved.
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.75rem;">
+          git commit -m "zero-loss distributed systems"
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 
 </html>

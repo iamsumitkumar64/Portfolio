@@ -1,443 +1,347 @@
-// Theme Management
-const body = document.body;
-const modeToggle = document.getElementById('mode-toggle');
-const modeIcon = document.getElementById('mode-icon');
-const header = document.querySelector('header');
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  initNavbar();
+  initMinimalTerminal();
+  initBubbleRoadmap();
+  initSkillsFilter();
+  initContactForm();
+  initCopyButtons();
+});
 
-// Check for saved theme preference
-const savedTheme = localStorage.getItem('portfolio-theme');
-if (savedTheme === 'light') {
-    body.classList.add('light-theme');
-    if (modeIcon) {
-        modeIcon.src = 'PORTO CONTENT/night.png';
-        modeIcon.alt = 'Dark Mode';
-    }
-} else {
-    body.classList.remove('light-theme');
-    if (modeIcon) {
-        modeIcon.src = 'PORTO CONTENT/light.png';
-        modeIcon.alt = 'Light Mode';
-    }
-}
+function initTheme() {
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
 
-// Toggle Theme function
-if (modeToggle) {
-    modeToggle.addEventListener('click', () => {
-        body.classList.toggle('light-theme');
-        const isLight = body.classList.contains('light-theme');
-        localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
-        
-        if (modeIcon) {
-            modeIcon.src = isLight ? 'PORTO CONTENT/night.png' : 'PORTO CONTENT/light.png';
-            modeIcon.alt = isLight ? 'Dark Mode' : 'Light Mode';
-        }
-        
-        // Notify particle network of theme change
-        if (window.particleNetwork) {
-            window.particleNetwork.updateColors(isLight);
-        }
+  const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    if (themeIcon) themeIcon.textContent = '🌙';
+  } else {
+    document.body.classList.remove('light-theme');
+    if (themeIcon) themeIcon.textContent = '☀️';
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const isLight = document.body.classList.toggle('light-theme');
+      localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+      if (themeIcon) themeIcon.textContent = isLight ? '🌙' : '☀️';
+      showToast(isLight ? 'Switched to Light Theme' : 'Switched to Dark Theme');
     });
+  }
 }
 
-// Header scroll effect
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
+function initNavbar() {
+  const header = document.querySelector('.site-header');
+  const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+  const sections = document.querySelectorAll('section[id]');
+  const moreDropdown = document.getElementById('nav-more-dropdown');
+  const moreToggleBtn = document.getElementById('nav-more-btn');
+  const mobileToggleBtn = document.getElementById('mobile-menu-btn');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const mobileDrawerOverlay = document.getElementById('mobile-drawer-overlay');
+  const mobileCloseBtn = document.getElementById('mobile-drawer-close');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+      header?.classList.add('scrolled');
     } else {
-        header.classList.remove('scrolled');
+      header?.classList.remove('scrolled');
     }
-});
 
-// Mobile Navigation Toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-const navItems = document.querySelectorAll('.nav-links a');
-
-if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
+    let current = '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 140;
+      const height = sec.offsetHeight;
+      if (window.scrollY >= top && window.scrollY < top + height) {
+        current = sec.getAttribute('id');
+      }
     });
 
-    // Close menu when clicking links
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-        });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  if (moreToggleBtn && moreDropdown) {
+    moreToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = moreDropdown.classList.toggle('open');
+      moreToggleBtn.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-            menuToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-        }
+      if (!moreDropdown.contains(e.target) && e.target !== moreToggleBtn) {
+        moreDropdown.classList.remove('open');
+        moreToggleBtn.setAttribute('aria-expanded', 'false');
+      }
     });
+
+    moreDropdown.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        moreDropdown.classList.remove('open');
+        moreToggleBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  const openDrawer = () => {
+    mobileDrawer?.classList.add('open');
+    mobileDrawerOverlay?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeDrawer = () => {
+    mobileDrawer?.classList.remove('open');
+    mobileDrawerOverlay?.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  if (mobileToggleBtn) mobileToggleBtn.addEventListener('click', openDrawer);
+  if (mobileCloseBtn) mobileCloseBtn.addEventListener('click', closeDrawer);
+  if (mobileDrawerOverlay) mobileDrawerOverlay.addEventListener('click', closeDrawer);
+
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
 }
 
-// Canvas Particle Network
-class ParticleNetwork {
-    constructor(canvasId) {
-        this.canvas = document.getElementById(canvasId);
-        if (!this.canvas) return;
-        this.ctx = this.canvas.getContext('2d');
-        this.particles = [];
-        this.maxParticles = window.innerWidth < 768 ? 30 : 65;
-        this.connectionDistance = 110;
-        this.mouse = { x: null, y: null, radius: 150 };
-        this.animationFrameId = null;
-        this.isLight = document.body.classList.contains('light-theme');
-        this.isVisible = true;
+function initMinimalTerminal() {
+  const terminalInput = document.getElementById('terminal-input');
+  const terminalOutput = document.getElementById('terminal-output');
+  const quickCmdBtns = document.querySelectorAll('.quick-cmd-btn');
 
-        this.init();
-        this.bindEvents();
-        this.setupVisibilityObserver();
-    }
+  quickCmdBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cmd = btn.getAttribute('data-cmd');
+      if (cmd) executeTerminalCommand(cmd);
+    });
+  });
 
-    init() {
-        this.resize();
-        this.updateColors(this.isLight);
-        this.particles = [];
-        for (let i = 0; i < this.maxParticles; i++) {
-            this.particles.push(this.createParticle());
+  if (terminalInput) {
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const cmd = terminalInput.value.trim();
+        if (cmd) {
+          executeTerminalCommand(cmd);
+          terminalInput.value = '';
         }
+      }
+    });
+  }
+
+  function executeTerminalCommand(rawCmd) {
+    const cmd = rawCmd.toLowerCase().trim();
+    if (!terminalOutput) return;
+
+    const cmdRecord = document.createElement('div');
+    cmdRecord.className = 'terminal-prompt-line';
+    cmdRecord.innerHTML = `<span class="terminal-prompt">sumit@dev:~$</span> <span class="terminal-cmd-text">${escapeHtml(rawCmd)}</span>`;
+    terminalOutput.appendChild(cmdRecord);
+
+    const responseDiv = document.createElement('div');
+    responseDiv.className = 'terminal-response-line';
+
+    if (cmd === 'clear') {
+      terminalOutput.innerHTML = '';
+      return;
+    } else if (cmd === 'help' || cmd === 'sumit --help' || cmd === '?') {
+      responseDiv.innerHTML = `
+        <div style="color: var(--text-primary); font-weight: 700;">Available commands:</div>
+        <div style="color: var(--text-secondary); display: grid; grid-template-columns: 110px 1fr; gap: 4px; margin-top: 4px;">
+          <span><b style="color:var(--text-primary)">skills</b></span> <span>List backend & architectural stack</span>
+          <span><b style="color:var(--text-primary)">projects</b></span> <span>View key repositories & POCs</span>
+          <span><b style="color:var(--text-primary)">arch</b></span> <span>View distributed system highlights</span>
+          <span><b style="color:var(--text-primary)">experience</b></span> <span>View corporate work history</span>
+          <span><b style="color:var(--text-primary)">contact</b></span> <span>Get email, phone & socials</span>
+          <span><b style="color:var(--text-primary)">resume</b></span> <span>Open / download resume PDF</span>
+          <span><b style="color:var(--text-primary)">git log</b></span> <span>Show recent architecture commits</span>
+          <span><b style="color:var(--text-primary)">clear</b></span> <span>Clear terminal window</span>
+        </div>
+      `;
+    } else if (cmd === 'skills') {
+      responseDiv.innerHTML = `
+        <div style="color: var(--text-primary); font-weight: 700;">⚡ Technical Stack Matrix:</div>
+        <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 4px; line-height: 1.5;">
+          • <b style="color:var(--text-primary)">Architectures:</b> Domain-Driven Design (DDD), CQRS, Transactional Outbox, Event-Driven (EDA), Microservices.<br>
+          • <b style="color:var(--text-primary)">Backend:</b> NestJS, Node.js, TypeScript, C++ (220+ DSA), Python, Django, REST, WebSockets.<br>
+          • <b style="color:var(--text-primary)">Databases & Queues:</b> RabbitMQ, PostgreSQL, TypeORM, Redis, BullMQ, MongoDB.<br>
+          • <b style="color:var(--text-primary)">Frontend & AI:</b> Next.js, React, Redux Toolkit, TailwindCSS, LangChain, LangGraph, Gemini API.
+        </div>
+      `;
+    } else if (cmd === 'projects') {
+      responseDiv.innerHTML = `
+        <div style="color: var(--text-primary); font-weight: 700;">📁 Featured Repositories:</div>
+        <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 4px; line-height: 1.5;">
+          1. <b>LangChain AI Agent POC</b> - Agentic workflows with LangGraph & Gemini Flash<br>
+          2. <b>Eternal Frames</b> - Multi-tenant studio platform with Outbox + RabbitMQ & Razorpay<br>
+          3. <b>Deca Chat</b> - Real-time messaging with WebSockets & Inbox-Outbox sync<br>
+          4. <b>C++ Custom Web Crawler</b> - Zero-dependency crawler with custom memory management<br>
+          5. <b>RabbitMQ Exchanges POC</b> - Multi-service asynchronous message orchestration
+        </div>
+      `;
+    } else if (cmd === 'arch') {
+      responseDiv.innerHTML = `
+        <div style="color: var(--text-primary); font-weight: 700;">🏗️ Distributed Architecture Highlights:</div>
+        <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 4px; line-height: 1.5;">
+          • <b>Transactional Outbox:</b> Eliminates dual-write anomalies across DB and Message Broker.<br>
+          • <b>Idempotent Consumers:</b> Handles duplicate delivery gracefully with deduplication keys.<br>
+          • <b>Dead Letter Queues (DLQ):</b> Quarantines poisoned messages for backoff & alert triage.
+        </div>
+      `;
+    } else if (cmd === 'experience') {
+      responseDiv.innerHTML = `
+        <div style="color: var(--text-primary); font-size: 0.8rem; line-height: 1.5;">
+          • <b style="color:var(--text-primary)">Full Stack Developer</b> @ Zenmonk Software & Services (Feb 2026 - Present)<br>
+          • <b style="color:var(--text-primary)">Junior Node.js Developer Intern</b> @ Techbuilder (Nov 2025 - Feb 2026)<br>
+          • <b style="color:var(--text-primary)">Software Developer Intern</b> @ CodeQuotient (Feb 2025 - Nov 2025)
+        </div>
+      `;
+    } else if (cmd === 'contact') {
+      responseDiv.innerHTML = `
+        <div style="color: var(--text-primary); font-weight: 700;">📬 Contact Coordinates:</div>
+        <div style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 4px; line-height: 1.5;">
+          • Email: <a href="mailto:iam.sumitkumar64@gmail.com" style="color:var(--text-primary); text-decoration:underline;">iam.sumitkumar64@gmail.com</a><br>
+          • Phone: <a href="tel:+919992528037" style="color:var(--text-primary); text-decoration:underline;">+91 99925 28037</a><br>
+          • LinkedIn: <a href="https://linkedin.com/in/iamsumitkumar64" target="_blank" style="color:var(--text-primary); text-decoration:underline;">linkedin.com/in/iamsumitkumar64</a><br>
+          • GitHub: <a href="https://github.com/iamsumitkumar64" target="_blank" style="color:var(--text-primary); text-decoration:underline;">github.com/iamsumitkumar64</a>
+        </div>
+      `;
+    } else if (cmd === 'resume' || cmd === 'cat resume.txt' || cmd === 'cat resume') {
+      responseDiv.innerHTML = `<div style="color: var(--text-primary);">Opening Resume PDF in new tab...</div>`;
+      window.open('PORTO CONTENT/Sumit%20Kumar%20Resume.pdf', '_blank');
+    } else if (cmd === 'git log' || cmd === 'git log --graph') {
+      responseDiv.innerHTML = `
+        <div style="color: var(--text-secondary); font-size: 0.78rem; font-family: var(--font-mono); line-height: 1.5;">
+          * <span style="color:var(--text-primary)">7f8a9e</span> (HEAD -> main) feat(resilience): implement DLQ with exponential retry<br>
+          * <span style="color:var(--text-primary)">3c12a4</span> feat(outbox): atomize DB writes & RabbitMQ event dispatch<br>
+          * <span style="color:var(--text-primary)">99bd70</span> refactor(domain): isolate bounded contexts with DDD aggregate roots<br>
+          * <span style="color:var(--text-primary)">1104e2</span> feat(payments): integrate Stripe Connect & Paymongo webhooks
+        </div>
+      `;
+    } else if (cmd === 'whoami') {
+      responseDiv.innerHTML = `<span style="color:var(--text-primary)">guest@sumit-dev (Authorized Visitor)</span>`;
+    } else {
+      responseDiv.innerHTML = `<span style="color:var(--text-primary);">Command not found: "${escapeHtml(rawCmd)}". Type <b style="color:var(--text-primary);">help</b> to see all commands.</span>`;
     }
 
-    createParticle() {
-        return {
-            x: Math.random() * this.canvas.width,
-            y: Math.random() * this.canvas.height,
-            vx: (Math.random() - 0.5) * 0.6,
-            vy: (Math.random() - 0.5) * 0.6,
-            radius: Math.random() * 2.5 + 1.5,
-            color: this.getRandomColor()
-        };
-    }
-
-    getRandomColor() {
-        // Cyan/Indigo tones depending on current theme
-        const colors = this.isLight 
-            ? ['rgba(79, 70, 229, 0.45)', 'rgba(8, 145, 178, 0.45)']
-            : ['rgba(99, 102, 241, 0.5)', 'rgba(6, 182, 212, 0.5)'];
-        return colors[Math.floor(Math.random() * colors.length)];
-    }
-
-    updateColors(isLight) {
-        this.isLight = isLight;
-        this.particles.forEach(p => {
-            p.color = this.getRandomColor();
-        });
-    }
-
-    resize() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
-    }
-
-    bindEvents() {
-        window.addEventListener('resize', () => {
-            this.resize();
-            this.init();
-        });
-
-        // Track mouse position over section
-        window.addEventListener('mousemove', (e) => {
-            this.mouse.x = e.clientX;
-            this.mouse.y = e.clientY;
-        });
-
-        window.addEventListener('mouseleave', () => {
-            this.mouse.x = null;
-            this.mouse.y = null;
-        });
-    }
-
-    setupVisibilityObserver() {
-        // Pause canvas updates if page is scrolled away from hero
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                this.isVisible = entry.isIntersecting;
-                if (this.isVisible) {
-                    this.animate();
-                } else {
-                    cancelAnimationFrame(this.animationFrameId);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        const hero = document.getElementById('home-section');
-        if (hero) observer.observe(hero);
-    }
-
-    animate() {
-        if (!this.isVisible) return;
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-        // Update and draw particles
-        this.particles.forEach(p => {
-            // Move
-            p.x += p.vx;
-            p.y += p.vy;
-
-            // Boundary check
-            if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
-            if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
-
-            // Mouse interaction (push away)
-            if (this.mouse.x !== null && this.mouse.y !== null) {
-                const dx = p.x - this.mouse.x;
-                const dy = p.y - this.mouse.y;
-                const dist = Math.hypot(dx, dy);
-                if (dist < this.mouse.radius) {
-                    const force = (this.mouse.radius - dist) / this.mouse.radius;
-                    p.x += (dx / dist) * force * 1.5;
-                    p.y += (dy / dist) * force * 1.5;
-                }
-            }
-
-            // Draw
-            this.ctx.beginPath();
-            this.ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = p.color;
-            this.ctx.fill();
-        });
-
-        // Draw connections (lines)
-        const lineColor = this.isLight ? 'rgba(79, 70, 229, 0.07)' : 'rgba(99, 102, 241, 0.08)';
-        for (let i = 0; i < this.particles.length; i++) {
-            for (let j = i + 1; j < this.particles.length; j++) {
-                const p1 = this.particles[i];
-                const p2 = this.particles[j];
-                const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-
-                if (dist < this.connectionDistance) {
-                    const alpha = (this.connectionDistance - dist) / this.connectionDistance * 0.6;
-                    this.ctx.beginPath();
-                    this.ctx.moveTo(p1.x, p1.y);
-                    this.ctx.lineTo(p2.x, p2.y);
-                    this.ctx.strokeStyle = this.isLight 
-                        ? `rgba(79, 70, 229, ${alpha * 0.12})`
-                        : `rgba(99, 102, 241, ${alpha * 0.15})`;
-                    this.ctx.lineWidth = 0.8;
-                    this.ctx.stroke();
-                }
-            }
-        }
-
-        this.animationFrameId = requestAnimationFrame(() => this.animate());
-    }
+    terminalOutput.appendChild(responseDiv);
+    const termBody = document.querySelector('.terminal-body');
+    if (termBody) termBody.scrollTop = termBody.scrollHeight;
+  }
 }
 
-// Instantiate canvas background and hero visual interactive states after load
-document.addEventListener('DOMContentLoaded', () => {
-    window.particleNetwork = new ParticleNetwork('particle-canvas');
-    
-    const codeWindow = document.querySelector('.hero-code-window');
-    if (codeWindow) {
-        codeWindow.addEventListener('click', (e) => {
-            e.stopPropagation();
-            codeWindow.classList.toggle('forward');
-        });
-        
-        document.addEventListener('click', () => {
-            codeWindow.classList.remove('forward');
-        });
+function initBubbleRoadmap() {
+  const bubbles = document.querySelectorAll('.arch-bubble-node');
+
+  bubbles.forEach(bubble => {
+    bubble.addEventListener('click', () => {
+      const isAlreadyActive = bubble.classList.contains('active');
+      bubbles.forEach(b => b.classList.remove('active'));
+      if (!isAlreadyActive) {
+        bubble.classList.add('active');
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.arch-bubble-node')) {
+      bubbles.forEach(b => b.classList.remove('active'));
     }
-});
+  });
+}
 
-// Timeline & Experience Scroll & Glow Observer
-const timelineItems = document.querySelectorAll('.timeline-item');
-const experienceItems = document.querySelectorAll('.experience-item');
+function initSkillsFilter() {
+  const tabBtns = document.querySelectorAll('.skill-tab-pill');
+  const techCards = document.querySelectorAll('.tech-matrix-card');
 
-const glowObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            entry.target.classList.add('glowing');
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      techCards.forEach(card => {
+        const cat = card.getAttribute('data-cat');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
         } else {
-            entry.target.classList.remove('glowing');
+          card.style.display = 'none';
         }
+      });
     });
-}, { 
-    threshold: 0.1, 
-    rootMargin: '-25% 0px -25% 0px' /* active zone in the center of the viewport */
-});
-
-if (timelineItems.length > 0) {
-    timelineItems.forEach(item => glowObserver.observe(item));
-}
-if (experienceItems.length > 0) {
-    experienceItems.forEach(item => glowObserver.observe(item));
+  });
 }
 
-// Resume PDF Download action
-const resumeBtn = document.getElementById('resume-btn');
-if (resumeBtn && resumeBtn.tagName === 'BUTTON') {
-    resumeBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const link = document.createElement('a');
-        link.href = 'PORTO%20CONTENT/Sumit%20Kumar%20Resume.pdf';
-        link.download = 'Sumit Kumar Resume.pdf';
-        link.click();
-    });
-}
-
-// Custom Toast Notifications
-function showToast(message, type = 'success') {
-    const container = document.getElementById('toast-container');
-    if (!container) return;
-
-    const toast = document.createElement('div');
-    toast.className = `toast ${type}`;
-    
-    // Icon selection
-    let icon = '✓';
-    if (type === 'error') icon = '✕';
-    
-    toast.innerHTML = `<span class="toast-icon">${icon}</span><span class="toast-message">${message}</span>`;
-    container.appendChild(toast);
-
-    // Trigger transition
-    setTimeout(() => {
-        toast.classList.add('show');
-    }, 50);
-
-    // Auto remove
-    setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => {
-            toast.remove();
-        }, 450);
-    }, 4000);
-}
-
-// Contact Form submission using EmailJS
-function SendMail(event) {
-    if (event) event.preventDefault();
-
-    const nameInput = document.getElementById('user-name');
-    const emailInput = document.getElementById('user-email');
-    const mobileInput = document.getElementById('user-mobile');
-    const messageInput = document.getElementById('user-message');
-    const submitBtn = document.querySelector('#contact-form button[type="submit"]');
-
-    if (!nameInput || !emailInput || !messageInput) {
-        showToast('Form structure is invalid.', 'error');
-        return false;
-    }
-
-    const params = {
-        from_name: nameInput.value.trim(),
-        email_id: emailInput.value.trim(),
-        mobile: mobileInput ? mobileInput.value.trim() : '',
-        message: messageInput.value.trim()
-    };
-
-    if (!params.from_name || !params.email_id || !params.message) {
-        showToast('Please fill in all required fields.', 'error');
-        return false;
-    }
-
-    // Set loading state
-    if (submitBtn) {
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerText = 'SENDING...';
-    }
+        submitBtn.textContent = 'Transmitting Message...';
+      }
 
-    emailjs.send("service_nvpczn8", "template_fjbjz6e", params)
-        .then((res) => {
-            showToast('Message sent successfully! Sumit will get back to you soon.', 'success');
-            // Reset fields
-            nameInput.value = '';
-            emailInput.value = '';
-            if (mobileInput) mobileInput.value = '';
-            messageInput.value = '';
-        })
-        .catch((error) => {
-            console.error("Failed to send email:", error);
-            showToast('Failed to send message. Please try again or email directly.', 'error');
-        })
-        .finally(() => {
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.innerText = 'SUBMIT FORM';
-            }
-        });
-
-    return false;
+      setTimeout(() => {
+        showToast('Message Transmitted! Sumit will get back to you shortly.');
+        form.reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message 🚀';
+        }
+      }, 800);
+    });
+  }
 }
 
-// Bind contact form submit explicitly if available
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', SendMail);
-    }
-});
-
-// Quotes rotation & controls
-const quotes = [
-    {
-        text: "You have the right to perform your actions, but not to claim the results.",
-        author: "— Bhagavad Gita 2.47"
-    },
-    {
-        text: "An equation means nothing to me unless it expresses a thought of God.",
-        author: "— Srinivasa Ramanujan"
-    },
-    {
-        text: "A person should never do that to others which he does not like to be done to him.",
-        author: "— Bhishma, Mahabharata"
-    }
-];
-
-let currentQuoteIndex = 0;
-const quoteTextEl = document.getElementById('quote-text');
-const quoteAuthorEl = document.getElementById('quote-author');
-const prevQuoteBtn = document.getElementById('prev-quote-btn');
-const nextQuoteBtn = document.getElementById('next-quote-btn');
-let quoteInterval;
-
-if (quoteTextEl && quoteAuthorEl) {
-    function displayQuote(index) {
-        quoteTextEl.style.opacity = '0';
-        quoteAuthorEl.style.opacity = '0';
-        
-        setTimeout(() => {
-            quoteTextEl.innerText = quotes[index].text;
-            quoteAuthorEl.innerText = quotes[index].author;
-            
-            quoteTextEl.style.opacity = '1';
-            quoteAuthorEl.style.opacity = '1';
-        }, 300);
-    }
-    
-    function startQuoteRotation() {
-        if (quoteInterval) clearInterval(quoteInterval);
-        quoteInterval = setInterval(() => {
-            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-            displayQuote(currentQuoteIndex);
-        }, 8000);
-    }
-    
-    if (prevQuoteBtn) {
-        prevQuoteBtn.addEventListener('click', () => {
-            currentQuoteIndex = (currentQuoteIndex - 1 + quotes.length) % quotes.length;
-            displayQuote(currentQuoteIndex);
-            startQuoteRotation();
+function initCopyButtons() {
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.getAttribute('data-copy');
+      if (text) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`Copied to clipboard: "${text}"`);
+        }).catch(() => {
+          showToast('Failed to copy');
         });
-    }
-    
-    if (nextQuoteBtn) {
-        nextQuoteBtn.addEventListener('click', () => {
-            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-            displayQuote(currentQuoteIndex);
-            startQuoteRotation();
-        });
-    }
-    
-    startQuoteRotation();
+      }
+    });
+  });
 }
 
-// Experience section migrated to modern vertical layout. Tab switching logic no longer required.
+function showToast(message) {
+  let toastContainer = document.querySelector('.toast-container');
+  if (!toastContainer) {
+    toastContainer = document.createElement('div');
+    toastContainer.className = 'toast-container';
+    document.body.appendChild(toastContainer);
+  }
+
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerHTML = `<span style="color:var(--text-primary);">●</span> <span>${escapeHtml(message)}</span>`;
+  toastContainer.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(10px)';
+    toast.style.transition = 'all 0.3s ease';
+    setTimeout(() => toast.remove(), 300);
+  }, 3500);
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
