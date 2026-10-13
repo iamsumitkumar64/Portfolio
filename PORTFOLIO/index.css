@@ -1184,7 +1184,7 @@ body.light-theme .git-status-tag.archived {
 
 .exp-impact-matrix {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 0.75rem;
   margin-bottom: 1.5rem;
 }

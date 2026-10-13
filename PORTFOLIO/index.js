@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initCopyButtons();
 });
-
+//hi
 function initTheme() {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
@@ -195,9 +195,8 @@ function initMinimalTerminal() {
     } else if (cmd === 'experience') {
       responseDiv.innerHTML = `
         <div style="color: var(--text-primary); font-size: 0.8rem; line-height: 1.5;">
-          • <b style="color:var(--text-primary)">Full Stack Developer Intern</b> @ Zenmonk Software & Services (Feb 2026 - Present)<br>
-          • <b style="color:var(--text-primary)">Junior Node.js Developer Intern</b> @ Techbuilder (Nov 2025 - Feb 2026)<br>
-          • <b style="color:var(--text-primary)">Software Developer Intern</b> @ CodeQuotient (Feb 2025 - Nov 2025)
+          • <b style="color:var(--text-primary)">Full Stack Developer Intern</b> @ Zenmonk Software & Services (Nov 2025 - Present)<br>
+          • <b style="color:var(--text-primary)">Software Developer Intern</b> @ CodeQuotient (Feb 2025 - Oct 2025)
         </div>
       `;
     } else if (cmd === 'contact') {
