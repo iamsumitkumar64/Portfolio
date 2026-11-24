@@ -75,19 +75,11 @@ export default function Projects() {
         </div>
 
         <div className={styles.repoGrid}>
-          {filteredProjects.map((repo: Project) => {
-            const isSpotlight =
-              repo.id === 'rag-poc' ||
-              repo.id === 'birwal-mcp' ||
-              repo.id === 'dot-react-comment-lib';
-
-            return (
-              <article
-                key={repo.id}
-                className={`${styles.repoCard} ${
-                  isSpotlight ? styles.spotlightCard : ''
-                }`}
-              >
+          {filteredProjects.map((repo: Project) => (
+            <article
+              key={repo.id}
+              className={styles.repoCard}
+            >
                 <div className={styles.cardMain}>
                   <div className={styles.cardHeader}>
                     <div className={styles.titleBlock}>
@@ -144,8 +136,7 @@ export default function Projects() {
                   ))}
                 </div>
               </article>
-            );
-          })}
+            ))}
         </div>
       </Box>
     </section>

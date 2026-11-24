@@ -127,14 +127,6 @@
   box-shadow: 0 14px 34px -4px rgba(0, 0, 0, 0.12);
 }
 
-.cardActive {
-  border-left: 4px solid var(--brand-green);
-}
-
-.cardPast {
-  border-left: 4px solid var(--border-color);
-}
-
 .cardHeaderBar {
   display: flex;
   align-items: center;
@@ -184,7 +176,7 @@
   color: var(--brand-green);
 }
 
-.cardPast .statusText {
+.completedStatusText {
   color: var(--text-muted);
 }
 
@@ -229,11 +221,6 @@
   box-shadow: var(--shadow-sm);
 }
 
-.cardActive .monogramAvatar {
-  background-color: var(--badge-green-bg);
-  border-color: var(--badge-green-border);
-  color: var(--brand-green);
-}
 
 .companyMeta {
   display: flex;

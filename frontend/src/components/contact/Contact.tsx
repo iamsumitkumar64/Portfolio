@@ -231,6 +231,7 @@ export default function Contact() {
                   id="user-name"
                   type="text"
                   placeholder="Jane Doe / Hiring Lead"
+                  disabled={isSubmitting}
                   {...register('name')}
                   className={`${styles.formInput} ${errors.name ? styles.inputError : ''}`}
                   aria-invalid={Boolean(errors.name)}
@@ -248,6 +249,7 @@ export default function Contact() {
                   id="user-email"
                   type="email"
                   placeholder="jane@company.com"
+                  disabled={isSubmitting}
                   {...register('email')}
                   className={`${styles.formInput} ${errors.email ? styles.inputError : ''}`}
                   aria-invalid={Boolean(errors.email)}
@@ -265,6 +267,7 @@ export default function Contact() {
                   id="user-mobile"
                   type="tel"
                   placeholder="+91 99925 28037"
+                  disabled={isSubmitting}
                   {...register('mobile')}
                   className={`${styles.formInput} ${errors.mobile ? styles.inputError : ''}`}
                   aria-invalid={Boolean(errors.mobile)}
@@ -282,6 +285,7 @@ export default function Contact() {
                   id="user-message"
                   rows={4}
                   placeholder="Tell me about the engineering role, team, or distributed systems problem..."
+                  disabled={isSubmitting}
                   {...register('message')}
                   className={`${styles.formTextarea} ${errors.message ? styles.inputError : ''}`}
                   aria-invalid={Boolean(errors.message)}

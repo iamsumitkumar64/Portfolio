@@ -35,11 +35,7 @@ export default function Experience() {
                 )}
               </div>
 
-              <article
-                className={`${styles.careerCard} ${
-                  exp.active ? styles.cardActive : styles.cardPast
-                }`}
-              >
+              <article className={styles.careerCard}>
                 <div className={styles.cardHeaderBar}>
                   <div className={styles.statusIndicatorGroup}>
                     <span
@@ -47,7 +43,11 @@ export default function Experience() {
                         exp.active ? styles.activeRadarPulse : styles.completedIndicator
                       }
                     ></span>
-                    <span className={styles.statusText}>
+                    <span
+                      className={`${styles.statusText} ${
+                        !exp.active ? styles.completedStatusText : ''
+                      }`}
+                    >
                       {exp.active ? 'Current Production Role' : 'Completed Internship'}
                     </span>
                   </div>
