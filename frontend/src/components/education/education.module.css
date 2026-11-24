@@ -1,0 +1,329 @@
+.educationSection {
+  padding: clamp(36px, 6vw, 76px) 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(14px, 3vw, 24px);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--brand-teal);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.8rem, 4vw, 2.75rem) !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: clamp(6px, 1vw, 10px) !important;
+  letter-spacing: -0.025em !important;
+}
+
+.desc {
+  font-size: clamp(0.9rem, 1.5vw, 1rem) !important;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto !important;
+}
+
+.bentoTwoCol {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 32px);
+  width: 100%;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vw, 20px);
+  min-width: 0;
+}
+
+.colHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+.colIcon {
+  font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+  flex-shrink: 0;
+}
+
+.colTitle {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.15rem, 2vw, 1.35rem) !important;
+  font-weight: 700 !important;
+  color: var(--text-primary);
+  line-height: 1.2 !important;
+}
+
+.colSubtitle {
+  font-size: clamp(0.75rem, 1.2vw, 0.8125rem);
+  color: var(--brand-teal);
+  font-weight: 500;
+  display: block;
+}
+
+.cardsStack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vw, 16px);
+}
+
+.credCard {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: clamp(16px, 3vw, 24px);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  min-width: 0;
+  position: relative;
+}
+
+.credCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-teal);
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.08);
+}
+
+
+.col:first-child .credCard {
+  border-left: 3px solid var(--brand-teal);
+}
+
+.col:last-child .credCard {
+  border-left: 3px solid #eab308;
+}
+
+.credTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.periodPill {
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.gradeScore {
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 1.2vw, 0.8125rem);
+  font-weight: 700;
+  color: var(--brand-green);
+  white-space: nowrap;
+}
+
+.credTitle {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.05rem, 1.8vw, 1.18rem) !important;
+  font-weight: 700 !important;
+  color: var(--text-primary);
+  margin-top: 2px !important;
+  line-height: 1.3 !important;
+  word-break: break-word;
+}
+
+.institution {
+  font-size: clamp(0.8rem, 1.2vw, 0.85rem) !important;
+  font-weight: 600 !important;
+  color: var(--brand-teal);
+}
+
+.summary {
+  font-size: clamp(0.82rem, 1.2vw, 0.86rem) !important;
+  line-height: 1.55 !important;
+  color: var(--text-secondary);
+}
+
+.chipsRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.miniChip {
+  font-family: var(--font-mono) !important;
+  font-size: clamp(0.68rem, 1.1vw, 0.72rem) !important;
+  background-color: var(--bg-warm) !important;
+  color: var(--text-muted) !important;
+  border-radius: 9999px !important;
+}
+
+.honorBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 1.2vw, 0.78rem);
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+.gold {
+  background-color: rgba(234, 179, 8, 0.15);
+  color: #b45309;
+  border: 1px solid rgba(234, 179, 8, 0.35);
+}
+
+.silver {
+  background-color: rgba(148, 163, 184, 0.15);
+  color: #475569;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.package {
+  background-color: rgba(203, 56, 55, 0.12);
+  color: #cb3837;
+  border: 1px solid rgba(203, 56, 55, 0.25);
+}
+
+.bronze {
+  background-color: var(--badge-green-bg);
+  color: var(--brand-green);
+  border: 1px solid var(--badge-green-border);
+}
+
+
+
+
+@media (max-width: 900px) {
+  .bentoTwoCol {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .educationSection {
+    padding: clamp(32px, 5vw, 56px) 0;
+  }
+  .credCard {
+    padding: 16px 14px;
+    border-radius: 16px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .colHeader {
+    gap: 10px;
+  }
+
+  .colIcon {
+    font-size: 1.4rem;
+  }
+
+  .colTitle {
+    font-size: 1.15rem !important;
+  }
+
+  .credCard {
+    padding: 14px 12px;
+    border-radius: 14px;
+    gap: 6px;
+  }
+
+  .credTopRow {
+    gap: 6px;
+  }
+
+  .periodPill,
+  .honorBadge {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+  }
+
+  .gradeScore {
+    font-size: 0.75rem;
+  }
+
+  .credTitle {
+    font-size: 1.05rem !important;
+  }
+
+  .institution {
+    font-size: 0.8rem !important;
+  }
+
+  .summary {
+    font-size: 0.82rem !important;
+  }
+
+  .chipsRow {
+    gap: 4px;
+  }
+
+  .miniChip {
+    font-size: 0.68rem !important;
+  }
+}
+
+
+@media (max-width: 340px) {
+  .credTopRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .periodPill,
+  .honorBadge {
+    font-size: 0.68rem;
+  }
+
+  .colTitle {
+    font-size: 1.05rem !important;
+  }
+}

@@ -1,0 +1,209 @@
+.contactSection {
+  padding: clamp(48px, 7vw, 80px) 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--brand-teal);
+}
+
+.title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2rem, 4vw, 2.75rem) !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: 10px !important;
+  letter-spacing: -0.025em !important;
+}
+
+.desc {
+  font-size: 1rem !important;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto !important;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 4vw, 36px);
+}
+
+.infoPanel,
+.formPanel {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 36px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.panelTitle {
+  font-family: var(--font-heading) !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  color: var(--text-primary);
+  margin-bottom: 6px !important;
+}
+
+.panelDesc {
+  font-size: 0.875rem !important;
+  color: var(--text-secondary);
+  margin-bottom: 24px !important;
+  line-height: 1.5 !important;
+}
+
+.cardsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.coordCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.coordCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-teal);
+  background-color: var(--card-bg);
+}
+
+.cardIcon {
+  font-size: 1.4rem;
+  margin-right: 14px;
+  flex-shrink: 0;
+}
+
+.cardText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cardLabel {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.cardValue {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.copyBadge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--brand-teal);
+  white-space: nowrap;
+}
+
+.arrowIcon {
+  color: var(--text-muted);
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-warm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  border-color: var(--brand-teal);
+  background-color: var(--card-bg);
+}
+
+.formTextarea {
+  resize: vertical;
+}
+
+.submitBtn {
+  background-color: var(--brand-teal) !important;
+  color: var(--brand-teal-contrast) !important;
+  padding: 12px 24px !important;
+  border-radius: 12px !important;
+  font-size: 0.95rem !important;
+  margin-top: 6px !important;
+}
+
+@media (max-width: 900px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}

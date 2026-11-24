@@ -1,0 +1,319 @@
+.terminalSection {
+  padding: clamp(36px, 6vw, 76px) 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 clamp(14px, 3vw, 24px);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: clamp(24px, 4vw, 40px);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--brand-teal);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.8rem, 4vw, 2.75rem) !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: clamp(6px, 1vw, 10px) !important;
+  letter-spacing: -0.025em !important;
+}
+
+.desc {
+  font-size: clamp(0.9rem, 1.5vw, 1rem) !important;
+  color: var(--text-secondary);
+  max-width: 640px;
+  margin: 0 auto !important;
+}
+
+
+.terminalWindow {
+  background-color: #121215;
+  border: 1px solid #2e2e33;
+  border-radius: 18px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  width: 100%;
+}
+
+.terminalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(10px, 1.8vw, 14px) clamp(12px, 2.5vw, 18px);
+  background-color: #1a1a1f;
+  border-bottom: 1px solid #2e2e33;
+  gap: 8px;
+}
+
+.dotsGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.windowDot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.redDot { background-color: #ef4444; }
+.yellowDot { background-color: #eab308; }
+.greenDot { background-color: #22c55e; }
+
+.windowTitle {
+  font-size: clamp(0.72rem, 1.2vw, 0.8125rem);
+  color: #a1a1aa;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  flex: 1;
+}
+
+.windowBadge {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: #27272a;
+  color: #71717a;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.terminalBody {
+  padding: clamp(14px, 2.5vw, 20px);
+  min-height: 260px;
+  max-height: 480px;
+  overflow-y: auto;
+  font-size: clamp(0.8rem, 1.2vw, 0.85rem);
+  line-height: 1.6;
+  color: #e4e4e7;
+  word-break: break-word;
+}
+
+.welcomeMsg {
+  color: #a1a1aa;
+  margin-bottom: 16px;
+}
+
+.cmdTag {
+  color: #5ee8b7;
+  font-weight: 600;
+}
+
+.historyItem {
+  margin-bottom: 14px;
+}
+
+.cmdEcho {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.promptSign {
+  color: #5ee8b7;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.cmdOutput {
+  color: #d4d4d8;
+  margin-left: 12px;
+}
+
+.promptLine {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.termInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: clamp(0.8rem, 1.2vw, 0.85rem);
+  min-width: 0;
+}
+
+.termInput::placeholder {
+  color: #52525b;
+}
+
+
+.cmdHelp ul {
+  list-style: none;
+  padding-left: 8px;
+  margin: 6px 0 0 0;
+}
+
+.greenText {
+  color: #5ee8b7;
+}
+
+.tealText {
+  color: #38bdf8;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cmdBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cmdError {
+  color: #f87171;
+}
+
+
+.chipsBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: clamp(10px, 1.8vw, 14px) clamp(12px, 2.5vw, 18px);
+  background-color: #18181b;
+  border-top: 1px solid #2e2e33;
+}
+
+.chipsLabel {
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+  color: #71717a;
+  white-space: nowrap;
+}
+
+.chipBtn {
+  font-family: inherit;
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: #27272a;
+  border: 1px solid #3f3f46;
+  color: #e4e4e7;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.chipBtn:hover {
+  background-color: #5ee8b7;
+  color: #09090b;
+  border-color: #5ee8b7;
+}
+
+
+
+@media (max-width: 768px) {
+  .terminalWindow {
+    border-radius: 14px;
+  }
+
+  .terminalBody {
+    padding: 14px 12px;
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .terminalHeader {
+    padding: 10px 12px;
+  }
+
+  .windowTitle {
+    font-size: 0.7rem;
+    max-width: 170px;
+  }
+
+  .windowBadge {
+    display: none;
+  }
+
+  .terminalBody {
+    padding: 12px 10px;
+    font-size: 0.78rem;
+    min-height: 200px;
+    max-height: 380px;
+  }
+
+  .cmdOutput {
+    margin-left: 6px;
+  }
+
+  .chipsBar {
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .chipsLabel {
+    width: 100%;
+    margin-bottom: 2px;
+  }
+
+  .chipBtn {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 340px) {
+  .dotsGroup {
+    gap: 4px;
+  }
+
+  .windowDot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .windowTitle {
+    max-width: 130px;
+    font-size: 0.65rem;
+  }
+
+  .chipBtn {
+    font-size: 0.68rem;
+    padding: 2px 6px;
+  }
+}

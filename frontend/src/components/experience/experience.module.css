@@ -1,0 +1,428 @@
+.experienceSection {
+  padding: clamp(40px, 7vw, 84px) 0;
+  width: 100%;
+  background-color: var(--bg-page);
+  position: relative;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(14px, 3vw, 24px);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: clamp(28px, 5vw, 48px);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--brand-teal);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2rem, 4.5vw, 2.9rem) !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: clamp(6px, 1vw, 12px) !important;
+  letter-spacing: -0.025em !important;
+}
+
+.desc {
+  font-size: clamp(0.92rem, 1.5vw, 1.05rem) !important;
+  color: var(--text-secondary);
+  max-width: 660px;
+  margin: 0 auto !important;
+  line-height: 1.6 !important;
+}
+
+.timelineTrack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4vw, 40px);
+  position: relative;
+  width: 100%;
+}
+
+.timelineItem {
+  display: flex;
+  gap: clamp(16px, 3vw, 28px);
+  position: relative;
+  align-items: stretch;
+}
+
+.timelineSpine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.timelineNode {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background-color: var(--card-bg);
+  margin-top: 24px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--bg-page);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.activeNode {
+  border-color: var(--brand-green);
+  background-color: var(--brand-green);
+  box-shadow: 0 0 0 4px var(--bg-page), 0 0 14px rgba(16, 185, 129, 0.5);
+}
+
+.timelineLine {
+  width: 2px;
+  flex: 1;
+  background-color: var(--border-color);
+  margin-top: 6px;
+  margin-bottom: -18px;
+  z-index: 1;
+}
+
+.careerCard {
+  flex: 1;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: clamp(20px, 3.5vw, 32px);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2.5vw, 22px);
+}
+
+.careerCard:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-teal);
+  box-shadow: 0 14px 34px -4px rgba(0, 0, 0, 0.12);
+}
+
+.cardActive {
+  border-left: 4px solid var(--brand-green);
+}
+
+.cardPast {
+  border-left: 4px solid var(--border-color);
+}
+
+.cardHeaderBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.statusIndicatorGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activeRadarPulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--brand-green);
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+  animation: radar-pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes radar-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.completedIndicator {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.statusText {
+  font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 1.2vw, 0.78rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-green);
+}
+
+.cardPast .statusText {
+  color: var(--text-muted);
+}
+
+.tenureBadge {
+  font-family: var(--font-mono);
+  font-size: clamp(0.72rem, 1.2vw, 0.8rem);
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.activeTenureBadge {
+  background-color: var(--badge-green-bg);
+  border-color: var(--badge-green-border);
+  color: var(--brand-green);
+}
+
+.companyHeroRow {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.5vw, 18px);
+}
+
+.monogramAvatar {
+  width: clamp(48px, 6vw, 56px);
+  height: clamp(48px, 6vw, 56px);
+  border-radius: 14px;
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-color);
+  color: var(--brand-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.cardActive .monogramAvatar {
+  background-color: var(--badge-green-bg);
+  border-color: var(--badge-green-border);
+  color: var(--brand-green);
+}
+
+.companyMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.roleTitle {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem) !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.2 !important;
+}
+
+.subMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(0.82rem, 1.3vw, 0.92rem);
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+}
+
+.companyNameText {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.metaDivider {
+  color: var(--text-muted);
+}
+
+.locationText {
+  color: var(--text-secondary);
+}
+
+.impactSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.impactSectionHeader {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.75rem, 1.2vw, 0.82rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.impactIcon {
+  font-size: 1.05rem;
+  color: var(--brand-teal);
+}
+
+.impactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.impactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: clamp(0.85rem, 1.3vw, 0.92rem);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.bulletCheck {
+  font-size: 1.05rem;
+  color: var(--brand-green);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.respTitle {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.respDesc {
+  color: var(--text-secondary);
+}
+
+.techStackFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.techFooterLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.techChipsTrack {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.techChip {
+  font-family: var(--font-mono) !important;
+  font-size: clamp(0.7rem, 1.1vw, 0.76rem) !important;
+  background-color: var(--bg-warm) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 9999px !important;
+}
+
+@media (max-width: 768px) {
+  .timelineTrack {
+    gap: 24px;
+  }
+
+  .timelineSpine {
+    display: none;
+  }
+
+  .careerCard {
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  .companyHeroRow {
+    gap: 12px;
+  }
+
+  .cardHeaderBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .careerCard {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .subMetaRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .metaDivider {
+    display: none;
+  }
+
+  .techChip {
+    font-size: 0.68rem !important;
+  }
+}
+
+@media (max-width: 340px) {
+  .container {
+    padding: 0 8px;
+  }
+
+  .careerCard {
+    padding: 14px 10px;
+  }
+
+  .roleTitle {
+    font-size: 1.1rem !important;
+  }
+}
