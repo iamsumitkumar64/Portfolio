@@ -1,20 +1,68 @@
 'use client';
 
 import * as React from 'react';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Typography, CircularProgress } from '@mui/material';
 import {
-  EmailOutlined,
-  PhoneOutlined,
   OpenInNew,
   Send,
-  ContentCopy,
+  CheckCircleOutlined,
+  ErrorOutlined,
 } from '@mui/icons-material';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import emailjs from '@emailjs/browser';
 import { CONTACT_INFO } from '@/data/portfolio-data';
 import styles from './contact.module.css';
 
+const contactSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(2, { message: 'Name must be at least 2 characters long' })
+    .max(50, { message: 'Name must not exceed 50 characters' }),
+  email: z
+    .string()
+    .trim()
+    .email({ message: 'Please enter a valid email address' }),
+  mobile: z
+    .string()
+    .trim()
+    .optional()
+    .refine((val) => !val || /^[+0-9\s\-()]{7,20}$/.test(val), {
+      message: 'Please enter a valid phone number (or leave empty)',
+    }),
+  message: z
+    .string()
+    .trim()
+    .min(10, { message: 'Message must be at least 10 characters long' })
+    .max(1500, { message: 'Message must not exceed 1500 characters' }),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
+
 export default function Contact() {
   const [copiedKey, setCopiedKey] = React.useState<string | null>(null);
-  const [submitted, setSubmitted] = React.useState(false);
+  const [status, setStatus] = React.useState<{
+    type: 'idle' | 'success' | 'error';
+    message: string;
+  }>({ type: 'idle', message: '' });
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    mode: 'onChange',
+    defaultValues: {
+      name: '',
+      email: '',
+      mobile: '',
+      message: '',
+    },
+  });
 
   const handleCopy = (key: string, text: string) => {
     if (navigator.clipboard) {
@@ -24,10 +72,34 @@ export default function Contact() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+  const onSubmit = async (data: ContactFormData) => {
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_nvpczn8';
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_fjbjz6e';
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'Gj3Jhn-9vvMOvH8oa';
+
+    const params = {
+      from_name: data.name.trim(),
+      email_id: data.email.trim(),
+      mobile: data.mobile ? data.mobile.trim() : '',
+      message: data.message.trim(),
+    };
+
+    try {
+      await emailjs.send(serviceId, templateId, params, publicKey);
+      setStatus({
+        type: 'success',
+        message: 'Message sent successfully! Sumit will get back to you soon.',
+      });
+      reset();
+      setTimeout(() => {
+        setStatus({ type: 'idle', message: '' });
+      }, 6000);
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again or email directly.',
+      });
+    }
   };
 
   return (
@@ -47,7 +119,6 @@ export default function Contact() {
         </Box>
 
         <Box className={styles.contactGrid}>
-          
           <Box className={styles.infoPanel}>
             <Typography variant="h5" className={styles.panelTitle}>
               Direct Network Coordinates
@@ -57,7 +128,6 @@ export default function Contact() {
             </Typography>
 
             <Box className={styles.cardsStack}>
-              
               <div
                 className={styles.coordCard}
                 onClick={() => handleCopy('email', CONTACT_INFO.email)}
@@ -72,7 +142,6 @@ export default function Contact() {
                 </span>
               </div>
 
-              
               <div
                 className={styles.coordCard}
                 onClick={() => handleCopy('phone', CONTACT_INFO.phone)}
@@ -87,7 +156,6 @@ export default function Contact() {
                 </span>
               </div>
 
-              
               <a
                 href={CONTACT_INFO.linkedin}
                 target="_blank"
@@ -102,7 +170,6 @@ export default function Contact() {
                 <OpenInNew fontSize="small" className={styles.arrowIcon} />
               </a>
 
-              
               <a
                 href={CONTACT_INFO.github}
                 target="_blank"
@@ -117,7 +184,6 @@ export default function Contact() {
                 <OpenInNew fontSize="small" className={styles.arrowIcon} />
               </a>
 
-              
               <a
                 href={CONTACT_INFO.leetcode}
                 target="_blank"
@@ -134,7 +200,6 @@ export default function Contact() {
             </Box>
           </Box>
 
-          
           <Box className={styles.formPanel}>
             <Typography variant="h5" className={styles.panelTitle}>
               Transmit Direct Message
@@ -143,44 +208,87 @@ export default function Contact() {
               Send an inquiry or interview schedule invitation directly to my inbox.
             </Typography>
 
-            <form onSubmit={handleSubmit} className={styles.form}>
+            {status.type === 'success' && (
+              <div className={`${styles.statusAlert} ${styles.successAlert}`}>
+                <CheckCircleOutlined fontSize="small" className={styles.alertIcon} />
+                <span>{status.message}</span>
+              </div>
+            )}
+
+            {status.type === 'error' && (
+              <div className={`${styles.statusAlert} ${styles.errorAlert}`}>
+                <ErrorOutlined fontSize="small" className={styles.alertIcon} />
+                <span>{status.message}</span>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit(onSubmit)} className={styles.form} noValidate>
               <div className={styles.fieldGroup}>
-                <label className={styles.fieldLabel}>Your Name</label>
+                <label htmlFor="user-name" className={styles.fieldLabel}>
+                  Your Name <span className={styles.requiredAsterisk}>*</span>
+                </label>
                 <input
+                  id="user-name"
                   type="text"
-                  required
                   placeholder="Jane Doe / Hiring Lead"
-                  className={styles.formInput}
+                  {...register('name')}
+                  className={`${styles.formInput} ${errors.name ? styles.inputError : ''}`}
+                  aria-invalid={Boolean(errors.name)}
                 />
+                {errors.name && (
+                  <span className={styles.errorText}>{errors.name.message}</span>
+                )}
               </div>
 
               <div className={styles.fieldGroup}>
-                <label className={styles.fieldLabel}>Your Email</label>
+                <label htmlFor="user-email" className={styles.fieldLabel}>
+                  Your Email <span className={styles.requiredAsterisk}>*</span>
+                </label>
                 <input
+                  id="user-email"
                   type="email"
-                  required
                   placeholder="jane@company.com"
-                  className={styles.formInput}
+                  {...register('email')}
+                  className={`${styles.formInput} ${errors.email ? styles.inputError : ''}`}
+                  aria-invalid={Boolean(errors.email)}
                 />
+                {errors.email && (
+                  <span className={styles.errorText}>{errors.email.message}</span>
+                )}
               </div>
 
               <div className={styles.fieldGroup}>
-                <label className={styles.fieldLabel}>Phone / Mobile (Optional)</label>
+                <label htmlFor="user-mobile" className={styles.fieldLabel}>
+                  Phone / Mobile (Optional)
+                </label>
                 <input
+                  id="user-mobile"
                   type="tel"
-                  placeholder="+91 (000) 000-0000"
-                  className={styles.formInput}
+                  placeholder="+91 99925 28037"
+                  {...register('mobile')}
+                  className={`${styles.formInput} ${errors.mobile ? styles.inputError : ''}`}
+                  aria-invalid={Boolean(errors.mobile)}
                 />
+                {errors.mobile && (
+                  <span className={styles.errorText}>{errors.mobile.message}</span>
+                )}
               </div>
 
               <div className={styles.fieldGroup}>
-                <label className={styles.fieldLabel}>Message &amp; Scope</label>
+                <label htmlFor="user-message" className={styles.fieldLabel}>
+                  Message &amp; Scope <span className={styles.requiredAsterisk}>*</span>
+                </label>
                 <textarea
-                  required
+                  id="user-message"
                   rows={4}
                   placeholder="Tell me about the engineering role, team, or distributed systems problem..."
-                  className={styles.formTextarea}
+                  {...register('message')}
+                  className={`${styles.formTextarea} ${errors.message ? styles.inputError : ''}`}
+                  aria-invalid={Boolean(errors.message)}
                 ></textarea>
+                {errors.message && (
+                  <span className={styles.errorText}>{errors.message.message}</span>
+                )}
               </div>
 
               <Button
@@ -188,10 +296,17 @@ export default function Contact() {
                 variant="contained"
                 size="large"
                 fullWidth
-                endIcon={<Send />}
+                disabled={isSubmitting}
+                endIcon={
+                  isSubmitting ? (
+                    <CircularProgress size={18} color="inherit" />
+                  ) : (
+                    <Send />
+                  )
+                }
                 className={styles.submitBtn}
               >
-                {submitted ? 'Message Delivered ✓' : 'Send Message Transmit'}
+                {isSubmitting ? 'SENDING...' : 'SUBMIT FORM'}
               </Button>
             </form>
           </Box>
