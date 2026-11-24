@@ -2,27 +2,81 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { Box, Button, IconButton, Typography } from '@mui/material';
 import {
+  HomeOutlined,
+  WorkOutlined,
+  ScienceOutlined,
+  PersonOutlined,
+  LayersOutlined,
+  KeyboardArrowDown,
   LightModeOutlined,
   DarkModeOutlined,
-  KeyboardArrowDown,
   Menu as MenuIcon,
   Close as CloseIcon,
+  AlbumOutlined,
+  ChatOutlined,
+  ArticleOutlined,
+  OpenInNew,
+  ArrowForward,
 } from '@mui/icons-material';
 import { useColorMode } from '@/theme/ThemeRegistry';
 import styles from './navbar.module.css';
 
+interface MegaItem {
+  id: string;
+  title: string;
+  urlLabel: string;
+  href: string;
+  description: string;
+  tag: string;
+  iconType: 'turntable' | 'comments' | 'assessment';
+}
+
+const EXPERIMENTS_DATA: MegaItem[] = [
+  {
+    id: 'turntable',
+    title: '3D Turntable Component',
+    urlLabel: 'turntable.poulo.site',
+    href: 'https://github.com/iamsumitkumar64/Birwal-MCP',
+    description:
+      'Engineered an interactive, highly responsive 3D Turntable component using modern WebGL, three-point lighting, and vinyl physics.',
+    tag: 'Live demo',
+    iconType: 'turntable',
+  },
+  {
+    id: 'component-lib',
+    title: 'Component Library',
+    urlLabel: 'components.poulo.site',
+    href: 'https://www.npmjs.com/package/dot-react-comment-lib',
+    description:
+      'Production-ready nested comment threads component library with multi-level replies, emoji reactions, and tsup bundling.',
+    tag: 'NPM package',
+    iconType: 'comments',
+  },
+  {
+    id: 'assessment',
+    title: 'Assessment',
+    urlLabel: 'assessment.poulo.site',
+    href: 'https://github.com/iamsumitkumar64/RAG-POC',
+    description:
+      'End-to-end Retrieval-Augmented Generation pipeline built with NestJS, Gemini embeddings, and PostgreSQL pgvector.',
+    tag: 'Live demo',
+    iconType: 'assessment',
+  },
+];
+
 export default function Navbar() {
   const { mode, toggleColorMode } = useColorMode();
-  const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const [activeTab, setActiveTab] = React.useState('home');
+  const [experimentsOpen, setExperimentsOpen] = React.useState(false);
+  const [hoveredExp, setHoveredExp] = React.useState<MegaItem>(EXPERIMENTS_DATA[0]);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const dropdownRef = React.useRef<HTMLLIElement>(null);
+  const navRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setDropdownOpen(false);
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setExperimentsOpen(false);
       }
     }
     document.addEventListener('mousedown', handleClickOutside);
@@ -30,252 +84,258 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={styles.header}>
-      <Box className={styles.container}>
-        
-        <Link href="#hero" className={styles.brandLink}>
-          <Box className={styles.logoSymbol}>&gt;_</Box>
-          <Box className={styles.brandTextGroup}>
-            <Typography variant="h6" component="span" className={styles.brandTitle}>
-              Sumit Kumar
-            </Typography>
-            <span className={styles.roleTag}>Software Engineer</span>
-          </Box>
-        </Link>
+    <header className={styles.headerWrapper}>
+      <div className={styles.navContainer} ref={navRef}>
+        <nav className={styles.pillIsland} aria-label="Main Navigation">
+          <Link
+            href="#hero"
+            className={`${styles.navItemBtn} ${activeTab === 'home' ? styles.activeItem : ''}`}
+            onClick={() => {
+              setActiveTab('home');
+              setExperimentsOpen(false);
+            }}
+          >
+            <HomeOutlined fontSize="small" />
+            <span>Home</span>
+          </Link>
 
-        
-        <nav className={styles.desktopNav} aria-label="Primary Navigation">
-          <ul className={styles.navMenu}>
-            <li>
-              <Link href="#hero" className={styles.navLink}>
-                Overview
-              </Link>
-            </li>
-            <li>
-              <Link href="#projects" className={styles.navLink}>
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="#experience" className={styles.navLink}>
-                Experience
-              </Link>
-            </li>
-            <li>
-              <Link href="#skills" className={styles.navLink}>
-                Skills
-              </Link>
-            </li>
+          <Link
+            href="#projects"
+            className={`${styles.navItemBtn} ${activeTab === 'work' ? styles.activeItem : ''}`}
+            onClick={() => {
+              setActiveTab('work');
+              setExperimentsOpen(false);
+            }}
+          >
+            <WorkOutlined fontSize="small" />
+            <span>Work</span>
+          </Link>
 
-            
-            <li className={styles.dropdownWrapper} ref={dropdownRef}>
-              <button
-                type="button"
-                className={styles.dropdownBtn}
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                aria-expanded={dropdownOpen}
-              >
-                <span>More</span>
-                <KeyboardArrowDown
-                  className={`${styles.chevron} ${dropdownOpen ? styles.chevronOpen : ''}`}
-                  fontSize="small"
-                />
-              </button>
+          <button
+            type="button"
+            className={`${styles.navItemBtn} ${experimentsOpen ? styles.activeItem : ''}`}
+            onClick={() => setExperimentsOpen(!experimentsOpen)}
+            aria-expanded={experimentsOpen}
+          >
+            <ScienceOutlined fontSize="small" />
+            <span>Experiments</span>
+            <KeyboardArrowDown
+              className={`${styles.chevron} ${experimentsOpen ? styles.chevronOpen : ''}`}
+            />
+          </button>
 
-              {dropdownOpen && (
-                <div className={styles.dropdownMenu}>
-                  <Link
-                    href="#education"
-                    className={styles.dropdownItem}
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    <span className={styles.dropdownIcon}>🎓</span>
-                    <div>
-                      <strong className={styles.dropdownHeading}>Education</strong>
-                      <span className={styles.dropdownSub}>MCA (Chandigarh Univ) &amp; BCA</span>
-                    </div>
-                  </Link>
+          <Link
+            href="#experience"
+            className={`${styles.navItemBtn} ${activeTab === 'about' ? styles.activeItem : ''}`}
+            onClick={() => {
+              setActiveTab('about');
+              setExperimentsOpen(false);
+            }}
+          >
+            <PersonOutlined fontSize="small" />
+            <span>About</span>
+          </Link>
 
-                  <Link
-                    href="#achievements"
-                    className={styles.dropdownItem}
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    <span className={styles.dropdownIcon}>🏆</span>
-                    <div>
-                      <strong className={styles.dropdownHeading}>Achievements</strong>
-                      <span className={styles.dropdownSub}>Zerone24 Coding Contest &amp; LeetCode</span>
-                    </div>
-                  </Link>
-
-                  <Link
-                    href="#terminal"
-                    className={styles.dropdownItem}
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    <span className={styles.dropdownIcon}>💻</span>
-                    <div>
-                      <strong className={styles.dropdownHeading}>Terminal Console</strong>
-                      <span className={styles.dropdownSub}>Interactive in-browser shell</span>
-                    </div>
-                  </Link>
-
-                  <Link
-                    href="#contact"
-                    className={styles.dropdownItem}
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    <span className={styles.dropdownIcon}>✉️</span>
-                    <div>
-                      <strong className={styles.dropdownHeading}>Direct Contact</strong>
-                      <span className={styles.dropdownSub}>Coordinates &amp; Transmission form</span>
-                    </div>
-                  </Link>
-                </div>
-              )}
-            </li>
-          </ul>
+          <Link
+            href="#skills"
+            className={`${styles.navItemBtn} ${activeTab === 'stack' ? styles.activeItem : ''}`}
+            onClick={() => {
+              setActiveTab('stack');
+              setExperimentsOpen(false);
+            }}
+          >
+            <LayersOutlined fontSize="small" />
+            <span>Stack</span>
+          </Link>
         </nav>
 
-        
-        <Box className={styles.actionsGroup}>
-          <IconButton
-            onClick={toggleColorMode}
-            className={styles.themeToggleBtn}
-            size="small"
-            title={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            aria-label={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-          >
-            {mode === 'dark' ? (
-              <LightModeOutlined fontSize="small" />
-            ) : (
-              <DarkModeOutlined fontSize="small" />
-            )}
-          </IconButton>
+        <a href="#contact" className={styles.callButton}>
+          <span className={styles.callIconCluster} aria-hidden="true">
+            <span className={styles.dotCenter}></span>
+            <span className={styles.dotTop}></span>
+            <span className={styles.dotRight}></span>
+            <span className={styles.dotBottom}></span>
+            <span className={styles.dotLeft}></span>
+          </span>
+          <span>Book a Call</span>
+        </a>
 
-          <Button
-            component="a"
-            href="/assets/Sumit Kumar Resume.pdf"
-            download
-            variant="outlined"
-            size="small"
-            className={styles.resumeBtn}
-          >
-            Resume PDF
-          </Button>
+        <button
+          type="button"
+          onClick={toggleColorMode}
+          className={styles.themeTogglePill}
+          title={mode === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          aria-label={mode === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        >
+          {mode === 'dark' ? (
+            <LightModeOutlined fontSize="small" />
+          ) : (
+            <DarkModeOutlined fontSize="small" />
+          )}
+        </button>
 
-          <Button
-            component="a"
-            href="#contact"
-            variant="contained"
-            size="small"
-            color="primary"
-            className={styles.talkBtn}
-          >
-            Let&apos;s Talk
-          </Button>
+        <button
+          type="button"
+          className={styles.mobileMenuBtn}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle Navigation Menu"
+        >
+          {mobileMenuOpen ? <CloseIcon fontSize="small" /> : <MenuIcon fontSize="small" />}
+        </button>
 
-          
-          <IconButton
-            className={styles.mobileHamburger}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle navigation drawer"
-          >
-            {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
-          </IconButton>
-        </Box>
-      </Box>
+        {experimentsOpen && (
+          <div className={styles.megaMenuWrapper}>
+            <div className={styles.megaGrid}>
+              <a
+                href={hoveredExp.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.previewCard}
+              >
+                <div className={styles.previewArtFrame}>
+                  {hoveredExp.id === 'turntable' ? (
+                    <div className={styles.turntableGraphic}>
+                      <div className={styles.turntableTextSide}>
+                        <span className={styles.turntableHeadline}>Your music, your cover.</span>
+                        <span className={styles.turntableSub}>Next.js • Three.js</span>
+                      </div>
+                      <div className={styles.vinylDisc}>
+                        <div className={styles.vinylCenter}>33</div>
+                        <div className={styles.tonearm}></div>
+                      </div>
+                    </div>
+                  ) : hoveredExp.id === 'component-lib' ? (
+                    <div className={styles.turntableGraphic}>
+                      <div className={styles.turntableTextSide}>
+                        <span className={styles.turntableHeadline}>Nested threaded comments</span>
+                        <span className={styles.turntableSub}>npm: dot-react-comment-lib</span>
+                      </div>
+                      <div className={styles.squircleIcon}>
+                        <ChatOutlined fontSize="medium" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className={styles.turntableGraphic}>
+                      <div className={styles.turntableTextSide}>
+                        <span className={styles.turntableHeadline}>RAG Semantic Indexing</span>
+                        <span className={styles.turntableSub}>pgvector • Gemini</span>
+                      </div>
+                      <div className={styles.squircleIcon}>
+                        <ArticleOutlined fontSize="medium" />
+                      </div>
+                    </div>
+                  )}
+                </div>
 
-      
-      {mobileMenuOpen && (
-        <Box className={styles.mobileDrawer}>
-          
-          <div className={styles.mobileThemeRow}>
-            <span className={styles.mobileThemeLabel}>Appearance</span>
-            <button
-              type="button"
-              className={styles.mobileThemePill}
-              onClick={toggleColorMode}
-            >
-              {mode === 'dark' ? (
-                <>
-                  <LightModeOutlined fontSize="small" />
-                  <span>Switch to Light Mode</span>
-                </>
-              ) : (
-                <>
-                  <DarkModeOutlined fontSize="small" />
-                  <span>Switch to Dark Mode</span>
-                </>
-              )}
-            </button>
+                <div className={styles.previewTextGroup}>
+                  <p className={styles.previewDesc}>{hoveredExp.description}</p>
+                  <div className={styles.previewFooterRow}>
+                    <span>{hoveredExp.urlLabel}</span>
+                    <span className={styles.liveDemoBadge}>
+                      <span>{hoveredExp.tag}</span>
+                      <OpenInNew fontSize="inherit" />
+                    </span>
+                  </div>
+                </div>
+              </a>
+
+              <div className={styles.rightListCol}>
+                <div className={styles.colHeader}>AI EXPERIMENTS</div>
+                <div className={styles.itemsStack}>
+                  {EXPERIMENTS_DATA.map((item) => (
+                    <div
+                      key={item.id}
+                      className={`${styles.megaItemRow} ${
+                        hoveredExp.id === item.id ? styles.activeMegaRow : ''
+                      }`}
+                      onMouseEnter={() => setHoveredExp(item)}
+                      onClick={() => {
+                        window.open(item.href, '_blank');
+                        setExperimentsOpen(false);
+                      }}
+                    >
+                      <div className={styles.squircleIcon}>
+                        {item.iconType === 'turntable' ? (
+                          <AlbumOutlined fontSize="small" />
+                        ) : item.iconType === 'comments' ? (
+                          <ChatOutlined fontSize="small" />
+                        ) : (
+                          <ArticleOutlined fontSize="small" />
+                        )}
+                      </div>
+                      <div className={styles.megaItemTexts}>
+                        <span className={styles.megaItemTitle}>{item.title}</span>
+                        <span className={styles.megaItemUrl}>{item.urlLabel}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.megaFooterBar}>
+              <span>Live demos, each in a new tab</span>
+              <Link
+                href="#projects"
+                className={styles.seeThemLink}
+                onClick={() => setExperimentsOpen(false)}
+              >
+                <span>See them here</span>
+                <ArrowForward fontSize="inherit" />
+              </Link>
+            </div>
           </div>
+        )}
 
-          <ul className={styles.mobileList}>
-            <li>
-              <Link href="#hero" onClick={() => setMobileMenuOpen(false)}>
-                Overview
-              </Link>
-            </li>
-            <li>
-              <Link href="#projects" onClick={() => setMobileMenuOpen(false)}>
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="#experience" onClick={() => setMobileMenuOpen(false)}>
-                Experience
-              </Link>
-            </li>
-            <li>
-              <Link href="#skills" onClick={() => setMobileMenuOpen(false)}>
-                Skills
-              </Link>
-            </li>
-            <li>
-              <Link href="#education" onClick={() => setMobileMenuOpen(false)}>
-                Education &amp; Degrees
-              </Link>
-            </li>
-            <li>
-              <Link href="#achievements" onClick={() => setMobileMenuOpen(false)}>
-                Achievements &amp; Honors
-              </Link>
-            </li>
-            <li>
-              <Link href="#terminal" onClick={() => setMobileMenuOpen(false)}>
-                Interactive Terminal
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
-                Contact Coordinates
-              </Link>
-            </li>
-          </ul>
+        {mobileMenuOpen && (
+          <div className={styles.mobileDrawer}>
+            <div className={styles.mobileThemeRow}>
+              <span>Theme Appearance</span>
+              <button
+                type="button"
+                className={styles.mobileThemePill}
+                onClick={toggleColorMode}
+              >
+                {mode === 'dark' ? <LightModeOutlined fontSize="small" /> : <DarkModeOutlined fontSize="small" />}
+                <span>{mode === 'dark' ? 'Light' : 'Dark'}</span>
+              </button>
+            </div>
 
-          <Box className={styles.mobileActions}>
-            <Button
-              component="a"
-              href="/assets/Sumit Kumar Resume.pdf"
-              download
-              variant="outlined"
-              fullWidth
-            >
-              Download Resume (.PDF)
-            </Button>
-            <Button
-              component="a"
-              href="#contact"
-              variant="contained"
-              fullWidth
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Let&apos;s Talk
-            </Button>
-          </Box>
-        </Box>
-      )}
+            <ul className={styles.mobileList}>
+              <li>
+                <Link href="#hero" onClick={() => setMobileMenuOpen(false)}>
+                  <span>Home</span>
+                  <HomeOutlined fontSize="small" />
+                </Link>
+              </li>
+              <li>
+                <Link href="#projects" onClick={() => setMobileMenuOpen(false)}>
+                  <span>Selected Work</span>
+                  <WorkOutlined fontSize="small" />
+                </Link>
+              </li>
+              <li>
+                <Link href="#experience" onClick={() => setMobileMenuOpen(false)}>
+                  <span>About &amp; Career</span>
+                  <PersonOutlined fontSize="small" />
+                </Link>
+              </li>
+              <li>
+                <Link href="#skills" onClick={() => setMobileMenuOpen(false)}>
+                  <span>Stack &amp; Skills</span>
+                  <LayersOutlined fontSize="small" />
+                </Link>
+              </li>
+              <li>
+                <Link href="#contact" onClick={() => setMobileMenuOpen(false)}>
+                  <span>Book a Call</span>
+                  <ArrowForward fontSize="small" />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
     </header>
   );
 }
